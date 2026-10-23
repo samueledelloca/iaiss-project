@@ -49,7 +49,7 @@ AGENT_SPECS: dict[str, AgentSpec] = {s.name: s for s in [
     _spec("hla_agent", 3, "Analyse HLA typing, restriction and binding coverage.",
           ["hla_typing", "broadest_hla_coverage", "run_analysis", "query_dataset"]),
     _spec("tcell_agent", 3, "Analyse CD4/CD8 and T-cell subset composition.",
-          DATA_TOOLS),
+          DATA_TOOLS + ["ics_fcs_summary"]),
     _spec("drug_discovery_agent", 3, "Propose antigen-specific therapeutic strategies.",
           ["most_immunogenic_epitopes", "broadest_hla_coverage", "run_analysis"]),
     _spec("structural_agent", 3, "Analyse epitope sequence/position and modifications.",

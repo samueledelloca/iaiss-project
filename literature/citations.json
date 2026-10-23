@@ -1,0 +1,156 @@
+[
+  {
+    "doi": "10.1186/s13041-020-00607-3",
+    "title": "CCR2 is localized in microglia and neurons, as well as infiltrating monocytes, in the lumbar spinal cord of ALS mice",
+    "authors_short": "Komiya et al.",
+    "year": 2020,
+    "journal": "Molecular Brain",
+    "theme": "als_t_cell_background",
+    "relation": "supports_background",
+    "note": "Shows that peripheral immune cells infiltrate the ALS spinal cord and fuel neuroinflammation, supporting the paper's premise of an immune component to motor neuron degeneration.",
+    "supporting_citations": 3
+  },
+  {
+    "doi": "10.1186/s40478-021-01241-3",
+    "title": "The pathogenic role of c-Kit+ mast cells in the spinal motor neuron-vascular niche in ALS",
+    "authors_short": "Kovacs et al.",
+    "year": 2021,
+    "journal": "Acta Neuropathologica Communications",
+    "theme": "als_t_cell_background",
+    "relation": "supports_background",
+    "note": "Documents immune cell accumulation around degenerating motor neurons in human and mouse ALS, reinforcing that the ALS lesion is an immunologically active site.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1111/cen3.12309",
+    "title": "Neuroinflammation in motor neuron disease",
+    "authors_short": "Endo et al.",
+    "year": 2016,
+    "journal": "Clinical and Experimental Neuroimmunology",
+    "theme": "als_t_cell_background",
+    "relation": "supports_background",
+    "note": "Review of the neuroinflammatory and adaptive-immune changes in ALS, giving general context for an autoimmune response against a neuronal protein.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1002/emmm.201201544",
+    "title": "Regulatory T-lymphocytes mediate amyotrophic lateral sclerosis progression and survival",
+    "authors_short": "Appel et al.",
+    "year": 2012,
+    "journal": "EMBO Molecular Medicine",
+    "theme": "treg_als",
+    "relation": "supports_background",
+    "note": "Reports that reduced Treg numbers and FoxP3 expression track faster ALS progression in patients, a central observation the paper's autoimmune framing builds on (carries a published erratum, no retraction or concern).",
+    "supporting_citations": 17
+  },
+  {
+    "doi": "10.1002/jcp.29401",
+    "title": "Regulatory T cells for amyotrophic lateral sclerosis/motor neuron disease: A clinical and preclinical systematic review",
+    "authors_short": "Rajabinejad et al.",
+    "year": 2019,
+    "journal": "Journal of Cellular Physiology",
+    "theme": "treg_als",
+    "relation": "supports_therapeutic_hypothesis",
+    "note": "Systematic review and meta-analysis finding that boosting Tregs prolongs survival in ALS models, supporting the therapeutic rationale for Treg-based intervention.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1016/j.isci.2020.101192",
+    "title": "Immunosuppressive Functions of M2 Macrophages Derived from iPSCs of Patients with ALS and Healthy Controls",
+    "authors_short": "Appel et al.",
+    "year": 2020,
+    "journal": "iScience",
+    "theme": "treg_als",
+    "relation": "supports_therapeutic_hypothesis",
+    "note": "Shows that iPSC-derived M2 macrophages, including C9orf72-mutant lines, can convert ALS effector T cells into functional Tregs, pointing to a route for restoring Treg-mediated suppression.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1186/s12974-020-01772-x",
+    "title": "CD4+ T cell expression of the IL-10 receptor is necessary for facial motoneuron survival after axotomy",
+    "authors_short": "Runge et al.",
+    "year": 2020,
+    "journal": "Journal of Neuroinflammation",
+    "theme": "il10_neuroprotection",
+    "relation": "supports_background",
+    "note": "Demonstrates that IL-10 signalling through CD4+ T cells is required for motoneuron survival, linking IL-10, T cells, and neuroprotection directly to motor neurons.",
+    "supporting_citations": 2
+  },
+  {
+    "doi": "10.3389/fncel.2019.00430",
+    "title": "Loss of IL-10 Promotes Differentiation of Microglia to a M1 Phenotype",
+    "authors_short": "Laffer et al.",
+    "year": 2019,
+    "journal": "Frontiers in Cellular Neuroscience",
+    "theme": "il10_neuroprotection",
+    "relation": "supports_background",
+    "note": "Shows IL-10 restrains microglia from a pro-inflammatory M1 state, supporting IL-10 as an anti-inflammatory, neuroprotective mediator in the CNS.",
+    "supporting_citations": 9
+  },
+  {
+    "doi": "10.1126/scitranslmed.adm8563",
+    "title": "Microglia-specific IL-10 gene delivery inhibits neuroinflammation and neurodegeneration",
+    "authors_short": "Bido et al.",
+    "year": 2024,
+    "journal": "Science Translational Medicine",
+    "theme": "il10_neuroprotection",
+    "relation": "supports_therapeutic_hypothesis",
+    "note": "Targeted IL-10 delivery to microglia reduces neuroinflammation and rescues neurons in a Parkinson model, offering proof of concept that raising IL-10 is neuroprotective.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1212/nxi.0000000000000465",
+    "title": "Expanded autologous regulatory T-lymphocyte infusions in ALS",
+    "authors_short": "Thonhoff et al.",
+    "year": 2018,
+    "journal": "Neurology: Neuroimmunology & Neuroinflammation",
+    "theme": "antigen_specific_therapy",
+    "relation": "supports_therapeutic_hypothesis",
+    "note": "Phase 1 trial where autologous expanded Treg infusions were safe and slowed ALS progression in proportion to Treg suppressive function, the clearest clinical support for Treg-based therapy in ALS.",
+    "supporting_citations": 4
+  },
+  {
+    "doi": "10.1126/scitranslmed.adn2404",
+    "title": "A phase 2 randomized trial with autologous polyclonal expanded regulatory T cells in children with new-onset type 1 diabetes",
+    "authors_short": "Al Nofal et al.",
+    "year": 2024,
+    "journal": "Science Translational Medicine",
+    "theme": "antigen_specific_therapy",
+    "relation": "contrasts",
+    "note": "A single dose of polyclonal Tregs failed to alter type 1 diabetes progression, illustrating the limits of non-specific Treg therapy and motivating antigen-specific approaches.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.3389/fimmu.2022.962177",
+    "title": "Synergistic targeting of immunologic pathways to empower durable tolerance therapies",
+    "authors_short": "Nepom et al.",
+    "year": 2022,
+    "journal": "Frontiers in Immunology",
+    "theme": "antigen_specific_therapy",
+    "relation": "supports_therapeutic_hypothesis",
+    "note": "Argues for antigen-specific, combination strategies to induce durable immune tolerance, framing the therapeutic logic of targeting a defined autoantigen.",
+    "supporting_citations": 0
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1000107",
+    "title": "Quantitative Predictions of Peptide Binding to Any HLA-DR Molecule of Known Sequence: NetMHCIIpan",
+    "authors_short": "Nielsen et al.",
+    "year": 2008,
+    "journal": "PLoS Computational Biology",
+    "theme": "hla_prediction",
+    "relation": "method_reference",
+    "note": "Original NetMHCIIpan method for predicting peptide binding to HLA class II, the tool used to identify candidate C9orf72-derived T cell epitopes.",
+    "supporting_citations": 5
+  },
+  {
+    "doi": "10.1111/imm.12889",
+    "title": "Improved methods for predicting peptide binding affinity to MHC class II molecules",
+    "authors_short": "Jensen et al.",
+    "year": 2018,
+    "journal": "Immunology",
+    "theme": "hla_prediction",
+    "relation": "method_reference",
+    "note": "Updated NetMHCII and NetMHCIIpan models with broader HLA-DR, DQ and DP coverage, the current standard for HLA class II epitope binding prediction.",
+    "supporting_citations": 8
+  }
+]

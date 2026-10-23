@@ -174,6 +174,17 @@ def search_paper(query: str, k: int = 5) -> dict:
     return {"query": query, "passages": rag.get_index().query(query, k=k)}
 
 
+def ics_fcs_summary() -> dict:
+    """Summarise the raw ICS flow-cytometry files (group x condition, panel)."""
+    from . import flow
+    df = flow.index_ics_fcs()
+    counts = df.groupby(["group", "condition"]).size().to_dict() if "group" in df else {}
+    return {"n_files": len(df),
+            "by_group_condition": {f"{g}/{c}": int(n) for (g, c), n in counts.items()},
+            "channels": flow.channel_panel(),
+            "total_events": int(df.n_events.sum()) if "n_events" in df else None}
+
+
 # --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
@@ -203,6 +214,7 @@ TOOLS: dict[str, Tool] = {t.name: t for t in [
     Tool("reported_pvalues", reported_pvalues, "Authors' reported p-values (validation)."),
     Tool("protein_sequence", protein_sequence, "C9orf72 protein sequence (UniProt Q96LT7)."),
     Tool("search_paper", search_paper, "Retrieve passages from the paper + SI (scientific RAG)."),
+    Tool("ics_fcs_summary", ics_fcs_summary, "Summarise the raw ICS flow-cytometry files."),
 ]}
 
 

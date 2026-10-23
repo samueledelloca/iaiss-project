@@ -18,6 +18,7 @@ def test_every_tool_runs_and_returns_dict():
                            "filters": {"antigen": "C9orf72", "cytokine": "Total"}},
         "run_analysis": {"analysis_id": "repro_fig2_C9orf72_Total"},
         "reproduce_claim": {"claim": "th2_bias"},
+        "search_paper": {"query": "survival", "k": 2},
     }
     for name in tools.TOOLS:
         out = tools.call(name, **defaults.get(name, {}))
