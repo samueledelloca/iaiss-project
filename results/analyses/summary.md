@@ -20,6 +20,8 @@
   _reproduces:_ IL-10-mediated responses associate with longer predicted survival (Fig. 4)
 - **repro_hla_immunogenicity** — Predicted HLA-II binding breadth correlates with observed response frequency (Spearman rho=0.29, p=0.00385, n=95).  
   _reproduces:_ Immunogenicity associated with HLA binding (ED Fig. 5)
+- **repro_cd4_dominance** — C9orf72-reactive T cells are predominantly CD4+ HC: CD4 median 83% vs CD8 9% (p=3.4e-06); ALS: CD4 median 92% vs CD8 5% (p=3.4e-06)  
+  _reproduces:_ Responses predominantly CD4+ T-cell mediated (Fig. 2, ED Fig. 4)
 
 ## Exploratory analyses (candidate novel observations)
 
@@ -29,3 +31,5 @@
 - **explore_spatial** — Adjacent overlapping peptides show lag-1 autocorrelation of response frequency rho=0.47 (permutation p=0.0002): significant spatial clustering.
 - **explore_jackknife_C9orf72_Total** — Base p=0.00159; across all leave-one-out removals p stays in [0.000607, 0.00263] and remains <0.05 in 56/56 removals: robust to any single donor.
 - **explore_censoring_C9orf72_Total** — Rank-based p=0.00159; above-floor responders 27/28 (ALS) vs 22/28 (HC), Fisher p=0.101: weaker under censoring.
+- **explore_fdr_family** — After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.
+- **explore_ratio_classifier** — The IFNg/IL-5 ratio alone separates ALS from HC with AUC=0.68 (n_ALS=26, n_HC=17): a modest single-feature signal, not a diagnostic on its own.

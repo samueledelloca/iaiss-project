@@ -8,11 +8,11 @@ Every agent run is logged under `experiments/agent_runs/`.
 
 ## Layer 3 - Scientific agents
 
-- **literature_agent** (scientific) - Find external support/contradiction for findings. Tools: explain_experimental_design.
+- **literature_agent** (scientific) - Find external support/contradiction for findings. Tools: explain_experimental_design, search_paper.
 - **immunology_agent** (scientific) - Interpret cytokine responses and Th phenotype. Tools: list_datasets, describe_dataset, query_dataset, run_analysis, reproduce_claim, compare_groups, list_analyses.
 - **als_agent** (scientific) - Relate findings to ALS biology, mutation status and controls. Tools: list_datasets, describe_dataset, query_dataset, run_analysis, reproduce_claim, compare_groups, list_analyses.
 - **hla_agent** (scientific) - Analyse HLA typing, restriction and binding coverage. Tools: hla_typing, broadest_hla_coverage, run_analysis, query_dataset.
-- **tcell_agent** (scientific) - Analyse CD4/CD8 and T-cell subset composition. Tools: list_datasets, describe_dataset, query_dataset, run_analysis, reproduce_claim, compare_groups, list_analyses.
+- **tcell_agent** (scientific) - Analyse CD4/CD8 and T-cell subset composition. Tools: list_datasets, describe_dataset, query_dataset, run_analysis, reproduce_claim, compare_groups, list_analyses, ics_fcs_summary.
 - **drug_discovery_agent** (scientific) - Propose antigen-specific therapeutic strategies. Tools: most_immunogenic_epitopes, broadest_hla_coverage, run_analysis.
 - **structural_agent** (scientific) - Analyse epitope sequence/position and modifications. Tools: protein_sequence, epitope_table, most_immunogenic_epitopes, run_analysis.
 - **singlecell_agent** (scientific) - Propose single-cell follow-ups for phenotype identity. Tools: list_datasets, describe_dataset, query_dataset, run_analysis, reproduce_claim, compare_groups, list_analyses.

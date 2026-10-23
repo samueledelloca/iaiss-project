@@ -19,8 +19,8 @@
     "deterministic": true
   },
   "tool_use_accuracy": {
-    "tools": 15,
-    "successful": 15,
+    "tools": 16,
+    "successful": 16,
     "accuracy": 1.0
   },
   "self_error_detection": {
@@ -43,5 +43,5 @@
     "correctly_rejected": 2,
     "n": 2
   },
-  "latency_s_per_tool": 0.8103
+  "latency_s_per_tool": 0.7807
 }

@@ -261,5 +261,27 @@
     "reproduces": "Immunogenicity associated with HLA binding (ED Fig. 5)",
     "novel": false,
     "robustness": {}
+  },
+  {
+    "id": "repro_cd4_dominance",
+    "question": "Are C9orf72-reactive T cells predominantly CD4+?",
+    "method": "Mann-Whitney of CD4 vs CD8 frequency among reactive cells, per group",
+    "finding": "C9orf72-reactive T cells are predominantly CD4+ HC: CD4 median 83% vs CD8 9% (p=3.4e-06); ALS: CD4 median 92% vs CD8 5% (p=3.4e-06)",
+    "stats": {
+      "HC": {
+        "median_CD4": 83.3,
+        "median_CD8": 8.94,
+        "p_value": 3.3748749558581833e-06
+      },
+      "ALS": {
+        "median_CD4": 91.9,
+        "median_CD8": 4.79,
+        "p_value": 3.3748749558581833e-06
+      }
+    },
+    "data_source": "edfig4_cd4_cd8",
+    "reproduces": "Responses predominantly CD4+ T-cell mediated (Fig. 2, ED Fig. 4)",
+    "novel": false,
+    "robustness": {}
   }
 ]
