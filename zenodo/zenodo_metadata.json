@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "upload_type": "dataset",
+    "title": "C9orf72-Nature2Agent: reproduced analyses, derived datasets and verified observations from the Michaelis et al. (2025) C9orf72/ALS autoimmunity study",
+    "creators": [
+      { "name": "Dell'Oca, Samuele", "affiliation": "USI-SUPSI", "orcid": "" }
+    ],
+    "description": "Machine-readable datasets and computational results produced by the C9orf72-Nature2Agent system (IAISS 2026, Project 1), an AI agent built from Michaelis et al., 'Autoimmune response to C9orf72 protein in amyotrophic lateral sclerosis', Nature (2025), DOI 10.1038/s41586-025-09588-6. Contents: 14 tidy datasets derived from the paper's open-access source data (the 100-peptide screen, 23-donor HLA typing and every figure's per-donor values); reproduced statistical analyses matching the authors' reported p-values; 8 independently verified observations not stated in the paper; a contradictions/uncertainties/limitations catalogue; a scientific and AI-system evaluation; reproduced and discovery figures; and the 18-page report. Primary data are reused under CC-BY 4.0 from the authors' Zenodo deposits (records 16749283, 16749334, 16754553, 16754591, 16754609). Code: https://github.com/samueledelloca/iaiss-project (MIT).",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": ["ALS", "C9orf72", "autoimmunity", "T cells", "FluoroSpot", "HLA class II", "epitope mapping", "Paper2Agent", "MCP", "scientific agents", "reproducibility"],
+    "related_identifiers": [
+      { "identifier": "10.1038/s41586-025-09588-6", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "10.5281/zenodo.16749283", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "10.5281/zenodo.16749334", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "10.5281/zenodo.16754553", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "10.5281/zenodo.16754591", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "10.5281/zenodo.16754609", "relation": "isDerivedFrom", "scheme": "doi" },
+      { "identifier": "https://github.com/samueledelloca/iaiss-project", "relation": "isSupplementedBy", "scheme": "url" }
+    ],
+    "notes": "Attribute Michaelis et al. (2025) for the underlying scientific data. Code in the linked GitHub repository is MIT-licensed; the data in this deposit retain CC-BY 4.0."
+  }
+}
