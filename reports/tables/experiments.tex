@@ -1,0 +1,19 @@
+\begin{tabular}{p{3.0cm}p{6.2cm}p{3.1cm}l}
+\toprule
+Experiment & Setup & Method & Config \\
+\midrule
+Reproduction & Fig 2 C9orf72 responses, ALS vs HC, 4 cytokines & Mann-Whitney & seed 1234 \\
+Th2 bias & IFNg/IL-5 ratio, ALS vs HC & Mann-Whitney & seed 1234 \\
+Specificity & ALS vs PD and AD controls & pairwise Mann-Whitney & seed 1234 \\
+Mutation effect & C9 mutation vs no mutation & Mann-Whitney & seed 1234 \\
+Survival & long vs short predicted survival & Mann-Whitney & seed 1234 \\
+HLA-immunogenicity & predicted binders vs response, 95 peptides & Spearman & seed 1234 \\
+Cross-antigen & ALS vs HC per antigen, IL-5 and IL-10 & Mann-Whitney & seed 1234 \\
+Spatial structure & lag-1 autocorrelation along the tiling & permutation (5000) & seed 1234 \\
+Donor jackknife & leave-one-out of the C9 Total test & Mann-Whitney x56 & seed 1234 \\
+Censoring & fraction above the assay floor & Fisher exact & seed 1234 \\
+FDR family & 16 antigen x cytokine comparisons & Benjamini-Hochberg & seed 1234 \\
+Ratio classifier & IFNg/IL-5 ratio as ALS classifier & ROC AUC & seed 1234 \\
+Predictor training & immunogenicity from HLA + sequence & 5-fold CV & seed 1234 \\
+\bottomrule
+\end{tabular}

@@ -57,7 +57,7 @@ therapeutic hypothesis with an explicit falsification experiment.
 Amyotrophic lateral sclerosis is a fatal neurodegenerative disease defined by the progressive
 loss of motor neurons. Neuroinflammation accompanies the degeneration, with T-cell infiltration
 and microglial activation in affected tissue, and T cells are thought to contribute to the pace
-of neuronal loss~\citep{komiya2020,kovacs2021,endo2016}. A specific antigenic target for this
+of neuronal loss~\citep{endo2016,kovacs2021}. A specific antigenic target for this
 response had not been reported until Michaelis et al.\ identified C9orf72 as a target of
 ALS-associated T-cell autoreactivity and mapped the recognised epitopes~\citep{michaelis2025c9orf72}.
 Their central observations are that C9orf72-specific responses are increased in ALS, that the
@@ -113,6 +113,47 @@ computed. The evaluation in Section~\ref{sec:eval} measures this directly throug
 and a planted-false-hypothesis test.
 
 \section{Background and data}
+\subsection{C9orf72 genetics and biology}
+A GGGGCC hexanucleotide repeat expansion in the first intron of \emph{C9orf72} is the most common
+genetic cause of amyotrophic lateral sclerosis and frontotemporal dementia, and it accounts for
+roughly one in ten cases of ALS overall and a larger share of familial disease. Unaffected alleles
+carry a small number of repeats, while pathogenic alleles carry hundreds to thousands. Three
+mechanisms are thought to act together: a loss of C9orf72 protein, a gain of function from the
+repeat RNA, which forms foci that sequester RNA-binding proteins, and repeat-associated non-ATG
+translation, which produces dipeptide repeat proteins. The protein itself acts in autophagy and
+membrane trafficking as a guanine-nucleotide exchange factor for Rab GTPases, and it also shapes
+myeloid and lymphoid immune function, so a reduction in its level has consequences for both
+neuronal maintenance and immune regulation. This dual role is part of what makes an autoimmune
+response against the protein plausible.
+
+\subsection{Immune involvement in ALS}
+Neuroinflammation accompanies the degeneration of motor neurons. Microglial activation and
+infiltrating monocytes are seen in ALS model tissue~\citep{komiya2020}, lymphocyte infiltration and
+glial activation are described across human and model studies~\citep{endo2016}, and the cellular
+niche around motor neurons is altered~\citep{kovacs2021}. The adaptive arm plays an active role.
+Regulatory T cells are neuroprotective in ALS, and their number and suppressive function are reduced
+in rapidly progressing patients, so a weaker regulatory compartment is associated with faster
+progression~\citep{appel2012}. Regulatory T-cell dysfunction is also documented in
+ALS~\citep{appel2020}, and the extension of survival by regulatory T cells in disease models has
+motivated Treg-directed therapy~\citep{rajabinejad2019}. The cytokine context matters as well. IL-10,
+the principal cytokine of regulatory T cells, is linked to neuroprotection through the dampening of
+microglial activation across neurodegeneration models~\citep{runge2020,laffer2019,bido2024}. What had
+been missing was a defined self-antigen that the T-cell response targets. The study used here fills
+that gap by identifying the C9orf72 protein as a target of ALS-associated T-cell autoreactivity and
+by mapping the recognised epitopes.
+
+\subsection{Antigen-specific immunotherapy}
+The therapeutic interest in this mechanism follows from the regulatory angle. Broad
+immunosuppression is a blunt instrument in a disease where part of the immune response is
+protective, so the field has moved toward restoring or expanding the regulatory compartment.
+Autologous regulatory T-cell approaches have been tested in ALS~\citep{thonhoff2018}, and
+antigen-specific tolerance is an active strategy in autoimmune disease more
+generally~\citep{nepom2022}. The evidence is mixed: a recent polyclonal regulatory T-cell trial in a
+different autoimmune indication was negative, which tempers expectations~\citep{al2024}. A defined
+autoantigen changes the design space, because it opens the door to an antigen-specific, not a polyclonal
+intervention, and the data analysed here point to which antigen and which patients such an
+intervention might target.
+
 \subsection{The study and its data}
 The study examined peripheral blood mononuclear cells from 40 people with ALS and 28 healthy
 controls, with additional Parkinson's disease (PD) and Alzheimer's disease (AD) cohorts and a
@@ -120,7 +161,7 @@ validation cohort. Antigen-specific responses were measured by IFN$\gamma$, IL-5
 FluoroSpot after a two-week expansion, against pools of C9orf72, TDP-43 and SOD1 peptides and an
 EBV control pool. Immunophenotyping used spectral flow cytometry, and cytokine-producing cells
 were characterised by intracellular cytokine staining. HLA class II binding was predicted with
-IEDB NetMHCIIpan-4.1 EL, and HLA restrictions were inferred with RATE~\citep{nielsen2008,jensen2018}.
+IEDB NetMHCIIpan-4.1 EL~\citep{nielsen2008,jensen2018}, and HLA restrictions were inferred with RATE.
 
 All primary data are open. The flow-cytometry files and FlowJo workspaces are deposited on Zenodo
 (CC-BY 4.0) across one spectral and four intracellular-cytokine-staining records; the full text,
@@ -129,17 +170,21 @@ The system fetches these with checksum verification and records provenance for e
 them it builds fourteen tidy tables, including the complete 100-peptide screen, the per-donor HLA
 typing of 23 donors, and the per-donor source data behind every figure.
 
-\paragraph{Why C9orf72 and why autoimmunity.}
-A noncoding hexanucleotide repeat expansion in \emph{C9orf72} is the most common genetic cause of
-ALS and frontotemporal dementia, and it carries a worse prognosis. The protein has roles in
-autophagy and membrane trafficking, and the expansion acts through a combination of reduced protein
-and toxic repeat products. Independently of the genetic mechanism, immune involvement is well
-documented: T cells infiltrate affected spinal cord, monocyte and mast-cell populations change in
-the motor-neuron niche~\citep{komiya2020,kovacs2021}, and the number and suppressive function of
-regulatory T cells fall as the disease
-accelerates~\citep{appel2012,appel2020,rajabinejad2019}. Against this background, a specific
-self-antigen recognised by autoreactive T cells gives the inflammation a target and a possible
-point of intervention, which is what the Michaelis study provides.
+\subsection{Cohorts and assays}
+The response data come from several assays with different readouts, which the reconstruction keeps
+distinct. The cytokine response screen is a FluoroSpot assay: thawed peripheral blood mononuclear
+cells are expanded for two weeks against a peptide pool, then restimulated, and the number of cells
+secreting IFN$\gamma$, IL-5 or IL-10 is counted as spot-forming units. This is the assay behind the
+total and per-cytokine response magnitudes and the per-donor values used for the main ALS-versus-HC
+comparisons. Intracellular cytokine staining on a conventional cytometer characterises which T-cell
+subsets produce the cytokines, and spectral cytometry on a high-parameter instrument profiles the
+broad T-helper compartment. The antigens are peptide pools for C9orf72, for the ALS proteins TDP-43
+and SOD1, and for Epstein-Barr virus as a non-self control. The C9orf72 library tiles the 481-residue
+protein with 100 overlapping 15-mer peptides stepped by five residues, and it includes five
+phosphorylated variants at serine or threonine positions. Sample sizes differ by assay, so the
+reconstruction carries the group counts with each table, so no analysis assumes the full cohort
+throughout; the FluoroSpot screen used about 28 donors per group, within the larger 40 ALS and 28
+control cohort.
 
 \subsection{Machine-readable reconstruction}
 The source-data workbook stores each figure as several side-by-side panels, some of which reuse
@@ -236,6 +281,82 @@ floor and testing it with Fisher's exact test. The discriminative value of a sin
 summarised by the area under the ROC curve. These choices let the system test not only whether an
 effect exists but whether it survives alternative assumptions.
 
+\section{Methodology}
+\subsection{Approach}
+The method has four parts that run as a pipeline. First, the paper's open data are reconstructed into
+tidy tables. Second, those tables and a set of analyses are exposed as validated tools behind an MCP
+server, which is the executable form the Paper2Agent paradigm calls for. Third, a layered set of
+agents uses those tools to reproduce the study, interrogate the data and generate and test
+hypotheses. Fourth, the scientific results and the system itself are evaluated. The guiding principle
+is a separation between a deterministic computational core, which produces every number, and a
+reasoning layer, which chooses what to ask and how to read an answer. This separation is what keeps
+the results reproducible and free of fabricated figures.
+
+\subsection{Data reconstruction}
+The source-data workbook stores each figure as side-by-side panels marked a, b, c and so on, with one
+or more header rows above columns of per-donor values. A column-centric parser forward-fills each
+header row across the full width, then walks the columns left to right. A run of columns separated
+from the previous run by a blank column starts a new block, and the block index is attached to every
+column. This block index separates two panels that reuse the same letter or the same measure name,
+such as the two-group and four-group blocks of Extended Data Figure~2, which a parser keyed on the
+measure name alone would merge and so double-count. Each emitted column carries its block, its panel
+letter, its measure, its series label and the numeric cells beneath it, which per-figure builders map
+to semantic fields. The peptide screen and the HLA typing are parsed from the Supplementary
+Information text, and the manuscript tables from the article XML. The parse is validated against the
+paper: epitope number 14 resolves to residues 56--70 across the figure data, the supplementary screen
+and the manuscript table, and the embedded protein sequence places all 95 non-phosphorylated peptides
+at their stated residue windows without error.
+
+\subsection{Statistical methodology}
+The tests follow the study's own methods so that reproduction is a like-for-like comparison. Two-group
+comparisons use the two-tailed Mann--Whitney $U$ test, reported with the rank-biserial correlation
+$r = 1 - 2U/(n_1 n_2)$ as the effect size and with group medians and sample sizes. Proportions use
+the two-tailed Fisher exact test and correlations use Spearman's $\rho$. Multi-group comparisons use
+one-way ANOVA with Dunnett's test against the control group. Where a family of tests is considered
+together, the false discovery rate is controlled by the Benjamini--Hochberg procedure and reported as
+adjusted $q$-values. The exploratory analyses add methods matched to each question: a lag-one
+autocorrelation with a 5000-shuffle permutation null for spatial structure, a leave-one-out jackknife
+of the test statistic for donor dependence, a Fisher exact test on the fraction of donors above the
+assay floor for censoring sensitivity, and the area under the ROC curve for single-feature
+discrimination. Percentile bootstrap intervals are available for any statistic. These choices let the
+system ask not only whether an effect exists but whether it survives a change of assumption.
+
+\subsection{Agent model}
+An agent is a declarative specification: a name, a layer, a role, a system prompt and the subset of
+tools it may call. A recorder wraps the shared tool registry so that a call outside an agent's
+permitted set is refused and every permitted call is logged with its arguments. A backend turns a
+task into an output. The deterministic backend computes the output from the tools and records it. The
+language-model backend, used when an API key is present, runs a tool-use loop in which the model reads
+the task, decides which tools to call, receives their JSON results and writes a conclusion. Both
+backends use the same tools, so a result produced by either is grounded in the same computation. Each
+run writes a record holding the prompt, the tool calls and the output, which is the audit trail the
+brief requires.
+
+\subsection{Discovery procedure}
+The discovery loop runs in a fixed order. The hypothesis generator emits the question bank. For each
+question, the owning scientific agent computes an answer through its permitted tools. The evidence
+checker recomputes the answer from scratch and compares the serialised results. The replication agent
+re-runs the relevant robustness analysis where one applies. The critic and falsification agents attach
+rule-based flags for small samples, marginal significance, underpowered pairings and single-feature
+weakness. The contradiction agent classifies the result as agreeing with, extending or qualifying the
+paper. The principal-investigator agent keeps the results that are novel, verified and free of a
+disqualifying flag as the observation set, and compiles the catalogue of caveats, uncertainties and
+limitations. The reasoning behind three representative results, with real tool calls, is recorded in
+the repository as a worked trace.
+
+\subsection{Evaluation methodology}
+The evaluation has two axes. The scientific axis measures reproducibility against the paper, robustness
+under alternative assumptions, novelty as the count of verified new observations, falsifiability as the
+presence of an explicit test for each hypothesis, biological plausibility, independent literature
+support, external validation and experimental tractability. The AI axis measures grounding, the
+fraction of quantitative findings whose printed number equals the computed statistic; tool-use
+accuracy, the fraction of tools that return a valid result; determinism, equality of the observation
+set across repeated runs; self-error detection, the count of questions the system annotates with a
+weakness; and false-hypothesis rejection, the fraction of planted nulls the system fails to confirm.
+Reproduction fidelity is the maximum absolute difference between a reproduced and a reported $p$-value
+over the comparisons for which the authors publish a value, with the agreement of the significance
+calls.
+
 \section{Implementation}
 \subsection{Tool catalogue}
 The MCP server exposes the fifteen tools in Table~\ref{tab:tools}. They fall into four groups:
@@ -321,8 +442,49 @@ agent a hypothesis and receive a computed, verified answer, and the principal-in
 a combined system could read this one's observation set and its catalogue of caveats directly. The
 deposit on Zenodo and the public repository give those downstream systems stable references to cite.
 
+\subsection{Software architecture}
+The code is a single installable library, \texttt{c9n2a}, with a thin layer of scripts and an MCP
+server on top. The library separates concerns by module. Reproducibility primitives (paths, seeds,
+typed configuration, structured logging and provenance) sit at the base and are imported everywhere.
+Data access is a small loader over the committed tables. The scientific logic is split into a
+statistics module of reusable tests, an analyses module that names each analysis and returns a
+structured, self-describing result, and a figures module. The parsing of the raw sources lives in its
+own module, as does the flow-cytometry ingestion and the retrieval index. The tool registry wraps the
+analyses and data access as a flat set of named, documented functions, and both the MCP server and the
+agent framework consume that single registry, so there is one implementation of each capability. The
+agent framework adds the specifications, the backends and the logged runtime, and the discovery module
+composes them into the loop. The scripts are thin entry points that wire these together for each
+pipeline stage, and a single shell entry point runs the stages in order. The data model is
+deliberately flat: tidy long-format tables with documented columns, JSON results keyed by identifier,
+and a machine-readable agent registry, which keeps the outputs easy to consume and to test. The test
+suite exercises each layer, from the parsers and the statistics against the authors' values through
+the tools, the server and the discovery loop, so a change that breaks a reproduction fails a test
+rather than passing silently.
+
+\section{Experiments}
+The computational work is organised as a set of experiments, each with a defined input, a method and a
+fixed configuration, listed in Table~\ref{tab:experiments}. They fall into three groups. The
+reproduction experiments re-derive the study's headline claims from the reconstructed data and compare
+the result against the authors' reported values. The robustness experiments stress-test the central
+findings under alternative assumptions: a jackknife over donors, a family-wise false-discovery
+correction, a censoring test at the assay floor, and a permutation test for spatial structure. The
+extension experiments ask questions the paper does not pose directly: whether the cytokine bias is
+antigen-specific, whether immunogenicity is spatially clustered, how well a single cytokine ratio
+separates the groups, and whether immunogenicity can be predicted from HLA binding and sequence. Every
+experiment fixes the same random seed, records a provenance manifest, and writes its outputs under
+\texttt{results/}, so each can be rerun and checked in isolation.
+
+\begin{table}[t]
+\centering
+\caption{The computational experiments, with their setup, statistical method and configuration.}
+\label{tab:experiments}
+\footnotesize
+\input{tables/experiments}
+\end{table}
+
 \section{Reproduction of the study's claims}
-The system reproduces every headline claim from the reconstructed data (Table~\ref{tab:repro}).
+The system reproduces every headline claim from the reconstructed data (Table~\ref{tab:repro}), with
+the full per-comparison statistics in Table~\ref{tab:reprodetail}.
 C9orf72-specific responses are higher in ALS than in controls for the total response
 ($p=\ReproTotalP{}$), for IL-5 ($p=\ReproILfiveP{}$), for IL-10 ($p=\ReproILtenP{}$) and, more
 weakly, for IFN$\gamma$ ($p=\ReproIFNgP{}$); the pattern is shown in Figure~\ref{fig:repro}. The
@@ -342,6 +504,16 @@ between an exact test and the normal approximation with tie correction.
 \label{tab:repro}
 \footnotesize
 \input{tables/reproduction}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Per-comparison reproduction statistics: group sizes ($n_1$ control, $n_2$ ALS or carrier),
+medians, rank-biserial effect size $r$ and two-tailed $p$. A negative $r$ means the second group
+ranks higher.}
+\label{tab:reprodetail}
+\footnotesize
+\input{tables/repro_detailed}
 \end{table}
 
 \begin{figure}[t]
@@ -416,6 +588,30 @@ antigen processing and the T-cell repertoire, not on binding alone.
 non-phosphorylated peptides (reproduction of Extended Data Figure~5). Each point is one peptide.}
 \label{fig:hla}
 \end{figure}
+
+\subsection{HLA restriction}
+Beyond the per-peptide binding breadth, the agent returns the inferred HLA restrictions that the
+study reports (Table~\ref{tab:hla}). These pair seven C9orf72 peptides with specific class-II
+alleles, predominantly of the DRB1 and DQB1 loci, with the association significance from the RATE
+method and the predicted binding percentile for each pair. The pattern is consistent with the
+reconstructed per-donor typing of 23 donors, in which DRB1 and DQB1 are the most variable loci and
+therefore the ones most able to carry an association. The restriction result and the binding-breadth
+result address different questions. Binding breadth asks how many of the common alleles a peptide can
+bind at all, which predicts how broadly immunogenic it can be across a population, and the strongest
+epitope, residues 56--70, is also the one with the broadest predicted coverage. Restriction asks
+which allele actually presents a peptide to the responders who carry it, which is the finer-grained
+claim and the one that a future validation could test directly by peptide-HLA multimer staining in
+allele-matched donors.
+
+\subsection{Immunodominance}
+The immunogenicity of the library is concentrated. Of the 100 screened peptides, a small set is
+recognised by at least three donors, and recognition falls off sharply outside the dominant windows.
+The residues around 56--95 and around 366--445 carry most of the strongest responses, which is the
+basis of the spatial-clustering result quantified later. For a therapeutic programme this matters
+because an antigen-specific intervention does not need the whole protein; a handful of dominant,
+broadly presented epitopes would cover most responders, and the agent can return that shortlist
+ranked either by the number of responding donors or by response magnitude, which are not identical
+orderings and so give two complementary views of dominance.
 
 \subsection{Answering the study's open questions}
 The brief poses five questions that an agent built from this study should be able to answer. The
@@ -578,7 +774,7 @@ The drug-discovery and experiment-designer agents turn the mechanism into a test
 reasoning is as follows. IL-10-biased C9orf72 responses track longer predicted survival, and IL-10
 from regulatory T cells is associated with neuroprotection in several
 settings~\citep{runge2020,laffer2019,bido2024}; regulatory T-cell number and function also decline
-as ALS progresses~\citep{appel2012,rajabinejad2019,appel2020}. These threads suggest a
+in rapidly progressing ALS~\citep{appel2012}. These threads suggest a
 tolerogenic, antigen-specific strategy: expand or induce regulatory C9orf72-specific T cells against
 the dominant epitopes, stratified to mutation carriers who show the strongest responses, with the
 broadest HLA-covering epitopes as the most deployable antigens. An antigen-specific regulatory
@@ -628,7 +824,7 @@ suppressive T cells and is linked to neuroprotection through the dampening of mi
 in several models~\citep{runge2020,laffer2019,bido2024}. The finding that the response in ALS is
 shifted away from IFN$\gamma$ and toward IL-10, and that the IL-10 share tracks longer predicted
 survival, is therefore readable as a protective regulatory arm that is present to differing degrees
-across patients. The decline of regulatory T cells as ALS progresses~\citep{appel2012,appel2020}
+across patients. The decline of regulatory T cells in rapidly progressing ALS~\citep{appel2012}
 places this arm under strain exactly when it is most needed. The intervention that follows from this
 reading is to reinforce the protective arm, which is why the proposed strategy is tolerogenic and
 antigen-specific: it targets the C9orf72-specific regulatory response and leaves the rest of the
@@ -658,6 +854,56 @@ quantification built from the raw data, and would extend the novel-observation
 search to the single-cell phenotype. The third is to connect this paper agent to agents built from
 complementary papers, so that a hypothesis generated here can be checked against external datasets
 and models, which is the cross-project ecosystem the programme envisages.
+
+\section{Discussion}
+\subsection{What the system demonstrates}
+The project set out to test whether an AI system can move from an observation to a falsifiable
+therapeutic proposal while staying honest about the evidence. The result is a system that reproduces
+the study from its own data, produces eight verified observations the paper does not state, surfaces
+two robustness caveats about the original framing, and frames a patient-stratified antigen-specific
+hypothesis with a companion falsification experiment. The chain from observation to mechanism to
+hypothesis to computational result to candidate to falsification is present as concrete artefacts, and each link can be inspected on its own. The scientific substance
+sits in ordinary statistics on real data, which is the part that should be trusted; the agent layer
+organises the work and decides what to ask.
+
+\subsection{Deterministic and language-model reasoning}
+A central design choice was to separate a deterministic computational core from a reasoning layer. The
+benefit is that every number in a result is computed, so the grounding rate is one by construction and
+the discovery loop reproduces bit for bit without credentials. The cost is that the committed run does
+not explore beyond the hypotheses its question bank encodes. A language-model backend, enabled by an
+API key, widens that exploration at the price of outputs that must then be checked. The two are not in
+tension so much as suited to different stages: the language layer is useful for proposing and framing,
+and the deterministic core is where a proposal becomes a checkable result. The system keeps the
+boundary visible, which is what lets a reader see where a claim comes from.
+
+\subsection{Comparison with the paper}
+The reproductions agree with the study in direction and, where the authors publish values, in the
+significance call and to within a small p-value difference. The value the system adds is on top of
+reproduction. It quantifies the spatial structure of immunogenicity, separates the antigen-specific
+IL-10 signal from the shared IL-5 signal, and tests the headline effects under corrections the paper
+does not apply, which both strengthens the robust claims and demotes the IFN$\gamma$ one. None of this
+contradicts the paper; it refines what can be said from the same data.
+
+\subsection{Ethical considerations}
+The data are de-identified human immunology measurements, released by the original authors under an
+open licence for reuse, and this work uses only the derived and summarised values plus the raw files
+the authors deposited. No attempt is made to re-identify donors. The therapeutic content is the most
+sensitive output, and it is treated accordingly: the proposals are computational hypotheses with
+stated falsifiers, not findings, and the report and the public disclaimer both state that they are not
+medical advice and must be checked against the primary source. The author verified the computational
+process and the reproducibility of the pipeline, and does not claim to vouch for the biological
+validity or clinical relevance of the results, which is the honest position given the subject matter.
+
+\subsection{Threats to validity}
+Several threats are worth naming. The assays summarise complex cellular readouts into spot or
+frequency values with a floor, so a difference in magnitude is not the same as a difference in the
+presence of a response, a distinction the censoring analysis makes explicit. Some strata, notably the
+survival and mutation groups, are small, so individual effects are marginal even where their direction
+matches the paper. The overlap of the tiling peptides inflates spatial autocorrelation, which is why
+the clustering result is read against a permutation null and not as proof of discrete epitopes. The
+HLA analysis uses the authors' binding predictions, so it inherits their method and its error. The
+predictor is trained on fewer than a hundred peptides, so the complex model overfits and only the
+linear baseline is reported. Each of these is recorded with the result it qualifies.
 
 \section{Conclusions}
 The project shows that a paper and its data can be turned into an interactive AI scientist that
@@ -714,48 +960,6 @@ specifications; and executable stage scripts driven by a single entry point. The
 the record of hypotheses, evidence and rejected claims are documented in \texttt{AI\_USAGE.md} and
 under \texttt{results/discovery/}.
 
-\section{Methods in detail}
-\subsection{Source-data parser}
-The source-data workbook stores each figure as side-by-side panels marked a, b, c and so on, with
-one or more header rows above columns of per-donor values. The parser forward-fills each header row
-across the full width, then walks the columns left to right. A run of columns separated from the
-previous run by a blank column starts a new block, and the block index is attached to every column.
-This block index is what separates two panels that reuse the same letter or the same measure name,
-such as the two-group and four-group blocks of Extended Data Figure~2, which a parser keyed on the
-measure name alone would merge. Each emitted column carries its block, its panel letter, its measure
-and its series label, and the numeric cells beneath it, which the per-figure builders then map to
-semantic fields.
-
-\subsection{Statistical definitions}
-Two-group comparisons use the two-tailed Mann--Whitney $U$ test, with the rank-biserial correlation
-$r = 1 - 2U/(n_1 n_2)$ as the effect size, where a negative value under the convention used here
-means the first group ranks higher. Proportions use Fisher's exact test and correlations use
-Spearman's $\rho$. Multi-group comparisons use one-way ANOVA with Dunnett's test against the control
-group. The false discovery rate across a family of tests is controlled by the Benjamini--Hochberg
-procedure, reported as adjusted $q$-values. Spatial structure uses the lag-one autocorrelation of
-response frequency along the ordered tiling, with a two-sided permutation $p$-value from 5000
-shuffles. Donor dependence uses a leave-one-out jackknife of the test statistic, and sensitivity to
-the assay floor compares the fraction of donors above the floor with Fisher's exact test.
-
-\subsection{Discovery procedure}
-The loop runs in a fixed order. The hypothesis generator emits the question bank. For each question,
-the owning scientific agent computes an answer through its permitted tools. The evidence checker
-recomputes the answer from scratch and compares the serialised results. The replication agent runs
-the relevant robustness analysis where one applies. The critic and falsification agents attach
-rule-based flags for small samples, marginal significance, underpowered pairings and single-feature
-weakness. The contradiction agent classifies the result as agreeing with, extending or qualifying the
-paper. The principal-investigator agent keeps the results that are novel, verified and free of a
-disqualifying flag as the observation set, and compiles the catalogue of caveats, uncertainties and
-limitations. Every step writes a run record with its prompt, its tool calls and its output.
-
-\subsection{Evaluation metrics}
-Grounding is the fraction of quantitative findings whose printed number equals the computed
-statistic. Tool-use accuracy is the fraction of tools returning a valid result under default
-arguments. Determinism is equality of the observation set across two runs. Self-error detection is
-the count of questions carrying at least one critique flag. The false-hypothesis-rejection test
-reports the fraction of planted nulls that the system fails to confirm. Reproduction fidelity is the
-maximum absolute difference between a reproduced and a reported $p$-value over the comparisons for
-which the authors publish a value, together with the agreement of the significance calls.
 
 \small
 \bibliographystyle{unsrtnat}

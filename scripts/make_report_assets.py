@@ -89,6 +89,54 @@ def main() -> None:
         "Question & $p$ & Paper claim reproduced \\\\\n\\midrule\n"
         + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n")
 
+    # ---- Table: detailed reproduction statistics ----
+    sys.path.insert(0, str(paths.ROOT / "src"))
+    from c9n2a import analyses as A  # noqa: E402
+    drows = []
+    for cyto in ["Total", "IFNg", "IL-5", "IL-10"]:
+        a = A.als_vs_hc_response("C9orf72", cyto).stats
+        drows.append(f"C9orf72 {cyto}, ALS vs HC & {a['n']['y']} & {a['n']['x']} & "
+                     f"{a['estimates']['median_y']:.0f} & {a['estimates']['median_x']:.0f} & "
+                     f"{a['effect_size']:.2f} & {fnum(a['p_value'])} \\\\")
+    th = A.cytokine_th2_bias().stats
+    drows.append(f"IFNg/IL-5 ratio, ALS vs HC & {th['n']['y']} & {th['n']['x']} & "
+                 f"{th['estimates']['median_y']:.2f} & {th['estimates']['median_x']:.2f} & "
+                 f"{th['effect_size']:.2f} & {fnum(th['p_value'])} \\\\")
+    mu = A.mutation_carrier_effect("Total").stats
+    drows.append(f"Mutation vs no-mutation (Total) & {mu['n']['y']} & {mu['n']['x']} & "
+                 f"{mu['estimates']['median_y']:.0f} & {mu['estimates']['median_x']:.0f} & "
+                 f"{mu['effect_size']:.2f} & {fnum(mu['p_value'])} \\\\")
+    su = A.survival_association("IL-10").stats
+    drows.append(f"Long vs short survival (IL-10) & {su['n']['y']} & {su['n']['x']} & "
+                 f"{su['estimates']['median_y']:.0f} & {su['estimates']['median_x']:.0f} & "
+                 f"{su['effect_size']:.2f} & {fnum(su['p_value'])} \\\\")
+    (REPORTS / "tables" / "repro_detailed.tex").write_text(
+        "\\begin{tabular}{p{5.6cm}ccccc c}\n\\toprule\n"
+        "Comparison & $n_1$ & $n_2$ & med$_1$ & med$_2$ & $r$ & $p$ \\\\\n\\midrule\n"
+        + "\n".join(drows) + "\n\\bottomrule\n\\end{tabular}\n")
+
+    # ---- Table: experiments ----
+    exps = [
+        ("Reproduction", "Fig 2 C9orf72 responses, ALS vs HC, 4 cytokines", "Mann-Whitney", "seed 1234"),
+        ("Th2 bias", "IFNg/IL-5 ratio, ALS vs HC", "Mann-Whitney", "seed 1234"),
+        ("Specificity", "ALS vs PD and AD controls", "pairwise Mann-Whitney", "seed 1234"),
+        ("Mutation effect", "C9 mutation vs no mutation", "Mann-Whitney", "seed 1234"),
+        ("Survival", "long vs short predicted survival", "Mann-Whitney", "seed 1234"),
+        ("HLA-immunogenicity", "predicted binders vs response, 95 peptides", "Spearman", "seed 1234"),
+        ("Cross-antigen", "ALS vs HC per antigen, IL-5 and IL-10", "Mann-Whitney", "seed 1234"),
+        ("Spatial structure", "lag-1 autocorrelation along the tiling", "permutation (5000)", "seed 1234"),
+        ("Donor jackknife", "leave-one-out of the C9 Total test", "Mann-Whitney x56", "seed 1234"),
+        ("Censoring", "fraction above the assay floor", "Fisher exact", "seed 1234"),
+        ("FDR family", "16 antigen x cytokine comparisons", "Benjamini-Hochberg", "seed 1234"),
+        ("Ratio classifier", "IFNg/IL-5 ratio as ALS classifier", "ROC AUC", "seed 1234"),
+        ("Predictor training", "immunogenicity from HLA + sequence", "5-fold CV", "seed 1234"),
+    ]
+    erows = [f"{esc(n)} & {esc(d)} & {esc(m)} & {esc(c)} \\\\" for n, d, m, c in exps]
+    (REPORTS / "tables" / "experiments.tex").write_text(
+        "\\begin{tabular}{p{3.0cm}p{6.2cm}p{3.1cm}l}\n\\toprule\n"
+        "Experiment & Setup & Method & Config \\\\\n\\midrule\n"
+        + "\n".join(erows) + "\n\\bottomrule\n\\end{tabular}\n")
+
     # ---- Table: novel observations ----
     rows = [f"{o['id']} & {esc(o['observation'][:108])} & {esc(o['relation_to_paper'].split()[0])} \\\\"
             for o in obs]
