@@ -310,6 +310,17 @@ statistics against the authors' values, the analyses, the figures, the tools, th
 RAG, the raw-FCS ingestion, the discovery loop and the evaluation. All AI-assisted code was read and
 is exercised by these tests.
 
+\subsection{Interoperability}
+The brief frames this project as one node in a larger ALS discovery ecosystem, so the outputs are
+built to be consumed by other agents. The MCP server is the integration surface: any other system
+that speaks the protocol can call these tools without knowing their implementation, and the tool
+results are plain JSON. The datasets are tidy CSVs with a documented schema, the agent
+specifications are a machine-readable registry, and the questions, observations and contradictions
+are JSON records keyed by identifier. A second paper agent, built the same way, could pass this
+agent a hypothesis and receive a computed, verified answer, and the principal-investigator agent of
+a combined system could read this one's observation set and its catalogue of caveats directly. The
+deposit on Zenodo and the public repository give those downstream systems stable references to cite.
+
 \section{Reproduction of the study's claims}
 The system reproduces every headline claim from the reconstructed data (Table~\ref{tab:repro}).
 C9orf72-specific responses are higher in ALS than in controls for the total response
@@ -537,7 +548,32 @@ hypothesis.
 \input{tables/evaluation}
 \end{table}
 
-\section{From observation to therapeutic hypothesis}
+\subsection{The remaining scientific dimensions}
+The brief lists eight scientific-evaluation dimensions, and the metrics above cover reproducibility,
+robustness, novelty and falsifiability directly. The other four are addressed as follows.
+Biological plausibility is argued from the mechanism in Section~\ref{sec:therapy}: an IL-10-biased
+regulatory response that tracks survival is consistent with a protective regulatory T-cell arm, a
+reading supported by the external literature gathered through the literature agent. Independent
+literature support is recorded in \texttt{literature/citations.json}, where fourteen references span
+the ALS T-cell background, the decline of regulatory T cells in ALS, IL-10-mediated neuroprotection
+and antigen-specific tolerance, and where one reference is a negative trial that argues against an
+over-optimistic reading. External validation is partly internal to the study, which included a
+separate validation cohort, and the derived observations are framed so that an external dataset
+could test them; the single-donor and multiple-testing checks guard against findings that would fail
+to generalise. Experimental tractability is captured by the experiment-designer agent, which turns
+the leading hypothesis into a defined adoptive-transfer experiment with named cells, a patient
+subgroup and a pre-registered falsifier, so the proposal can be costed and run as a concrete
+experiment.
+
+\subsection{Cost and latency}
+The deterministic backend has no language-model cost, so the recorded run is bounded by local
+compute. The full pipeline, from dataset build through analyses, figures, the discovery loop and the
+evaluation, completes in well under a minute on a laptop, and the per-tool latency is a few
+milliseconds. A live backend would add language-model cost and latency to the generative and
+critical steps; the computational tools those steps call would be unchanged, so the cost of the
+scientific core stays fixed and only the reasoning layer scales with model choice.
+
+\section{From observation to therapeutic hypothesis}\label{sec:therapy}
 The drug-discovery and experiment-designer agents turn the mechanism into a testable proposal. The
 reasoning is as follows. IL-10-biased C9orf72 responses track longer predicted survival, and IL-10
 from regulatory T cells is associated with neuroprotection in several
@@ -636,7 +672,10 @@ discovery loop, so the interactive agent and the autonomous pipeline agree by co
 All data fetching is checksum-verified, dependencies are pinned, seeds are fixed, and each run
 writes a provenance manifest. The AI tools used, the agent specifications and prompts, and the
 record of hypotheses, evidence and rejected claims are documented in the repository
-(\texttt{AI\_USAGE.md}, \texttt{agents/registry.json}, \texttt{results/discovery/}). The author
+(\texttt{AI\_USAGE.md}, \texttt{agents/registry.json}, \texttt{results/discovery/}). The code is
+public at \url{https://github.com/samueledelloca/iaiss-project} and the derived datasets and results
+are archived on Zenodo at \href{https://doi.org/10.5281/zenodo.23598390}{10.5281/zenodo.23598390}
+under CC-BY 4.0. The author
 inspected and tested all AI-assisted code and is responsible for the scientific content.
 
 \appendix

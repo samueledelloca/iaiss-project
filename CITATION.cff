@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software or its data, please cite both the archive and the primary study."
+title: "C9orf72-Nature2Agent"
+authors:
+  - family-names: "Dell'Oca"
+    given-names: "Samuele"
+    affiliation: "USI-SUPSI"
+    orcid: "https://orcid.org/0000-0002-6773-9155"
+version: "1.0.0"
+date-released: "2026-10-23"
+license: "MIT"
+repository-code: "https://github.com/samueledelloca/iaiss-project"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23598390"
+    description: "Derived datasets and results (Zenodo, CC-BY 4.0)"
+references:
+  - type: article
+    title: "Autoimmune response to C9orf72 protein in amyotrophic lateral sclerosis"
+    authors:
+      - family-names: "Michaelis"
+        given-names: "Tanner"
+    journal: "Nature"
+    year: 2025
+    volume: 647
+    start: 970
+    end: 978
+    doi: "10.1038/s41586-025-09588-6"

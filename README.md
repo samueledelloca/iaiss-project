@@ -1,5 +1,8 @@
 # C9orf72-Nature2Agent
 
+[![Dataset DOI](https://img.shields.io/badge/data-10.5281%2Fzenodo.23598390-blue)](https://doi.org/10.5281/zenodo.23598390)
+[![License: MIT](https://img.shields.io/badge/code-MIT-green)](LICENSE)
+
 An autonomous AI scientist built from the Michaelis et al. (2025) *Nature* study
 on ALS autoimmunity. The system turns the paper, its supplementary material and
 its source data into an interactive, executable agent that explains the design,
@@ -108,6 +111,12 @@ manifests (git commit, config hash, package versions, input checksums), versione
 data (Zenodo record id + per-file MD5), logged agent runs, and a deterministic
 discovery loop. The AI tools used and all prompts/agent configurations are
 documented in [`AI_USAGE.md`](AI_USAGE.md).
+
+## Data and results archive
+
+The derived datasets, computational results, evaluation and report are archived on
+Zenodo (CC-BY 4.0): [10.5281/zenodo.23598390](https://doi.org/10.5281/zenodo.23598390).
+Regenerate the deposit package with `python scripts/make_zenodo_package.py`.
 
 ## Licensing
 
