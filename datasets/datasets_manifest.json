@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-10-23T08:25:56.427429+00:00",
-  "git_commit": "eb04d8cb49c2995c7bd9c874e4edfedf01be1b87",
+  "timestamp_utc": "2026-10-23T08:29:35.677998+00:00",
+  "git_commit": "7ca90a81418d95fb7f07d89c9b5a95536826f401",
   "git_dirty": true,
   "python_version": "3.12.3",
   "platform": "Linux-6.14.0-32-generic-x86_64-with-glibc2.39",
@@ -58,6 +58,8 @@
     "fig4_mutation_survival": {
       "rows": 284,
       "columns": [
+        "block",
+        "analysis",
         "cytokine",
         "stratum",
         "donor_idx",
@@ -67,6 +69,8 @@
     "edfig2_ifng_il5_ratio": {
       "rows": 792,
       "columns": [
+        "block",
+        "kind",
         "measure",
         "group",
         "donor_idx",
@@ -76,6 +80,7 @@
     "edfig4_cd4_cd8": {
       "rows": 456,
       "columns": [
+        "block",
         "panel",
         "sub",
         "series",
@@ -86,6 +91,7 @@
     "edfig5_immunogenicity_hla": {
       "rows": 490,
       "columns": [
+        "block",
         "panel",
         "series",
         "idx",
@@ -95,6 +101,7 @@
     "edfig6_clinical_correlates": {
       "rows": 403,
       "columns": [
+        "block",
         "panel",
         "measure",
         "series",

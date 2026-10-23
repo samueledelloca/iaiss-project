@@ -57,6 +57,8 @@ def parse_columns(ws, label_row: int, data_row: int,
     subs = _ffill(row(sub_row)) if sub_row is not None else [None] * width
     labels = row(label_row)
     out = []
+    prev_col = None
+    block_id = -1
     for c in range(width):
         lab = labels[c]
         if lab is None or str(lab).strip() == "":
@@ -71,8 +73,13 @@ def parse_columns(ws, label_row: int, data_row: int,
             except (TypeError, ValueError):
                 values.append(v)  # keep non-numeric (e.g. p-value panels)
         if values:
-            out.append({"col": c, "panel": panels[c], "sub": subs[c],
-                        "label": str(lab).strip(), "values": values})
+            # a gap of more than one column (a blank separator) starts a new block,
+            # which disambiguates panels that reuse the same letter / measure name.
+            if prev_col is None or c - prev_col > 1:
+                block_id += 1
+            prev_col = c
+            out.append({"col": c, "block": block_id, "panel": panels[c],
+                        "sub": subs[c], "label": str(lab).strip(), "values": values})
     return out
 
 
@@ -146,27 +153,32 @@ def build_fig3_epitopes(wb) -> pd.DataFrame:
 
 def build_fig4_mutation(wb) -> pd.DataFrame:
     recs = parse_columns(wb["Fig. 4"], label_row=2, data_row=3)
+    # Blocks 0-3: mutation status (4 strata); 4-7: C9 vs no mutation; 8-11: Short/Long survival.
+    analysis = {**{b: "mutation_status" for b in range(0, 4)},
+                **{b: "c9_vs_nonmut" for b in range(4, 8)},
+                **{b: "survival" for b in range(8, 12)}}
     rows = []
     for r in recs:
-        cyto, status = r["sub"], r["label"]
-        # panels a-d: mutation status across 4 groups; e-h: C9 vs no mutation; i-l: Short/Long survival
         for i, v in enumerate(r["values"]):
             if isinstance(v, (int, float)):
-                rows.append({"cytokine": cyto, "stratum": status,
+                rows.append({"block": r["block"], "analysis": analysis.get(r["block"], "?"),
+                             "cytokine": r["sub"], "stratum": r["label"],
                              "donor_idx": i, "magnitude": float(v)})
     return pd.DataFrame(rows)
 
 
 def build_edfig2_ifng_il5(wb) -> pd.DataFrame:
     recs = parse_columns(wb["ED Fig. 2"], label_row=2, data_row=3)
+    # Blocks 0-2: 2-group panels (HC vs ALS); blocks 3-9: 4-group panels (HC/ALS/PD/AD).
     rows = []
     for r in recs:
         if r["label"] not in {"HC", "ALS", "PD", "AD"}:
             continue
+        kind = "two_group" if r["block"] <= 2 else "four_group"
         for i, v in enumerate(r["values"]):
             if isinstance(v, (int, float)):
-                rows.append({"measure": r["sub"], "group": r["label"],
-                             "donor_idx": i, "value": float(v)})
+                rows.append({"block": r["block"], "kind": kind, "measure": r["sub"],
+                             "group": r["label"], "donor_idx": i, "value": float(v)})
     return pd.DataFrame(rows)
 
 
@@ -176,7 +188,7 @@ def build_edfig4_cd4cd8(wb) -> pd.DataFrame:
     for r in recs:
         for i, v in enumerate(r["values"]):
             if isinstance(v, (int, float)):
-                rows.append({"panel": r["panel"], "sub": r["sub"],
+                rows.append({"block": r["block"], "panel": r["panel"], "sub": r["sub"],
                              "series": r["label"], "donor_idx": i, "value": float(v)})
     return pd.DataFrame(rows)
 
@@ -187,7 +199,7 @@ def build_edfig5_immunogenicity(wb) -> pd.DataFrame:
     for r in recs:
         for i, v in enumerate(r["values"]):
             if isinstance(v, (int, float)):
-                rows.append({"panel": r["panel"], "series": r["label"],
+                rows.append({"block": r["block"], "panel": r["panel"], "series": r["label"],
                              "idx": i, "value": float(v)})
     return pd.DataFrame(rows)
 
@@ -198,7 +210,7 @@ def build_edfig6_clinical(wb) -> pd.DataFrame:
     for r in recs:
         for i, v in enumerate(r["values"]):
             if isinstance(v, (int, float)):
-                rows.append({"panel": r["panel"], "measure": r["sub"],
+                rows.append({"block": r["block"], "panel": r["panel"], "measure": r["sub"],
                              "series": r["label"], "idx": i, "value": float(v)})
     return pd.DataFrame(rows)
 
