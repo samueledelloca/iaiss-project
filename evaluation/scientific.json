@@ -1,0 +1,182 @@
+{
+  "reproducibility": {
+    "paper_claims_reproduced": 10,
+    "n_reproduction_questions": 10,
+    "reported_pvalue_fidelity": {
+      "comparisons": [
+        {
+          "measure": "IFNg cytokine release",
+          "reproduced_p": 0.008306816301068642,
+          "paper_p": 0.007,
+          "abs_diff": 0.001306816301068642,
+          "same_call": true
+        },
+        {
+          "measure": "IL-5 cytokine release",
+          "reproduced_p": 0.014829519237406835,
+          "paper_p": 0.014,
+          "abs_diff": 0.0008295192374068346,
+          "same_call": true
+        },
+        {
+          "measure": "IFNg/IL-5 ratio",
+          "reproduced_p": 0.04826692385876989,
+          "paper_p": 0.047,
+          "abs_diff": 0.0012669238587698917,
+          "same_call": true
+        }
+      ],
+      "max_abs_diff": 0.001306816301068642,
+      "significance_agreement": 1.0
+    }
+  },
+  "statistical_robustness": {
+    "jackknife": {
+      "base_p": 0.0015913407200414003,
+      "max_p": 0.0026276208841964936,
+      "min_p": 0.0006074506103467673,
+      "frac_sig": 1.0
+    },
+    "fdr_family": [
+      {
+        "antigen": "C9orf72",
+        "cytokine": "Total",
+        "p": 0.0015913407200414003,
+        "q": 0.012730725760331203
+      },
+      {
+        "antigen": "C9orf72",
+        "cytokine": "IFNg",
+        "p": 0.03808326179503989,
+        "q": 0.12186643774412764
+      },
+      {
+        "antigen": "C9orf72",
+        "cytokine": "IL-5",
+        "p": 0.00031760985998954816,
+        "q": 0.005081757759832771
+      },
+      {
+        "antigen": "C9orf72",
+        "cytokine": "IL-10",
+        "p": 0.0046871395844527534,
+        "q": 0.02499807778374802
+      },
+      {
+        "antigen": "TDP-43",
+        "cytokine": "Total",
+        "p": 0.129200775512386,
+        "q": 0.2953160583140252
+      },
+      {
+        "antigen": "TDP-43",
+        "cytokine": "IFNg",
+        "p": 0.9395151747737118,
+        "q": 0.9477970600860888
+      },
+      {
+        "antigen": "TDP-43",
+        "cytokine": "IL-5",
+        "p": 0.02165369027516867,
+        "q": 0.08661476110067468
+      },
+      {
+        "antigen": "TDP-43",
+        "cytokine": "IL-10",
+        "p": 0.10084803203914494,
+        "q": 0.26892808543771984
+      },
+      {
+        "antigen": "SOD1",
+        "cytokine": "Total",
+        "p": 0.9281613194963927,
+        "q": 0.9477970600860888
+      },
+      {
+        "antigen": "SOD1",
+        "cytokine": "IFNg",
+        "p": 0.3052882333610697,
+        "q": 0.4884611733777115
+      },
+      {
+        "antigen": "SOD1",
+        "cytokine": "IL-5",
+        "p": 0.21926508938687206,
+        "q": 0.3898046033544392
+      },
+      {
+        "antigen": "SOD1",
+        "cytokine": "IL-10",
+        "p": 0.8358084019472232,
+        "q": 0.9477970600860888
+      },
+      {
+        "antigen": "EBV",
+        "cytokine": "Total",
+        "p": 0.5268434347302196,
+        "q": 0.7663177232439558
+      },
+      {
+        "antigen": "EBV",
+        "cytokine": "IFNg",
+        "p": 0.7766531265771661,
+        "q": 0.9477970600860888
+      },
+      {
+        "antigen": "EBV",
+        "cytokine": "IL-5",
+        "p": 0.20740880336089473,
+        "q": 0.3898046033544392
+      },
+      {
+        "antigen": "EBV",
+        "cytokine": "IL-10",
+        "p": 0.9477970600860888,
+        "q": 0.9477970600860888
+      }
+    ],
+    "censoring": {
+      "mannwhitney_p": 0.0015913407200414003,
+      "fisher": {
+        "test": "Fisher exact (two-sided)",
+        "statistic": 7.363636363636363,
+        "p_value": 0.1011805065079205,
+        "effect_size": 7.363636363636363,
+        "effect_name": "odds ratio",
+        "n": {},
+        "estimates": {},
+        "table": [
+          [
+            27,
+            1
+          ],
+          [
+            22,
+            6
+          ]
+        ]
+      },
+      "table": [
+        [
+          27,
+          1
+        ],
+        [
+          22,
+          6
+        ]
+      ]
+    }
+  },
+  "novelty": {
+    "verified_novel_observations": 8,
+    "meets_success_criterion": true
+  },
+  "falsifiability": {
+    "interpretive_hypotheses_with_falsifier": 4
+  },
+  "diversity": {
+    "distinct_owning_agents": 11
+  },
+  "biological_plausibility": "IL-10/regulatory bias with survival benefit is consistent with a protective regulatory T-cell role; see literature/citations.json."
+}

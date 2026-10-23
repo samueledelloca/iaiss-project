@@ -1,0 +1,47 @@
+{
+  "hallucination": {
+    "grounded_findings": 9,
+    "checked": 9,
+    "grounding_rate": 1.0,
+    "note": "deterministic backend: findings generated from computed statistics"
+  },
+  "citation_accuracy": "see literature/citations.json (DOIs resolved via scite/Crossref)",
+  "hypothesis_novelty": {
+    "novel": 8,
+    "total": 24,
+    "rate": 0.3333333333333333
+  },
+  "hypothesis_diversity": {
+    "owning_agents": 11,
+    "analyses": 18
+  },
+  "reproducibility": {
+    "deterministic": true
+  },
+  "tool_use_accuracy": {
+    "tools": 15,
+    "successful": 15,
+    "accuracy": 1.0
+  },
+  "self_error_detection": {
+    "questions_self_flagged": 10,
+    "limitations_catalogued": 3
+  },
+  "false_hypothesis_rejection": {
+    "planted_nulls": [
+      {
+        "hypothesis": "EBV total response differs ALS vs HC",
+        "p_value": 0.5268434347302196,
+        "rejected": true
+      },
+      {
+        "hypothesis": "donor index predicts response magnitude",
+        "p_value": 0.7883464016341167,
+        "rejected": true
+      }
+    ],
+    "correctly_rejected": 2,
+    "n": 2
+  },
+  "latency_s_per_tool": 0.8103
+}
