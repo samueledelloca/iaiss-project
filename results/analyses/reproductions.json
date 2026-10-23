@@ -133,7 +133,7 @@
     "id": "repro_specificity_Total",
     "question": "Is the ALS Total C9orf72 response specific vs PD and AD controls?",
     "method": "Pairwise two-tailed Mann-Whitney U, ALS vs each control group",
-    "finding": "ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05.",
+    "finding": "ALS Total C9orf72 responses differ from HC (p<0.05) and not from PD, AD: elevated versus healthy controls but not statistically distinguished from the other neurodegenerative groups.",
     "stats": {
       "ALS_vs_HC": {
         "test": "Mann-Whitney U (two-sided)",
@@ -185,7 +185,7 @@
       }
     },
     "data_source": "edfig2_ifng_il5_ratio",
-    "reproduces": "C9orf72 response relatively specific to ALS (ED Fig. 2)",
+    "reproduces": "C9orf72 responses elevated in disease groups vs HC (ED Fig. 2)",
     "novel": false,
     "robustness": {}
   },

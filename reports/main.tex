@@ -1,8 +1,8 @@
 \documentclass[11pt]{article}
 
-% --- engine: pdflatex. Roboto needs a working fontspec engine (luaotfload is
+% - engine: pdflatex. Roboto needs a working fontspec engine (luaotfload is
 % not installed here); TeX Gyre Heros is the closest available humanist-neutral
-% sans. Recompile with lualatex/xelatex + \setmainfont{Roboto} for Roboto. ---
+% sans. Recompile with lualatex/xelatex + \setmainfont{Roboto} for Roboto. -
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{tgheros}
@@ -38,19 +38,23 @@
 \noindent
 This report describes a multi-agent system that converts the
 \emph{Nature} study on C9orf72 autoimmunity in amyotrophic lateral sclerosis (ALS)~\citep{michaelis2025c9orf72} into an
-interactive, executable AI scientist. The system ingests the paper, its supplementary
-material and its source data, exposes them as validated tools behind a Model Context Protocol
-(MCP) server, and runs a five-layer agent ecosystem that explains the design, reproduces the
-statistical analyses and figures, interrogates the peptide and HLA data, generates new
-hypotheses and verifies them. Reproduced $p$-values match the authors' reported values to
-within $|\Delta p|=\FidelityMaxDiff{}$. The discovery loop answered \NumQuestions{} questions
-and produced \NumObservations{} verified observations that the paper does not state, among them
-a spatial clustering of epitope immunogenicity along the protein sequence (permutation
-$p=\SpatialPerm{}$) and the finding that the IL-5 bias in ALS is shared with TDP-43 while the
-IL-10 bias is specific to C9orf72. The system evaluates both the science (reproducibility,
-robustness, novelty, falsifiability) and itself (grounding, tool-use accuracy, determinism,
-rejection of planted false hypotheses), and frames a patient-stratified, antigen-specific
-therapeutic hypothesis with an explicit falsification experiment.
+interactive, executable agent. The design choice that defines the system is a separation between a
+deterministic computational core, which produces every reported number, and a reasoning layer, which
+chooses what to ask. The core is exposed as validated tools behind a Model Context Protocol (MCP)
+server, and a five-layer agent ecosystem uses those tools to explain the design, reproduce the
+analyses and figures, interrogate the peptide and HLA data, and pose and test questions beyond the
+paper. Because every result is computed, the grounding rate is one by construction and the discovery
+loop reproduces without credentials. In the committed configuration the questions come from a curated
+bank executed deterministically; a language-model backend can drive the same agents live when an API
+key is present. Reproduced $p$-values match the authors' reported values to within
+$|\Delta p|=\FidelityMaxDiff{}$ with full agreement of the significance calls. Beyond reproduction,
+the system reports two genuinely new biological observations, that epitope immunogenicity is
+spatially clustered along the protein sequence (permutation $p=\SpatialPerm{}$) and that the ALS IL-5
+bias is shared with TDP-43 while the IL-10 bias is specific to C9orf72, together with a set of
+robustness audits of the paper's own effects. It evaluates both the science (reproducibility,
+robustness, novelty, falsifiability) and itself (grounding, tool-use accuracy, determinism, rejection
+of planted false hypotheses). A patient-stratified antigen-specific therapeutic hypothesis, with an
+explicit falsification experiment, is included as an illustrative downstream use.
 \end{abstract}
 
 \section{Introduction}
@@ -72,13 +76,27 @@ support. This is a question about reasoning over the study, not a re-run of it. 
 Paper2Agent paradigm, which turns a paper and its computational resources into an executable agent
 served over MCP, so the paper becomes a resource an agent can run~\citep{miao2025paper2agent}.
 
+The difficulty in automating this is reliability. A system that reads a paper and proposes
+hypotheses can produce fluent text that states numbers the data do not support, and in a scientific
+setting such a claim is worse than silence, because it is costly to check and easy to believe. The
+position taken here is that the way to earn trust is to make every reported number the output of a
+computation that anyone can rerun, and to make the system's honesty a measured quantity. That
+choice shapes the whole design, from the shared tool core to the grounding and false-hypothesis
+metrics, and it is the reason the system is cautious where it could be impressive. This report is one
+of a set of related projects that share a dataset and are meant to interoperate, so the emphasis on
+tidy, computed, auditable outputs also serves the larger goal of letting such systems be combined
+without compounding each other's errors.
+
 \paragraph{Contributions.}
-The system (i) reconstructs the study's data as machine-readable tables and reproduces its
-headline claims from those tables; (ii) exposes the study as a validated MCP tool server and a
-five-layer agent ecosystem; (iii) generates and verifies \NumObservations{} observations absent
-from the paper; (iv) catalogues contradictions, uncertainties and limitations; and (v) evaluates
-both the scientific result and the AI system. All code was written with an AI coding agent,
-inspected, and covered by an automated test suite.
+The central contribution is methodological: a design in which every reported number is produced by a
+shared deterministic core, so reproduction, robustness checks and hypothesis-testing are all grounded
+and auditable, and the system's honesty can be measured (grounding, determinism, and the rejection of
+planted false hypotheses). Two further contributions follow. The first is building the MCP tool layer
+and the analyses from the raw open data for a paper that has no public analysis codebase, which is
+where this departs from wrapping an existing tutorial. The second is scientific: alongside
+reproducing the study, the system reports two new observations and a set of robustness audits, and
+frames one falsifiable downstream hypothesis. All code was written with an AI coding agent, inspected,
+and covered by an automated test suite.
 
 \paragraph{The pipeline the system is meant to demonstrate.}
 The aim is to show that a
@@ -111,6 +129,21 @@ language layer, which only frames and routes. In the committed configuration the
 rule-based and reads from the computed results, so a figure in the text is always a figure that was
 computed. The evaluation in Section~\ref{sec:eval} measures this directly through a grounding check
 and a planted-false-hypothesis test.
+
+\subsection{Positioning}
+It helps to be explicit about what this work adds, because the space of paper-to-agent and
+AI-scientist systems is active. Against Paper2Agent, the difference is the starting material. Paper2Agent
+agentifies a paper by locating and wrapping its existing code and tutorials; the study used here is an
+experimental immunology paper with open data but no analysis codebase, so there is nothing to wrap,
+and the tool layer is built from the raw data. The contribution there is showing that the same output
+shape, an MCP server of validated tools, can be reached for a data-only paper. Against language-model
+``AI scientist'' and co-scientist systems, which generate and debate hypotheses with a model in the
+loop, the difference is where the trust sits. Those systems are strong at proposing and weak at
+guaranteeing that a stated number is real. This system inverts the emphasis: the proposing is modest,
+bounded by a question bank in the committed configuration, but every number is computed by a shared
+core and the honesty of the system is measured. The two designs are complementary,
+and the natural combination, a language model proposing over this grounded core, is the clearest next
+step.
 
 \section{Background and data}
 \subsection{C9orf72 genetics and biology}
@@ -148,7 +181,7 @@ immunosuppression is a blunt instrument in a disease where part of the immune re
 protective, so the field has moved toward restoring or expanding the regulatory compartment.
 Autologous regulatory T-cell approaches have been tested in ALS~\citep{thonhoff2018}, and
 antigen-specific tolerance is an active strategy in autoimmune disease more
-generally~\citep{nepom2022}. The evidence is mixed: a recent polyclonal regulatory T-cell trial in a
+generally~\citep{nepom2022}. The evidence is mixed, because a recent polyclonal regulatory T-cell trial in a
 different autoimmune indication was negative, which tempers expectations~\citep{al2024}. A defined
 autoantigen changes the design space, because it opens the door to an antigen-specific, not a polyclonal
 intervention, and the data analysed here point to which antigen and which patients such an
@@ -172,7 +205,7 @@ typing of 23 donors, and the per-donor source data behind every figure.
 
 \subsection{Cohorts and assays}
 The response data come from several assays with different readouts, which the reconstruction keeps
-distinct. The cytokine response screen is a FluoroSpot assay: thawed peripheral blood mononuclear
+distinct. The cytokine response screen is a FluoroSpot assay. Thawed peripheral blood mononuclear
 cells are expanded for two weeks against a peptide pool, then restimulated, and the number of cells
 secreting IFN$\gamma$, IL-5 or IL-10 is counted as spot-forming units. This is the assay behind the
 total and per-cytokine response magnitudes and the per-donor values used for the main ALS-versus-HC
@@ -185,6 +218,19 @@ phosphorylated variants at serine or threonine positions. Sample sizes differ by
 reconstruction carries the group counts with each table, so no analysis assumes the full cohort
 throughout; the FluoroSpot screen used about 28 donors per group, within the larger 40 ALS and 28
 control cohort.
+
+The clinical variables attached to the donors are what make the survival and mutation analyses
+possible, and they also bound them. The study records, for the relevant donors, the C9orf72 mutation
+status, a predicted survival time, and functional-rating and demographic variables, and the
+reconstruction carries the per-donor values behind the clinical figure so these can be related to the
+response magnitudes. The mutation and survival strata are small once the cohort is split, which is
+the reason those effects are treated as marginal throughout this report, and it is also why the
+system reports the stratified therapeutic reasoning as a hypothesis to test rather than a conclusion.
+The 23 donors with full HLA typing are a subset again, so the HLA-restriction results speak to those
+donors and to the alleles they carry, and the reconstruction keeps the donor identifiers so a reader
+can see exactly which donors enter each analysis. Keeping the counts and identifiers visible at every
+step is a small discipline that prevents the most common error in reusing someone else's data, which
+is to assume a single cohort where the original used several overlapping ones.
 
 \subsection{Machine-readable reconstruction}
 The source-data workbook stores each figure as several side-by-side panels, some of which reuse
@@ -222,7 +268,7 @@ the two manuscript tables.
 The system is organised in five layers (Figure~\ref{fig:arch}). Layer~1 is the scientific
 knowledge: the paper, its supplementary material, the source data, and curated external
 literature retrieved through a literature agent. Layer~2 is the paper agent, an MCP server that
-exposes the study as fifteen validated tools. Layer~3 comprises ten scientific agents (literature,
+exposes the study as sixteen validated tools. Layer~3 comprises ten scientific agents (literature,
 immunology, ALS, HLA, T-cell, drug-discovery, structural, single-cell, clinical and safety) that
 answer domain questions using those tools. Layer~4 comprises seven discovery agents (hypothesis
 generator, hypothesis critic, evidence checker, replication, contradiction, experiment designer
@@ -236,11 +282,11 @@ construction, cannot override contradictory evidence.
   lay/.style={font=\bfseries\footnotesize,anchor=west}]
 \node[box,text width=13.5cm] (l1) {Nature paper \textbar{} supplementary \textbar{} source data \textbar{} external literature (scite)};
 \node[lay,above=0.5mm of l1.north west] {Layer 1: Scientific knowledge};
-\node[box,text width=13.5cm,below=7mm of l1,fill=green!6] (l2) {MCP server (Paper2Agent): 15 validated tools over data, stats, epitopes, HLA, RAG, raw FCS};
+\node[box,text width=13.5cm,below=7mm of l1,fill=green!6] (l2) {MCP server (Paper2Agent): 16 validated tools over data, stats, epitopes, HLA, RAG, raw FCS};
 \node[lay,above=0.5mm of l2.north west] {Layer 2: Paper agent};
 \node[box,text width=13.5cm,below=7mm of l2,fill=orange!6] (l3) {10 scientific agents: literature, immunology, ALS, HLA, T-cell, drug-discovery, structural, single-cell, clinical, safety};
 \node[lay,above=0.5mm of l3.north west] {Layer 3: Scientific agents};
-\node[box,text width=13.5cm,below=7mm of l3,fill=purple!6] (l4) {7 discovery agents: generate $\to$ check evidence $\to$ replicate $\to$ critique $\to$ find contradictions $\to$ design falsification};
+\node[box,text width=13.5cm,below=7mm of l3,fill=purple!6] (l4) {7 discovery agents: generate $\to$ check evidence $\to$ replicate $\to$ critique $\to$ find contradictions $\to$ design experiment $\to$ state falsifier};
 \node[lay,above=0.5mm of l4.north west] {Layer 4: Discovery agents};
 \node[box,text width=13.5cm,below=7mm of l4,fill=red!6] (l5) {PI agent: integrates outputs; cannot override contradictory evidence};
 \node[lay,above=0.5mm of l5.north west] {Layer 5: Principal investigator};
@@ -260,8 +306,7 @@ RAG index with a lexical fallback), and a summary of the raw flow-cytometry file
 returns a JSON-serialisable result and is covered by the test suite, which plays the role of the
 Paper2Agent validation loop.
 
-The reasoning agents use a pluggable backend. Without an API key they run deterministically: each
-answer is computed from the tools and the finding text is generated from the computed statistic,
+The reasoning agents use a pluggable backend. Without an API key they run deterministically. Each answer is computed from the tools and the finding text is generated from the computed statistic,
 so no number is produced that is not grounded in a computation. With an API key the same agents
 run a Claude tool-use loop over the same tools. The committed results come from the deterministic
 backend, which makes the discovery loop reproducible without credentials. Every agent run is logged
@@ -311,8 +356,10 @@ at their stated residue windows without error.
 The tests follow the study's own methods so that reproduction is a like-for-like comparison. Two-group
 comparisons use the two-tailed Mann--Whitney $U$ test, reported with the rank-biserial correlation
 $r = 1 - 2U/(n_1 n_2)$ as the effect size and with group medians and sample sizes. Proportions use
-the two-tailed Fisher exact test and correlations use Spearman's $\rho$. Multi-group comparisons use
-one-way ANOVA with Dunnett's test against the control group. Where a family of tests is considered
+the two-tailed Fisher exact test and correlations use Spearman's $\rho$. One-way ANOVA with Dunnett's
+test against the control group is available for multi-group comparisons, and the pairwise disease-group
+contrasts (ALS against PD and AD) use the two-tailed Mann-Whitney test, which matches the pairwise
+p-values the original study reports for those panels. Where a family of tests is considered
 together, the false discovery rate is controlled by the Benjamini--Hochberg procedure and reported as
 adjusted $q$-values. The exploratory analyses add methods matched to each question: a lag-one
 autocorrelation with a 5000-shuffle permutation null for spatial structure, a leave-one-out jackknife
@@ -359,16 +406,24 @@ calls.
 
 \section{Implementation}
 \subsection{Tool catalogue}
-The MCP server exposes the fifteen tools in Table~\ref{tab:tools}. They fall into four groups:
+The MCP server exposes the sixteen tools in Table~\ref{tab:tools}. They fall into four groups:
 orientation (design explanation, dataset listing and description), data access (filtered queries,
 reported-p-value retrieval, the protein sequence, a raw flow-cytometry summary), analysis (claim
 reproduction, named analyses, a generic group comparison, epitope and HLA interrogation), and
 retrieval (semantic search over the paper). A client such as Claude Code connects through the
-repository's MCP configuration and calls these tools interactively.
+repository's MCP configuration and calls these tools interactively. A session might begin with
+\texttt{explain\_experimental\_design} to orient, then \texttt{reproduce\_claim} with the IL-5
+comparison to see the ALS-versus-HC result recomputed with its effect size, then
+\texttt{broadest\_hla\_coverage} to find the most deployable epitopes, then \texttt{search\_paper} to
+pull the sentences of the paper that discuss them, and finally \texttt{run\_analysis} with the spatial
+or cross-antigen identifier to reach the novel results. Each call returns a small JSON object, so the
+client can chain them and the user can read every intermediate value. The same calls are what the
+agents make internally, which is why an interactive answer and a discovery-loop answer agree: they are
+the same computation reached by two paths.
 
 \begin{table}[t]
 \centering
-\caption{The fifteen tools exposed by the MCP server and used by the agents.}
+\caption{The sixteen tools exposed by the MCP server and used by the agents.}
 \label{tab:tools}
 \footnotesize
 \input{tables/tools}
@@ -399,6 +454,26 @@ simple biochemical features of its sequence. On the \ModelN{} non-phosphorylated
 therefore preferred on this small sample, which is itself a useful caution about model choice when
 the number of positive examples is in the low tens. The model is trained with a fixed seed and its
 checkpoint and metrics are saved.
+
+The gap between the two models is visible in the cross-validated ROC curves
+(Figure~\ref{fig:predictor}, left). The logistic model separates immunogenic from non-immunogenic
+peptides with an area under the curve of \ModelBaselineAUC{}, while the gradient-boosting model, with
+far more capacity, falls to \ModelGBAUC{}, close to chance, because it fits noise in a sample of only
+\ModelN{} peptides with \ModelPos{} positives. The logistic coefficients (Figure~\ref{fig:predictor},
+right) show that predicted HLA-II binding breadth and a small set of biochemical features carry the
+signal, which is consistent with the HLA-immunogenicity correlation reported earlier and with the
+expectation that a peptide must bind class II to be presented. The lesson is methodological as much
+as biological: on data this small, a constrained model generalises and a flexible one memorises, so
+the predictor is reported as a weak but honest linear signal, not as a tool for ranking new peptides.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/discovery_predictor}
+\caption{Peptide-immunogenicity prediction. Left: cross-validated ROC curves for the logistic model
+and gradient boosting; the logistic model generalises better on the small sample. Right: standardised
+logistic coefficients, with predicted HLA-II binding breadth among the strongest features.}
+\label{fig:predictor}
+\end{figure}
 
 \subsection{Agent framework and the discovery loop}
 Each agent is a declarative specification: a name, a layer, a role, a system prompt and the subset
@@ -431,9 +506,20 @@ statistics against the authors' values, the analyses, the figures, the tools, th
 RAG, the raw-FCS ingestion, the discovery loop and the evaluation. All AI-assisted code was read and
 is exercised by these tests.
 
+The whole project runs on a consumer laptop. It was developed and verified on a machine with a
+consumer GPU and a recent multi-core CPU, under Python 3.12 on Linux, and it needs no accelerator for
+the committed results, because the statistics, the parsing and the retrieval are CPU work and the
+embedding model is a small ONNX model. The full pipeline, from fetching the data through the datasets,
+analyses, figures, discovery loop and evaluation, completes in a few minutes, and a single shell entry
+point runs the stages in order or one at a time. Dependencies are pinned in both pip and conda forms,
+the environment is a single virtual environment, and the data are fetched on demand with checksum
+verification, so a reader can reproduce every table and figure from a clean checkout. The derived
+datasets and all results are also archived with a DOI so they can be cited and compared against a
+fresh run.
+
 \subsection{Interoperability}
 The brief frames this project as one node in a larger ALS discovery ecosystem, so the outputs are
-built to be consumed by other agents. The MCP server is the integration surface: any other system
+built to be consumed by other agents. The MCP server is the integration surface. Any other system
 that speaks the protocol can call these tools without knowing their implementation, and the tool
 results are plain JSON. The datasets are tidy CSVs with a documented schema, the agent
 specifications are a machine-readable registry, and the questions, observations and contradictions
@@ -458,8 +544,7 @@ pipeline stage, and a single shell entry point runs the stages in order. The dat
 deliberately flat: tidy long-format tables with documented columns, JSON results keyed by identifier,
 and a machine-readable agent registry, which keeps the outputs easy to consume and to test. The test
 suite exercises each layer, from the parsers and the statistics against the authors' values through
-the tools, the server and the discovery loop, so a change that breaks a reproduction fails a test
-rather than passing silently.
+the tools, the server and the discovery loop, so a change that breaks a reproduction fails a test and cannot pass silently.
 
 \section{Experiments}
 The computational work is organised as a set of experiments, each with a defined input, a method and a
@@ -494,9 +579,26 @@ more strongly, IL-10 responses are higher in donors with longer predicted surviv
 HLA-II binding breadth correlates with observed immunogenicity.
 
 As an external check, the system compares its recomputed $p$-values against the authors' own
-reported values for the Extended Data Figure~2 comparisons. The two agree in every significance
-call and differ by at most $|\Delta p|=\FidelityMaxDiff{}$, a gap consistent with the difference
-between an exact test and the normal approximation with tie correction.
+reported values for the Extended Data Figure~2 comparisons, which are the ones for which the paper
+prints exact numbers. For the three two-group panels the authors report $0.007$, $0.014$ and $0.047$;
+the system recomputes $0.0083$, $0.0148$ and $0.0483$ for the same comparisons. The two agree in every
+significance call and differ by at most $|\Delta p|=\FidelityMaxDiff{}$, a gap consistent with the
+difference between an exact test, which the authors used, and the normal approximation with tie
+correction that the library applies. This is the strongest available evidence that the reconstruction
+and the statistics are faithful, because it compares two independent computations of the same quantity
+rather than a computation against a direction of effect. The authors' reported values are themselves
+parsed into a table and carried in the datasets, so this comparison is itself reproducible
+(Table~\ref{tab:fidelity}).
+
+\begin{table}[t]
+\centering
+\caption{Reproduction fidelity: the system's recomputed $p$-values against the authors' reported
+values for the three two-group Extended Data Figure~2 comparisons, with the absolute difference and
+whether the significance call agrees.}
+\label{tab:fidelity}
+\footnotesize
+\input{tables/fidelity}
+\end{table}
 
 \begin{table}[t]
 \centering
@@ -539,6 +641,20 @@ uncertainty and reported as such.
 response magnitudes in donors with short versus long predicted survival; the black bar is the
 median and the $y$-axis is on a log scale.}
 \label{fig:survival}
+\end{figure}
+
+The IL-5 bias itself reproduces as a shift in the per-donor IFN$\gamma$/IL-5 ratio
+(Figure~\ref{fig:th2}). In healthy controls the ratio sits near one, with IFN$\gamma$ and IL-5
+roughly balanced, while in ALS it drops below one, so IL-5 dominates. This is the single-number
+summary of the T-helper-2 skew that the per-cytokine comparisons show separately.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.42\linewidth]{figures/edfig2_th2_bias}
+\caption{The per-donor IFN$\gamma$/IL-5 ratio in healthy controls and ALS (reproduction of an
+Extended Data panel). The dashed line marks a balanced ratio of one; the ALS distribution sits
+below it. The $y$-axis is on a log scale and the black bar is the median.}
+\label{fig:th2}
 \end{figure}
 
 \section{Epitope and HLA interrogation}
@@ -632,8 +748,29 @@ donors that respond.
 The discovery loop generated \NumQuestions{} questions owned by the scientific agents, computed an
 answer for each, re-verified each answer independently, applied an adversarial critique, and
 classified each result against the paper. Table~\ref{tab:obs} lists the \NumObservations{}
-observations that are novel relative to the paper and that survived verification. Several are worth
-describing.
+observations that are novel relative to the paper and that survived verification, and
+Table~\ref{tab:verification} shows, for each, that an independent recompute confirmed it and which
+critic flags it carries.
+
+It is worth being precise about what ``novel'' means here, because the eight are not all the same
+kind of result. Two are genuinely new biological observations that the paper does not make: the
+spatial clustering of epitope immunogenicity along the protein sequence, and the separation of the
+antigen-specific IL-10 signal from the shared IL-5 signal. The remaining six are robustness audits of
+the paper's own effects: a donor jackknife, a family-wise correction, a censoring test, a
+single-feature classifier read, and the phospho and cross-antigen checks. The audits are valuable,
+because they say which of the paper's claims survive a change of assumption, but they are not new
+biology, and the two categories are stated separately, each with its own label.
+
+\begin{table}[t]
+\centering
+\caption{Independent verification of the novel observations: whether a from-scratch recompute matched
+the committed result, and the adversarial critic's flags.}
+\label{tab:verification}
+\footnotesize
+\input{tables/verification}
+\end{table}
+
+The genuinely new results are worth describing in detail.
 
 \paragraph{Immunogenicity is spatially clustered.}
 Ordering the peptides along the protein, the response frequency of adjacent overlapping peptides is
@@ -652,28 +789,58 @@ ALS T-helper-2 skew, whereas the IL-10 signal is antigen-specific and tracks
 survival.
 
 \paragraph{Robustness and its limits.}
-The central C9orf72 total-response difference is robust to removing any single donor: across all
+The central C9orf72 total-response difference is robust to removing any single donor. Across all
 56 leave-one-out removals the $p$-value stays below 0.05. Two robustness limits are also surfaced
 by the system itself. First, if the total response is reduced to the fraction of donors above the
 assay floor, the difference weakens to Fisher $p=0.10$, so the effect lives in the magnitude
 of the responses, while the fraction of donors that respond barely differs. Second, the IFN$\gamma$ increase does
 not survive Benjamini--Hochberg correction across the sixteen antigen-by-cytokine comparisons
 ($q=0.12$), whereas the total, IL-5 and IL-10 effects do. These are reported as limitations, not
-hidden.
+hidden. Figure~\ref{fig:robustness} shows the three robustness checks together: the jackknife
+$p$-values all sit below the 0.05 line, the corrected $q$-values keep three of the four cytokines
+significant while IFN$\gamma$ crosses the line, and the above-floor counts are close between the
+groups, which is why the censoring test is the weakest of the three.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/discovery_robustness}
+\caption{Robustness of the central C9orf72 result. Left: the distribution of leave-one-out
+$p$-values across all 56 donor removals, all below 0.05 (dashed line). Middle: Benjamini--Hochberg
+$q$-values across the 16 antigen-by-cytokine comparisons; IFN$\gamma$ does not survive. Right: the
+number of donors responding above the assay floor in each group.}
+\label{fig:robustness}
+\end{figure}
 
 \paragraph{Multiple-testing and classifier views.}
 Two further results quantify how far the signal carries. Under Benjamini--Hochberg control across
 the sixteen antigen-by-cytokine comparisons, the total, IL-5 and IL-10 C9orf72 effects keep
 $q<0.05$ while IFN$\gamma$ does not, which is consistent with the IL-5/IL-10 emphasis of the study.
 Treating the IFN$\gamma$/IL-5 ratio as a single feature, its ability to separate ALS from healthy
-controls is modest (area under the ROC curve $0.68$), so the cytokine bias is a real group
-difference rather than an individual-level diagnostic.
+controls is modest (area under the ROC curve $0.68$), so the cytokine bias is a group-level difference that does not separate individuals.
 
 \paragraph{Phosphorylation.}
 The screen includes five phosphorylated peptide variants alongside their parent sequences. Comparing
 each pair, phosphorylation changed the average magnitude by a median of about nine spot units and
 raised immunogenicity in three of the five pairs. The sample is small and the effect is weak, which
-the critic agent flags; the result is reported as a direction to test rather than a conclusion.
+the critic agent flags; the result is reported as a direction to test, not as a conclusion.
+
+\subsection{A worked trace}
+To make the loop concrete, here is the spatial-clustering result as the agents produced it, with the
+real tool calls. The hypothesis generator poses the question of whether immunogenic epitopes are
+scattered or clustered along the protein. The structural agent calls
+\texttt{most\_immunogenic\_epitopes(top=6)} and reads the residue positions of the strongest hits,
+which fall in a small number of windows around residues 56--95 and 366--445. It then calls
+\texttt{run\_analysis(explore\_spatial)}, which computes the lag-one autocorrelation of response
+frequency along the ordered tiling against a 5000-shuffle permutation null and returns
+$\rho=0.47$, $p=\SpatialPerm{}$. The evidence checker reruns the same call and confirms an identical
+result. The replication step is implicit here, since the permutation test is itself the robustness
+check. The critic attaches the flag that overlapping 15-mers share up to ten residues, so part of the
+autocorrelation is expected from overlap alone and the effect should be read against the permutation
+null, not as proof of discrete epitopes. The contradiction agent classifies the result as extending
+the paper, which maps epitopes but does not report their spatial structure. The principal-investigator
+agent keeps it as a verified novel observation with the overlap caveat recorded. The same trace, and
+two others, are stored in the repository so the reasoning is open to inspection and not taken on
+trust.
 
 The full question set, with its classification against the paper, is listed in
 Table~\ref{tab:questions}.
@@ -761,6 +928,29 @@ the leading hypothesis into a defined adoptive-transfer experiment with named ce
 subgroup and a pre-registered falsifier, so the proposal can be costed and run as a concrete
 experiment.
 
+\subsection{Rejecting planted false hypotheses}
+The false-hypothesis-rejection test deserves a closer look, because it is the metric that is not true
+by construction. Two null hypotheses are planted that a careless system might confirm. The first is
+that the EBV control response, which should not be ALS-specific, differs between ALS and healthy
+controls; the system computes the comparison and returns a non-significant result, so the hypothesis
+is not confirmed. The second is that the donor index predicts the response magnitude, which would
+indicate an ordering artefact in the data; the system computes the
+correlation and again finds nothing, so the artefact hypothesis is rejected. Both nulls are declined,
+which is the behaviour a sound system must show. The value of the test is that it is a negative
+control on the system itself: a pipeline that reported a significant EBV difference or a donor-index
+effect would be fabricating structure, and this check would catch it.
+
+\subsection{What the metrics do and do not show}
+Two of the AI metrics, grounding and determinism, are high by construction of the deterministic
+backend, and this should be said plainly. They do not measure the system's intelligence; they
+measure that the design delivers what it promises, namely that every number is computed and that the
+pipeline is reproducible. The metrics that do carry independent information are tool-use accuracy,
+which could fail if a tool were mis-specified, the self-flagging count, which reflects the critic's
+coverage, and the false-hypothesis rejection, which is a genuine negative control. Reading the
+evaluation this way keeps it honest: the grounding guarantee is a property of the architecture, and
+the architecture is the contribution, so the metric is evidence that the design works, not a claim
+that the system reasons well.
+
 \subsection{Cost and latency}
 The deterministic backend has no language-model cost, so the recorded run is bounded by local
 compute. The full pipeline, from dataset build through analyses, figures, the discovery loop and the
@@ -782,14 +972,25 @@ approach has been pursued in ALS and in autoimmune disease more
 generally~\citep{thonhoff2018,nepom2022}, though a recent polyclonal regulatory T-cell trial in a
 different autoimmune indication was negative, which is a reason for caution~\citep{al2024}.
 
-The experiment-designer agent states the most efficient falsification: expand C9orf72(56--70)-specific
-CD4 T cells, polarise them toward an IL-10-producing regulatory phenotype, and test adoptive
-transfer in a C9orf72 model, with the pre-registered falsifier that if IL-10-biased
-C9orf72-specific regulatory T cells do not slow progression, the survival-association hypothesis is
-rejected. The single-cell agent proposes the companion experiment needed to interpret the result:
-single-cell transcriptomics with paired T-cell-receptor sequencing on sorted C9orf72-reactive CD4
-cells, to resolve whether the IL-10 signal comes from a Tr1/regulatory or a T-helper-2 effector
-population. These are hypotheses with explicit tests, not claims of efficacy.
+The experiment-designer agent states the most efficient falsification. The design is to expand
+C9orf72(56--70)-specific CD4 T cells from mutation-carrier donors, polarise them toward an
+IL-10-producing regulatory phenotype, and test adoptive transfer in a C9orf72 disease model, reading
+out motor function and motor-neuron survival over the model's disease course against a vehicle and an
+irrelevant-antigen cell control. The hypothesis is directional, so the design is powered to detect a
+slowing of progression, and the pre-registered falsifier is simple: if IL-10-biased
+C9orf72-specific regulatory T cells do not slow progression relative to the controls, the
+survival-association hypothesis is rejected for that intervention. The choice of the 56--70 epitope
+follows from the data, since it is both the most broadly recognised and the most broadly HLA-covered,
+and the choice of mutation carriers follows from their stronger responses, so each design decision
+traces back to a computed result the reader can check.
+
+The single-cell agent proposes the companion experiment needed to interpret the result. Single-cell
+transcriptomics with paired T-cell-receptor sequencing on sorted C9orf72-reactive CD4 cells would
+resolve whether the IL-10 signal comes from a Tr1 or regulatory population, which would support the
+protective reading, or from a T-helper-2 effector population, which would not, and the receptor
+sequencing would show whether the response is clonally focused on the dominant epitopes. These are
+hypotheses with explicit tests, not claims of efficacy, and they are offered as an illustration of
+how the grounded outputs can seed a downstream programme, not as a result of this work.
 
 \section{Limitations}
 The system inherits the study's limits and adds its own. FluoroSpot magnitude is in assay-specific
@@ -845,15 +1046,32 @@ safety agent keeps this hazard on the list and why the proposed first test is a 
 than a dose-finding study.
 
 \section{Future work}
-Three extensions follow naturally. The first is to run the reasoning layer live over the same
-tools and to measure the gap between the deterministic framing and a language-model framing on the
-grounding and tool-use metrics, which would quantify what the language layer adds and where it
-drifts. The second is to re-derive the response frequencies from the raw flow-cytometry files by
-applying the FlowJo gating, which would let the system test the figures against an independent
-quantification built from the raw data, and would extend the novel-observation
-search to the single-cell phenotype. The third is to connect this paper agent to agents built from
-complementary papers, so that a hypothesis generated here can be checked against external datasets
-and models, which is the cross-project ecosystem the programme envisages.
+Three extensions follow naturally, in rough order of value.
+
+The most important is to re-derive the response frequencies from the raw flow-cytometry files. The
+system already indexes all 90 intracellular-cytokine-staining files and reads the FlowJo workspace
+gating, so the step is to apply that gating to the event-level data and recompute the cytokine-positive
+frequencies, then compare them against the authors' summarised values. This would turn the current
+self-consistency check into an independent quantification, which is the main thing standing between
+this work and a genuinely external validation. The same event-level data would open the single-cell
+phenotype to analysis, letting the system ask whether the IL-10-producing C9orf72-reactive cells carry
+a regulatory or a T-helper-2 surface profile, the question the single-cell agent currently can only
+propose.
+
+The second is to run the reasoning layer live over the same tools and measure the gap between the
+deterministic framing and a language-model framing on the grounding and tool-use metrics. That single
+experiment would convert the project's central design claim, that a grounded core and a reasoning
+layer can be separated and the trade measured, from an assertion into a result, and it would let the
+hypothesis generator propose questions beyond the curated bank while the core keeps every reported
+number honest.
+
+The third is to connect this paper agent to agents built from complementary papers, so a hypothesis
+generated here can be checked against external datasets and models. Because the outputs are tidy
+tables, a machine-readable agent registry and JSON records keyed by identifier, and because the tools
+are reached over a standard protocol, a second agent can consume this one's results without knowing
+its internals. This is the cross-project ecosystem the programme envisages, and the grounding
+guarantee is what would keep a chain of such agents trustworthy, where an ungrounded chain would compound
+guesses.
 
 \section{Discussion}
 \subsection{What the system demonstrates}
@@ -884,6 +1102,24 @@ IL-10 signal from the shared IL-5 signal, and tests the headline effects under c
 does not apply, which both strengthens the robust claims and demotes the IFN$\gamma$ one. None of this
 contradicts the paper; it refines what can be said from the same data.
 
+\subsection{Generality of the approach}
+Little in the method is specific to this paper. The parts that are specific are the parser for one
+workbook layout and the handful of domain tools for epitopes and HLA; everything else, the
+reproducibility core, the statistics, the tool-registry and MCP layer, the agent framework, the
+discovery loop and the evaluation, is general. For another data-rich paper the work would be to write
+a parser for its source data and a small set of domain tools, after which the same scaffolding would
+provide reproduction, robustness checks, a grounded discovery loop and a self-evaluation. The design
+therefore reads as a template for turning an open-data paper into a grounded agent, and the cost of
+applying it falls mostly on the one-off task of understanding and parsing the specific dataset. That
+is also where the irreducible human judgement sits, because deciding what a column means and whether a
+reconstructed number matches the source is exactly the verification the author performed here and the
+part a language model cannot be trusted to do unchecked. The grounding guarantee does not remove the
+need for that judgement; it localises it, by making every downstream number a mechanical consequence
+of the parse, so a reader who trusts the parse can trust the rest, and a reader who wants to check the
+parse has a small, well-defined target. This is the sense in which the contribution is a method and
+not a single result: the same machinery would carry a different paper, and the measured honesty would
+transfer with it.
+
 \subsection{Ethical considerations}
 The data are de-identified human immunology measurements, released by the original authors under an
 open licence for reuse, and this work uses only the derived and summarised values plus the raw files
@@ -895,24 +1131,45 @@ process and the reproducibility of the pipeline, and does not claim to vouch for
 validity or clinical relevance of the results, which is the honest position given the subject matter.
 
 \subsection{Threats to validity}
-Several threats are worth naming. The assays summarise complex cellular readouts into spot or
-frequency values with a floor, so a difference in magnitude is not the same as a difference in the
-presence of a response, a distinction the censoring analysis makes explicit. Some strata, notably the
-survival and mutation groups, are small, so individual effects are marginal even where their direction
-matches the paper. The overlap of the tiling peptides inflates spatial autocorrelation, which is why
-the clustering result is read against a permutation null and not as proof of discrete epitopes. The
-HLA analysis uses the authors' binding predictions, so it inherits their method and its error. The
-predictor is trained on fewer than a hundred peptides, so the complex model overfits and only the
-linear baseline is reported. Each of these is recorded with the result it qualifies.
+The threats are easier to see when sorted by type. Construct validity concerns whether the measured
+quantity means what the claim assumes. The FluoroSpot readout summarises a complex cellular response
+into a spot count with a floor, so a difference in magnitude is not the same as a difference in
+whether a response is present, a distinction the censoring analysis makes explicit. Internal validity
+concerns artefacts in the analysis itself. The overlap of the tiling peptides inflates spatial
+autocorrelation, which is why the clustering result is read against a permutation null and not as
+proof of discrete epitopes, and the donor-ordering null control guards against an ordering artefact.
+External validity concerns whether the findings would generalise. The most important limit here is
+that the reproductions and the derived observations are built on the authors' own summarised source
+data and their HLA binding predictions, so the verification is largely a check of self-consistency,
+not an independent confirmation; the raw flow-cytometry files, which the system indexes but does not
+yet re-gate, are what would make the quantification independent, and re-deriving the response
+frequencies from them is the single most valuable next step. Statistical-conclusion validity concerns
+the inference. Several strata, notably the mutation and survival groups, are small, so individual
+effects are marginal even where their direction matches the paper, and the predictor is trained on
+fewer than a hundred peptides, so only the constrained linear model is reported. Each of these is
+recorded with the result it qualifies.
 
 \section{Conclusions}
-The project shows that a paper and its data can be turned into an interactive AI scientist that
-does more than summarise. The system reproduces the study's claims from its own data with high
-fidelity, produces eight verified observations the paper does not state, surfaces two genuine
-robustness caveats about the original framing, and frames a falsifiable therapeutic hypothesis with
-a companion experiment. Every result is computed, logged and re-verified, and the system is honest
-about what it cannot support. The same tools that answer a question interactively drive the
-discovery loop, so the interactive agent and the autonomous pipeline agree by construction.
+The project shows that a published paper and its open data can be turned into a grounded, interactive
+agent that does more than summarise. The system reproduces the study's claims from its own data with
+high fidelity, matching the authors' reported $p$-values to within $|\Delta p|=\FidelityMaxDiff{}$,
+and on top of reproduction it reports two genuinely new biological observations, a set of robustness
+audits that say which of the paper's effects survive a change of assumption, and one falsifiable
+downstream hypothesis. Every number is computed, logged and re-verified, and the same tools that
+answer a question interactively drive the discovery loop, so the interactive agent and the pipeline
+agree by construction.
+
+The contribution that should outlast the specific findings is the design. By routing every reported
+quantity through a shared deterministic core and keeping the reasoning layer separate and optional,
+the system makes its own honesty measurable, which is what the grounding, determinism and
+false-hypothesis-rejection results demonstrate. That design is also what makes the system safe to
+extend and to combine with others, because a consumer of its outputs inherits computed, auditable
+values and not a chain of unverified assertions. The honest limits are stated throughout: the
+verification is largely self-consistency until the raw flow-cytometry files are re-derived, the small
+strata make some effects marginal, and the committed discovery is bounded by a curated question bank.
+None of these undercut the central result, which is that grounding and verification can be built into
+an AI scientific workflow and then measured, and that doing so costs some ambition at the proposing
+stage and buys a great deal of trust at the reporting stage.
 
 \paragraph{Reproducibility and AI use.}
 All data fetching is checksum-verified, dependencies are pinned, seeds are fixed, and each run

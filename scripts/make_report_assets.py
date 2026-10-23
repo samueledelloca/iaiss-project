@@ -110,10 +110,38 @@ def main() -> None:
     drows.append(f"Long vs short survival (IL-10) & {su['n']['y']} & {su['n']['x']} & "
                  f"{su['estimates']['median_y']:.0f} & {su['estimates']['median_x']:.0f} & "
                  f"{su['effect_size']:.2f} & {fnum(su['p_value'])} \\\\")
+    cd = A.cd4_dominance().stats["ALS"]
+    drows.append(f"CD4 vs CD8 (ALS, reactive cells) & -- & -- & "
+                 f"{cd['median_CD8']:.0f} & {cd['median_CD4']:.0f} & -- & {fnum(cd['p_value'])} \\\\")
+    sp = A.als_specificity_vs_pd_ad("Total").stats
+    for other in ["PD", "AD"]:
+        r = sp[f"ALS_vs_{other}"]
+        drows.append(f"ALS vs {other} (Total C9orf72) & -- & -- & -- & -- & "
+                     f"{r['effect_size']:.2f} & {fnum(r['p_value'])} \\\\")
     (REPORTS / "tables" / "repro_detailed.tex").write_text(
         "\\begin{tabular}{p{5.6cm}ccccc c}\n\\toprule\n"
         "Comparison & $n_1$ & $n_2$ & med$_1$ & med$_2$ & $r$ & $p$ \\\\\n\\midrule\n"
         + "\n".join(drows) + "\n\\bottomrule\n\\end{tabular}\n")
+
+    # ---- Table: reproduction fidelity (reproduced vs authors' reported) ----
+    ed = datasets.load("edfig2_ifng_il5_ratio")
+    tg = ed[ed.kind == "two_group"]
+    import sys as _sys
+    _sys.path.insert(0, str(paths.ROOT / "src"))
+    from c9n2a import stats as _st  # noqa: E402
+    paper = {"IFNg cytokine release": 0.007, "IL-5 cytokine release": 0.014,
+             "IFNg/IL-5 ratio": 0.047}
+    frows = []
+    for meas, pp in paper.items():
+        s = tg[tg.measure == meas]
+        r = _st.mann_whitney(s[s.group == "ALS"].value.tolist(),
+                             s[s.group == "HC"].value.tolist())
+        frows.append(f"{esc(meas)} & {pp:.3f} & {r.p_value:.4f} & {abs(r.p_value-pp):.4f} & "
+                     f"{'yes' if (r.p_value<0.05)==(pp<0.05) else 'no'} \\\\")
+    (REPORTS / "tables" / "fidelity.tex").write_text(
+        "\\begin{tabular}{p{5.0cm}cccc}\n\\toprule\n"
+        "Comparison (ALS vs HC) & reported $p$ & reproduced $p$ & $|\\Delta p|$ & same call \\\\\n"
+        "\\midrule\n" + "\n".join(frows) + "\n\\bottomrule\n\\end{tabular}\n")
 
     # ---- Table: experiments ----
     exps = [
@@ -136,6 +164,20 @@ def main() -> None:
         "\\begin{tabular}{p{3.0cm}p{6.2cm}p{3.1cm}l}\n\\toprule\n"
         "Experiment & Setup & Method & Config \\\\\n\\midrule\n"
         + "\n".join(erows) + "\n\\bottomrule\n\\end{tabular}\n")
+
+    # ---- Table: novel-observation verification ----
+    qs = load(R / "discovery" / "questions.json")
+    vrows = []
+    for q in qs:
+        if q["kind"] != "novel":
+            continue
+        flags = "; ".join(q["critique_flags"]) or "none"
+        vrows.append(f"{q['id']} & {esc(q['question'][:52])} & "
+                     f"{'yes' if q['verified'] else 'no'} & {esc(flags[:40])} \\\\")
+    (REPORTS / "tables" / "verification.tex").write_text(
+        "\\begin{tabular}{llcp{5.4cm}}\n\\toprule\n"
+        "ID & Observation & Re-verified & Critic flags \\\\\n\\midrule\n"
+        + "\n".join(vrows) + "\n\\bottomrule\n\\end{tabular}\n")
 
     # ---- Table: novel observations ----
     rows = [f"{o['id']} & {esc(o['observation'][:108])} & {esc(o['relation_to_paper'].split()[0])} \\\\"

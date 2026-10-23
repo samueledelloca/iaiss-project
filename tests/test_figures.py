@@ -11,7 +11,7 @@ pytestmark = pytest.mark.skipif(
 
 def test_all_figures_build(tmp_path):
     names = figures.build_all(tmp_path)
-    assert len(names) == 7
+    assert len(names) == 9
     for n in names:
         assert (tmp_path / f"{n}.png").exists()
         assert (tmp_path / f"{n}.pdf").exists()

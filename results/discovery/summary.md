@@ -28,7 +28,7 @@
 - **Q06** (reproduction, tcell_agent): Are C9orf72-reactive T cells predominantly CD4+?  
   → C9orf72-reactive T cells are predominantly CD4+ HC: CD4 median 83% vs CD8 9% (p=3.4e-06); ALS: CD4 median 92% vs CD8 5% (p=3.4e-06) [agrees; verified=True]
 - **Q07** (reproduction, als_agent): Is the ALS C9orf72 response specific vs PD and AD controls?  
-  → ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05. [agrees; verified=True]
+  → ALS Total C9orf72 responses differ from HC (p<0.05) and not from PD, AD: elevated versus healthy controls but not statistically distinguished from the other neurodegenerative groups. [agrees; verified=True]
 - **Q08** (reproduction, als_agent): Do C9orf72-mutation carriers show stronger responses?  
   → C9orf72-mutation carriers have Total responses with median 7263 vs 100 in non-carriers (p=0.0281). [agrees; verified=True] _(flags: small sample (n<15 in a group); marginal significance (0.01<=p<0.05); multiple-testing sensitive)_
 - **Q09** (reproduction, clinical_agent): Is the IL-10 C9orf72 response associated with predicted survival?  

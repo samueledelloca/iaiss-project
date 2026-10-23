@@ -186,9 +186,73 @@ def fig_cross_antigen(out_dir: Path) -> str:
     return "discovery_cross_antigen"
 
 
+def fig_predictor(out_dir: Path) -> str:
+    """Peptide-immunogenicity predictor: ROC curve and feature importances."""
+    from sklearn.ensemble import GradientBoostingClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_curve, roc_auc_score
+    from sklearn.model_selection import cross_val_predict
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from .predictor import build_features
+
+    X, y = build_features()
+    base = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+    gb = GradientBoostingClassifier(random_state=1234)
+    k = min(5, int(y.sum()), int((1 - y).sum()))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 3.3),
+                                   gridspec_kw={"width_ratios": [1, 1]})
+    for est, name, col in [(base, "logistic", OI["blue"]), (gb, "grad. boosting", OI["orange"])]:
+        p = cross_val_predict(est, X, y, cv=k, method="predict_proba")[:, 1]
+        fpr, tpr, _ = roc_curve(y, p)
+        ax1.plot(fpr, tpr, color=col, lw=1.8, label=f"{name} (AUC={roc_auc_score(y, p):.2f})")
+    ax1.plot([0, 1], [0, 1], color=OI["grey"], ls="--", lw=0.8)
+    ax1.set_xlabel("False positive rate"); ax1.set_ylabel("True positive rate")
+    ax1.set_title("Immunogenicity prediction (cross-validated)"); ax1.legend(loc="lower right", fontsize=8)
+    base.fit(X, y)
+    coef = base.named_steps["logisticregression"].coef_[0]
+    order = np.argsort(np.abs(coef))
+    ax2.barh(np.array(X.columns)[order], coef[order], color=OI["green"])
+    ax2.axvline(0, color="black", lw=0.8)
+    ax2.set_xlabel("Standardised logistic coefficient")
+    ax2.set_title("Feature weights")
+    _save(fig, out_dir, "discovery_predictor")
+    return "discovery_predictor"
+
+
+def fig_robustness(out_dir: Path) -> str:
+    """Robustness panel: jackknife p-values, FDR q-values, censoring 2x2."""
+    from .analyses import donor_jackknife, fdr_family_fig2, censoring_robustness
+    import pandas as pd
+    f2 = datasets.load("fig2_fluorospot_responses")
+    s = f2[(f2.antigen == "C9orf72") & (f2.cytokine == "Total")]
+    hc = s[s.group == "HC"].magnitude.to_numpy(); als = s[s.group == "ALS"].magnitude.to_numpy()
+    ps = [stats.mann_whitney(np.delete(als, i), hc).p_value for i in range(len(als))]
+    ps += [stats.mann_whitney(als, np.delete(hc, i)).p_value for i in range(len(hc))]
+    fdr = pd.DataFrame(fdr_family_fig2().stats["table"])
+    c9 = fdr[fdr.antigen == "C9orf72"]
+    cen = censoring_robustness("C9orf72", "Total").stats["table"]
+    fig, (a1, a2, a3) = plt.subplots(1, 3, figsize=(10.5, 3.1))
+    a1.hist(ps, bins=15, color=OI["blue"], alpha=0.85)
+    a1.axvline(0.05, color=OI["red"], ls="--", lw=1); a1.set_xlabel("leave-one-out $p$")
+    a1.set_ylabel("count"); a1.set_title(f"Jackknife ({len(ps)} removals)")
+    a2.bar(c9.cytokine, c9.q, color=[OI["green"] if q < 0.05 else OI["red"] for q in c9.q])
+    a2.axhline(0.05, color="black", ls="--", lw=0.8); a2.set_ylabel("BH $q$")
+    a2.set_title("FDR across 16 tests"); a2.tick_params(axis="x", labelrotation=30)
+    im = np.array(cen)
+    a3.imshow(im, cmap="Blues"); a3.set_xticks([0, 1]); a3.set_xticklabels(["> floor", "<= floor"])
+    a3.set_yticks([0, 1]); a3.set_yticklabels(["ALS", "HC"])
+    for (i, j), v in np.ndenumerate(im):
+        a3.text(j, i, int(v), ha="center", va="center", color="black")
+    a3.set_title("Above-floor counts")
+    _save(fig, out_dir, "discovery_robustness")
+    return "discovery_robustness"
+
+
 ALL_FIGURES = [fig_c9orf72_responses, fig_th2_bias, fig_epitope_landscape,
                fig_hla_immunogenicity, fig_survival,
-               fig_spatial_clustering, fig_cross_antigen]
+               fig_spatial_clustering, fig_cross_antigen,
+               fig_predictor, fig_robustness]
 
 
 def build_all(out_dir: Path) -> list[str]:

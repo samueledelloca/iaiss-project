@@ -128,7 +128,7 @@
     "question": "Is the ALS C9orf72 response specific vs PD and AD controls?",
     "owner": "als_agent",
     "kind": "reproduction",
-    "answer": "ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05.",
+    "answer": "ALS Total C9orf72 responses differ from HC (p<0.05) and not from PD, AD: elevated versus healthy controls but not statistically distinguished from the other neurodegenerative groups.",
     "verified": true,
     "verification_note": "recomputed; identical output",
     "critique_flags": [],

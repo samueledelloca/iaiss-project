@@ -12,8 +12,8 @@
   _reproduces:_ C9orf72-specific responses increased in ALS (Fig. 2)
 - **repro_th2_bias**: The IFNg/IL-5 ratio is lower in ALS (median 0.65) than HC (median 1.26), p=0.0483: an IL-5-biased response in ALS.  
   _reproduces:_ ALS responses enriched for IL-5/IL-10 over IFNg (Fig. 2, ED Fig. 2)
-- **repro_specificity_Total**: ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05.  
-  _reproduces:_ C9orf72 response relatively specific to ALS (ED Fig. 2)
+- **repro_specificity_Total**: ALS Total C9orf72 responses differ from HC (p<0.05) and not from PD, AD: elevated versus healthy controls but not statistically distinguished from the other neurodegenerative groups.  
+  _reproduces:_ C9orf72 responses elevated in disease groups vs HC (ED Fig. 2)
 - **repro_mutation_Total**: C9orf72-mutation carriers have Total responses with median 7263 vs 100 in non-carriers (p=0.0281).  
   _reproduces:_ Mutation carriers show stronger C9orf72-specific responses (Fig. 4)
 - **repro_survival_IL-10**: IL-10 responses are higher in long-survival donors (median 1153 vs 100, p=0.0382).  

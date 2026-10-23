@@ -81,15 +81,18 @@ def als_specificity_vs_pd_ad(measure: str = "Total") -> Analysis:
     res = {}
     for other in ["HC", "PD", "AD"]:
         res[f"ALS_vs_{other}"] = stats.mann_whitney(groups["ALS"], groups[other]).as_dict()
-    sig = [k for k, v in res.items() if v["p_value"] < 0.05]
+    sig = [k.replace("ALS_vs_", "") for k, v in res.items() if v["p_value"] < 0.05]
+    nonsig = [k.replace("ALS_vs_", "") for k, v in res.items() if v["p_value"] >= 0.05]
     return Analysis(
         id=f"repro_specificity_{measure}",
         question=f"Is the ALS {measure} C9orf72 response specific vs PD and AD controls?",
         method="Pairwise two-tailed Mann-Whitney U, ALS vs each control group",
         finding=(f"ALS {measure} C9orf72 responses differ from "
-                 f"{', '.join(sig) if sig else 'no group'} at p<0.05."),
+                 f"{', '.join(sig) if sig else 'no group'} (p<0.05) and not from "
+                 f"{', '.join(nonsig) if nonsig else 'none'}: elevated versus healthy controls but "
+                 f"not statistically distinguished from the other neurodegenerative groups."),
         stats=res, data_source="edfig2_ifng_il5_ratio",
-        reproduces="C9orf72 response relatively specific to ALS (ED Fig. 2)")
+        reproduces="C9orf72 responses elevated in disease groups vs HC (ED Fig. 2)")
 
 
 def mutation_carrier_effect(cytokine: str = "Total") -> Analysis:
