@@ -582,6 +582,23 @@ proposal is a hypothesis assembled from the data and the literature; it is not e
 and the system is built to make that boundary explicit rather than to cross it. These are reasons to
 read the output as a structured, checkable argument, not as a conclusion.
 
+\paragraph{A mechanistic reading.}
+The study's observations fit a coherent, if still tentative, mechanism. A loss of peripheral
+tolerance to C9orf72 would expose the protein to autoreactive CD4 T cells, which is consistent with
+the CD4 dominance of the response and with the stronger responses in mutation carriers, in whom
+C9orf72 handling is already perturbed. The quality of that response then appears to matter for
+outcome. An IFN$\gamma$-dominated response is the signature of a pro-inflammatory, potentially
+tissue-damaging T-helper-1 programme, whereas IL-10 is the central regulatory cytokine of
+suppressive T cells and is linked to neuroprotection through the dampening of microglial activation
+in several models~\citep{runge2020,laffer2019,bido2024}. The finding that the response in ALS is
+shifted away from IFN$\gamma$ and toward IL-10, and that the IL-10 share tracks longer predicted
+survival, is therefore readable as a protective regulatory arm that is present to differing degrees
+across patients. The decline of regulatory T cells as ALS progresses~\citep{appel2012,appel2020}
+places this arm under strain exactly when it is most needed. The intervention that follows from this
+reading is to reinforce the protective arm rather than to suppress the response wholesale, which is
+why the proposed strategy is tolerogenic and antigen-specific rather than broadly
+immunosuppressive.
+
 \paragraph{Why stratification matters here.}
 The data argue for stratification on two axes. Mutation carriers show the strongest C9orf72-specific
 responses, so they are the subgroup in whom an antigen-specific intervention has the most to act on.
@@ -658,6 +675,49 @@ deterministic discovery loop verified by re-running; logged agent runs; recorded
 specifications; and executable stage scripts driven by a single entry point. The AI tools used and
 the record of hypotheses, evidence and rejected claims are documented in \texttt{AI\_USAGE.md} and
 under \texttt{results/discovery/}.
+
+\section{Methods in detail}
+\subsection{Source-data parser}
+The source-data workbook stores each figure as side-by-side panels marked a, b, c and so on, with
+one or more header rows above columns of per-donor values. The parser forward-fills each header row
+across the full width, then walks the columns left to right. A run of columns separated from the
+previous run by a blank column starts a new block, and the block index is attached to every column.
+This block index is what separates two panels that reuse the same letter or the same measure name,
+such as the two-group and four-group blocks of Extended Data Figure~2, which a parser keyed on the
+measure name alone would merge. Each emitted column carries its block, its panel letter, its measure
+and its series label, and the numeric cells beneath it, which the per-figure builders then map to
+semantic fields.
+
+\subsection{Statistical definitions}
+Two-group comparisons use the two-tailed Mann--Whitney $U$ test, with the rank-biserial correlation
+$r = 1 - 2U/(n_1 n_2)$ as the effect size, where a negative value under the convention used here
+means the first group ranks higher. Proportions use Fisher's exact test and correlations use
+Spearman's $\rho$. Multi-group comparisons use one-way ANOVA with Dunnett's test against the control
+group. The false discovery rate across a family of tests is controlled by the Benjamini--Hochberg
+procedure, reported as adjusted $q$-values. Spatial structure uses the lag-one autocorrelation of
+response frequency along the ordered tiling, with a two-sided permutation $p$-value from 5000
+shuffles. Donor dependence uses a leave-one-out jackknife of the test statistic, and sensitivity to
+the assay floor compares the fraction of donors above the floor with Fisher's exact test.
+
+\subsection{Discovery procedure}
+The loop runs in a fixed order. The hypothesis generator emits the question bank. For each question,
+the owning scientific agent computes an answer through its permitted tools. The evidence checker
+recomputes the answer from scratch and compares the serialised results. The replication agent runs
+the relevant robustness analysis where one applies. The critic and falsification agents attach
+rule-based flags for small samples, marginal significance, underpowered pairings and single-feature
+weakness. The contradiction agent classifies the result as agreeing with, extending or qualifying the
+paper. The principal-investigator agent keeps the results that are novel, verified and free of a
+disqualifying flag as the observation set, and compiles the catalogue of caveats, uncertainties and
+limitations. Every step writes a run record with its prompt, its tool calls and its output.
+
+\subsection{Evaluation metrics}
+Grounding is the fraction of quantitative findings whose printed number equals the computed
+statistic. Tool-use accuracy is the fraction of tools returning a valid result under default
+arguments. Determinism is equality of the observation set across two runs. Self-error detection is
+the count of questions carrying at least one critique flag. The false-hypothesis-rejection test
+reports the fraction of planted nulls that the system fails to confirm. Reproduction fidelity is the
+maximum absolute difference between a reproduced and a reported $p$-value over the comparisons for
+which the authors publish a value, together with the agreement of the significance calls.
 
 \small
 \bibliographystyle{unsrtnat}
