@@ -269,6 +269,16 @@ of 6.37 million recorded events across a fourteen-colour panel that includes a v
 lineage and cytokine markers. The FlowJo workspace gating hierarchy is read where parseable. This
 represents the primary data behind the study, not only the summarised figure values.
 
+\subsection{A peptide-immunogenicity model}
+As a model component, the system trains a classifier that predicts whether a peptide is immunogenic,
+defined as recognition by at least three donors, from its predicted HLA-II binding breadth and
+simple biochemical features of its sequence. On the \ModelN{} non-phosphorylated peptides
+(\ModelPos{} immunogenic), a cross-validated logistic model reaches an area under the ROC curve of
+\ModelBaselineAUC{}, while gradient boosting overfits to \ModelGBAUC{}. The simple linear model is
+therefore preferred on this small sample, which is itself a useful caution about model choice when
+the number of positive examples is in the low tens. The model is trained with a fixed seed and its
+checkpoint and metrics are saved.
+
 \subsection{Agent framework and the discovery loop}
 Each agent is a declarative specification: a name, a layer, a role, a system prompt and the subset
 of tools it may call. A recorder wraps the tool registry so that a tool call outside an agent's
