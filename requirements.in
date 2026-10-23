@@ -1,0 +1,42 @@
+# High-level dependency intent (human-readable). Exact pins live in requirements.txt,
+# produced by `pip freeze` inside the project venv. See environment.yml for conda.
+
+# --- Scientific core ---
+numpy
+pandas
+scipy
+statsmodels
+scikit-learn
+matplotlib
+seaborn
+pyarrow
+openpyxl
+
+# --- Flow cytometry (FCS / FlowJo workspace parsing & gating) ---
+flowkit
+flowio
+
+# --- Sequence / epitope / immunoinformatics ---
+biopython
+logomaker
+
+# --- Scientific RAG (ONNX embeddings, no torch) + lexical retrieval ---
+fastembed
+faiss-cpu
+rank-bm25
+
+# --- Agent / tool infrastructure ---
+mcp
+anthropic
+requests
+python-dotenv
+
+# --- Config, logging, orchestration ---
+pyyaml
+pydantic
+rich
+tqdm
+platformdirs
+
+# --- Testing ---
+pytest

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "c9n2a"
+version = "0.1.0"
+description = "C9orf72-Nature2Agent: an autonomous AI scientist built from the Michaelis et al. (2025) Nature study on ALS autoimmunity"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Samuele Dell'Oca", email = "samuele.delloca@supsi.ch" }]
+keywords = ["ALS", "C9orf72", "autoimmunity", "Paper2Agent", "MCP", "scientific-agent", "flow-cytometry"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.c9n2a]
+# Project-wide reproducibility defaults (see configs/base.yaml for the full config).
+random_seed = 1234
