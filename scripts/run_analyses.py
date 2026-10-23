@@ -33,10 +33,10 @@ def main() -> None:
     lines = ["# Analysis results\n",
              "## Reproductions of the paper's claims\n"]
     for a in repro:
-        lines.append(f"- **{a['id']}** — {a['finding']}  \n  _reproduces:_ {a['reproduces']}")
+        lines.append(f"- **{a['id']}**: {a['finding']}  \n  _reproduces:_ {a['reproduces']}")
     lines.append("\n## Exploratory analyses (candidate novel observations)\n")
     for a in explore:
-        lines.append(f"- **{a['id']}** — {a['finding']}")
+        lines.append(f"- **{a['id']}**: {a['finding']}")
     (out / "summary.md").write_text("\n".join(lines) + "\n")
 
     provenance.write_manifest(out, provenance.capture_provenance(

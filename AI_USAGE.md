@@ -25,20 +25,20 @@ The brief requires recording hypotheses, the evidence for and against, which wer
 rejected, which were tested, the prompts/agent specifications, and the AI-generated
 code. In this repository:
 
-1. **Every major hypothesis / question** — `results/discovery/questions.json` (24).
-2. **Evidence supporting it** — the computed `stats` and `finding` per question,
+1. **Every major hypothesis / question**: `results/discovery/questions.json` (24).
+2. **Evidence supporting it**: the computed `stats` and `finding` per question,
    and `literature/citations.json` for external support.
-3. **Evidence against it** — `critique_flags` per question and
+3. **Evidence against it**: `critique_flags` per question and
    `results/discovery/contradictions.json` (limitations, uncertainties, caveats).
-4. **Rejected hypotheses** — the planted nulls in the false-hypothesis-rejection
+4. **Rejected hypotheses**: the planted nulls in the false-hypothesis-rejection
    test (`evaluation.false_hypothesis_test`), both correctly rejected.
-5. **Hypotheses tested** — every non-interpretive question is computed and
+5. **Hypotheses tested**: every non-interpretive question is computed and
    independently re-verified (`verified` field); robustness in
    `evaluation/scientific.json`.
-6. **Prompts and agent specifications** — `agents/registry.json` (system prompts
+6. **Prompts and agent specifications**: `agents/registry.json` (system prompts
    and tool permissions for all 18 agents); backend and model in
    `configs/base.yaml`; per-run logs under `experiments/agent_runs/`.
-7. **AI-generated code** — the entire `src/c9n2a/` library, `model/`, `scripts/`
+7. **AI-generated code**: the entire `src/c9n2a/` library, `model/`, `scripts/`
    and `tests/`, written with Claude Code, inspected and covered by tests.
 
 ## Reasoning backend and reproducibility
