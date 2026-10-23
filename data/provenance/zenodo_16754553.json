@@ -1,0 +1,126 @@
+{
+  "record_id": "16754553",
+  "doi": "10.5281/zenodo.16754553",
+  "conceptdoi": "10.5281/zenodo.16754552",
+  "title": "Autoimmune response to C9orf72 protein in amyotrophic lateral sclerosis - ICS data Screen 2",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2025-08-06",
+  "files": [
+    {
+      "key": "HC Specimen_001_C2_C02 Peptide.fcs",
+      "md5": "8ce5e0b1c6156d27de634cbcf4dd839b",
+      "status": "cached",
+      "bytes": 1573477
+    },
+    {
+      "key": "2-Week ICS #2.wsp",
+      "md5": "400ca3bbd82bc4b4ff03cb71fdfadc76",
+      "status": "cached",
+      "bytes": 1749663
+    },
+    {
+      "key": "ALS Specimen_001_C11_C11 Peptide.fcs",
+      "md5": "64d160df58ed7f470733f80d8c1e05e0",
+      "status": "cached",
+      "bytes": 606216
+    },
+    {
+      "key": "HC Specimen_001_C3_C03 Positive.fcs",
+      "md5": "2514a2fe797856957f76423a6f090ab9",
+      "status": "cached",
+      "bytes": 1319254
+    },
+    {
+      "key": "HC Specimen_001_C1_C01 Negative.fcs",
+      "md5": "3a747fea893e40a0fee761dd86df0238",
+      "status": "cached",
+      "bytes": 1127016
+    },
+    {
+      "key": "HC Specimen_001_H7_H07 Negative.fcs",
+      "md5": "cdae0d35dd0a7a17df0ac1cb9dff0815",
+      "status": "cached",
+      "bytes": 7903236
+    },
+    {
+      "key": "HC Specimen_001_C9_C09 Positive.fcs",
+      "md5": "b84338f0808879770ebc0adbb47cfbd2",
+      "status": "cached",
+      "bytes": 1455875
+    },
+    {
+      "key": "HC Specimen_001_H9_H09 Positive.fcs",
+      "md5": "342652232a8d197dba00dbdd9adcb29a",
+      "status": "cached",
+      "bytes": 6238957
+    },
+    {
+      "key": "ALS Specimen_001_H1_H01 Negatice.fcs",
+      "md5": "4b2b9449abda593196b0ab9911182560",
+      "status": "cached",
+      "bytes": 3287134
+    },
+    {
+      "key": "ALS Specimen_001_H3_H03 Positive.fcs",
+      "md5": "cfbf7600eef490ee7a5f6ddc905c9c1c",
+      "status": "cached",
+      "bytes": 2190037
+    },
+    {
+      "key": "ALS Specimen_001_C6_C06 Positive.fcs",
+      "md5": "12ae19d978e314427910e761a0ed1d49",
+      "status": "cached",
+      "bytes": 539977
+    },
+    {
+      "key": "HC Specimen_001_C8_C08 Peptide.fcs",
+      "md5": "3cb3497ee6e657b50f2a22645a9ff1b9",
+      "status": "cached",
+      "bytes": 2104478
+    },
+    {
+      "key": "ALS Specimen_001_C4_C04 Negative.fcs",
+      "md5": "f4d39ab69920d550de5db04deebfd479",
+      "status": "cached",
+      "bytes": 454238
+    },
+    {
+      "key": "ALS Specimen_001_C10_C10 Negative.fcs",
+      "md5": "7433a5b87675b44ef92068529de71df6",
+      "status": "cached",
+      "bytes": 462279
+    },
+    {
+      "key": "HC Specimen_001_H8_H08 Peptide.fcs",
+      "md5": "db86f72d8b250506270ace2763364575",
+      "status": "cached",
+      "bytes": 9116258
+    },
+    {
+      "key": "ALS Specimen_001_H2_H02 Peptide.fcs",
+      "md5": "9ebf6f4d6357bf0c86213960a52e1e0e",
+      "status": "cached",
+      "bytes": 2336318
+    },
+    {
+      "key": "ALS Specimen_001_C12_C12 Positive.fcs",
+      "md5": "b86a834554f4f18fe12d2f100abf7841",
+      "status": "cached",
+      "bytes": 531817
+    },
+    {
+      "key": "ALS Specimen_001_C5_C05 Peptide.fcs",
+      "md5": "681bf1e58ee72098ccf0b01b4e0c2a3f",
+      "status": "cached",
+      "bytes": 340898
+    },
+    {
+      "key": "HC Specimen_001_C7_C07 Negative.fcs",
+      "md5": "85e23f1d7da05c17a47cfa445a84f07c",
+      "status": "cached",
+      "bytes": 1524877
+    }
+  ]
+}

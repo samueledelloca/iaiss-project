@@ -36,6 +36,10 @@ ICS_RECORDS = [r for r, m in RECORDS.items() if m["label"].startswith("ics")]
 ZENODO_API = "https://zenodo.org/api/records/{rid}"
 UA = {"User-Agent": "c9n2a/0.1 (research; samuele.delloca@supsi.ch)"}
 
+PMC_ID = "PMC12657233"
+PMC_NUM = "12657233"
+PROV_DIR = paths.DATA / "provenance"   # tracked in git (data/raw/ is ignored)
+
 
 def md5_file(path: Path, chunk: int = 1 << 20) -> str:
     h = hashlib.md5()
@@ -90,7 +94,52 @@ def fetch_record(rid: str) -> dict:
         "publication_date": meta["metadata"].get("publication_date"),
         "files": files_manifest,
     }
-    with open(out_dir / "provenance.json", "w") as fh:
+    PROV_DIR.mkdir(parents=True, exist_ok=True)
+    with open(PROV_DIR / f"zenodo_{rid}.json", "w") as fh:
+        json.dump(manifest, fh, indent=2)
+    return manifest
+
+
+def fetch_pmc() -> dict:
+    """Fetch the open-access full text (JATS) and supplementary files.
+
+    JATS XML via NCBI E-utilities; the supplementary bundle (figure images,
+    Supplementary Information PDF, and the MOESM3 source-data workbook) via the
+    EuropePMC REST API, which mirrors PMC.
+    """
+    out_xml = paths.DATA_RAW / "pmc"
+    out_supp = paths.DATA_RAW / "supplementary"
+    out_xml.mkdir(parents=True, exist_ok=True)
+    out_supp.mkdir(parents=True, exist_ok=True)
+    manifest: dict = {"pmc_id": PMC_ID, "files": []}
+
+    jats = out_xml / f"{PMC_ID}.jats.xml"
+    r = requests.get("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+                     params={"db": "pmc", "id": PMC_NUM, "rettype": "xml",
+                             "retmode": "xml"}, headers=UA, timeout=180)
+    r.raise_for_status()
+    jats.write_bytes(r.content)
+    manifest["files"].append({"key": jats.name, "bytes": len(r.content),
+                              "sha256": hashlib.sha256(r.content).hexdigest()})
+    print(f"  [downloaded] {jats.name} ({len(r.content)/1e3:.0f} KB)")
+
+    import io
+    import zipfile
+    r = requests.get(
+        f"https://www.ebi.ac.uk/europepmc/webservices/rest/{PMC_ID}/supplementaryFiles",
+        headers=UA, timeout=600)
+    if r.status_code == 200 and r.content[:2] == b"PK":
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        for name in z.namelist():
+            data = z.read(name)
+            (out_supp / Path(name).name).write_bytes(data)
+            manifest["files"].append({"key": Path(name).name, "bytes": len(data),
+                                      "sha256": hashlib.sha256(data).hexdigest()})
+        print(f"  [downloaded] {len(z.namelist())} supplementary files")
+    else:
+        print(f"  [warn] supplementary bundle not retrieved (status {r.status_code})")
+    PROV_DIR.mkdir(parents=True, exist_ok=True)
+    with open(PROV_DIR / "pmc.json", "w") as fh:
         json.dump(manifest, fh, indent=2)
     return manifest
 
@@ -98,12 +147,18 @@ def fetch_record(rid: str) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--records", default="ics",
-                    help="'all', 'ics', or a comma-separated list of record ids")
+                    help="'all', 'ics', 'spectral', 'none', or comma-separated record ids")
+    ap.add_argument("--pmc", action="store_true",
+                    help="also fetch the PMC full text + supplementary files")
     args = ap.parse_args()
     if args.records == "all":
         rids = list(RECORDS)
     elif args.records == "ics":
         rids = ICS_RECORDS
+    elif args.records == "spectral":
+        rids = ["16749283"]
+    elif args.records == "none":
+        rids = []
     else:
         rids = [r.strip() for r in args.records.split(",")]
     total = 0
@@ -111,8 +166,11 @@ def main() -> None:
         print(f"== Record {rid} ({RECORDS.get(rid, {}).get('title', '?')}) ==")
         m = fetch_record(rid)
         total += sum(f["bytes"] for f in m["files"])
-    print(f"\nDone. {len(rids)} record(s), {total/1e6:.1f} MB total, "
-          f"under {paths.DATA_RAW / 'zenodo'}")
+    if args.pmc:
+        print("== PMC full text + supplementary ==")
+        fetch_pmc()
+    print(f"\nDone. {len(rids)} Zenodo record(s), {total/1e6:.1f} MB; "
+          f"provenance under {PROV_DIR}")
 
 
 if __name__ == "__main__":
