@@ -41,11 +41,30 @@ code. In this repository:
 7. **AI-generated code**: the entire `src/c9n2a/` library, `model/`, `scripts/`
    and `tests/`, written with Claude Code, inspected and covered by tests.
 
-## Reasoning backend and reproducibility
+## Reasoning backend: what reasons, and when (read this before the oral)
 
-With no API key present, the reasoning agents run deterministically (the findings
-are generated from computed statistics, so the hallucination rate is zero by
-construction and the discovery loop is bit-for-bit reproducible). With
-`ANTHROPIC_API_KEY` set, the same agents can run live over the same validated
-tools (`c9n2a.agentkit.AnthropicBackend`). The committed results come from the
-deterministic path so they can be reproduced without credentials.
+Be precise about this, because it is the most likely exam question.
+
+- **The scientific findings are real computations.** The reproductions and the eight
+  novel observations are produced by running real statistical tests (SciPy/statsmodels)
+  on the real published data, every time the pipeline runs. They are not text a model
+  wrote and saved. The grounding metric (1.0) means every number printed equals the
+  number computed.
+- **The committed discovery run is deterministic.** With no `ANTHROPIC_API_KEY`,
+  `run_discovery.py` is ordinary Python: it calls the tools in a fixed order and applies
+  rule-based verification and critique. No language model runs at that point.
+- **Where the AI reasoning is.** Two places. (1) At build time, the question bank and the
+  choice of which analyses to run were produced by the Claude Code agent; a worked trace
+  of that reasoning, with real tool calls, is in
+  `results/discovery/agent_reasoning_example.md`. (2) At run time, if `ANTHROPIC_API_KEY`
+  is set, `c9n2a.agentkit.AnthropicBackend` makes the agents reason live over the same
+  tools. Run `python scripts/run_agent_live.py` to see one agent decide which tools to
+  call, read their outputs and write a conclusion.
+- **Honest summary for the oral.** "The agents are deterministic by default so the results
+  reproduce without credentials; they reason with a language model when a key is set. The
+  discoveries themselves are real statistics from the data. I verified the computational
+  process and reproducibility; I did not and cannot vouch for the biological validity of
+  the results (see `DISCLAIMER.md`)."
+
+The committed results come from the deterministic path so they can be reproduced without
+credentials.
