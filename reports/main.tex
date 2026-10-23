@@ -36,8 +36,8 @@
 
 \begin{abstract}
 \noindent
-This report describes a multi-agent system that converts the Michaelis et al.\ (2025)
-\emph{Nature} study on C9orf72 autoimmunity in amyotrophic lateral sclerosis (ALS) into an
+This report describes a multi-agent system that converts the
+\emph{Nature} study on C9orf72 autoimmunity in amyotrophic lateral sclerosis (ALS)~\citep{michaelis2025c9orf72} into an
 interactive, executable AI scientist. The system ingests the paper, its supplementary
 material and its source data, exposes them as validated tools behind a Model Context Protocol
 (MCP) server, and runs a five-layer agent ecosystem that explains the design, reproduces the
@@ -65,12 +65,12 @@ responses are mediated mainly by CD4\textsuperscript{+} T cells, that they are r
 for IL-5 and IL-10 over IFN$\gamma$, and that IL-10-mediated responses are associated with longer
 predicted survival.
 
-The objective of this project is not to re-run that study. It is to ask whether an AI system can
+The objective is to ask whether an AI system can
 use the C9orf72 autoimmune mechanism as a starting point and move from observation to mechanism to
 hypothesis to a falsifiable therapeutic proposal, while remaining honest about what the data
-support. The work follows the Paper2Agent paradigm, which turns a paper and its computational
-resources into an executable agent served over MCP rather than treating the paper as a static
-document~\citep{miao2025paper2agent}.
+support. This is a question about reasoning over the study, not a re-run of it. The work follows the
+Paper2Agent paradigm, which turns a paper and its computational resources into an executable agent
+served over MCP, so the paper becomes a resource an agent can run~\citep{miao2025paper2agent}.
 
 \paragraph{Contributions.}
 The system (i) reconstructs the study's data as machine-readable tables and reproduces its
@@ -81,7 +81,7 @@ both the scientific result and the AI system. All code was written with an AI co
 inspected, and covered by an automated test suite.
 
 \paragraph{The pipeline the system is meant to demonstrate.}
-The aim is not to show that a language model can summarise ALS literature. It is to show that a
+The aim is to show that a
 multi-agent system can move along a chain from an observation to a mechanism, from a mechanism to a
 hypothesis, from a hypothesis to a computational result, and from a result to a therapeutic
 candidate with a falsification experiment attached. Each link in that chain is a concrete artefact
@@ -89,7 +89,7 @@ in this project: the observations are the reproductions, the mechanism is the IL
 C9orf72-specific response, the hypotheses are the generated questions, the computational results are
 the verified observations, the candidate is the antigen-specific regulatory strategy, and the
 falsification is the experiment the designer agent specifies. The value of making the chain explicit
-is that every step can be checked, and a weak step is visible rather than hidden inside fluent prose.
+is that every step can be checked, and a weak step stays visible for inspection.
 
 \section{Related work}
 Two lines of work frame this project. The first is the conversion of scientific artefacts into
@@ -97,7 +97,7 @@ executable agents. Paper2Agent automates the construction of an MCP server from 
 codebase, with agents that locate the code, set up the environment, extract tools from tutorials
 and validate them before assembly~\citep{miao2025paper2agent}. The Michaelis study is an
 experimental immunology paper without a public analysis codebase, so the present work builds the
-computational infrastructure from the data rather than wrapping existing tutorials, then exposes it
+computational infrastructure directly from the data, then exposes it
 in the same MCP tool shape. The second line is multi-agent hypothesis generation, where separate
 agents propose, critique and debate hypotheses and a coordinating agent integrates them. The
 discovery loop here follows that division of labour, with explicit verification, replication,
@@ -190,15 +190,15 @@ construction, cannot override contradictory evidence.
   box/.style={draw,rounded corners,align=center,minimum height=8mm,inner sep=2pt,fill=blue!5},
   lay/.style={font=\bfseries\footnotesize,anchor=west}]
 \node[box,text width=13.5cm] (l1) {Nature paper \textbar{} supplementary \textbar{} source data \textbar{} external literature (scite)};
-\node[lay,above=0.5mm of l1.north west] {Layer 1 — Scientific knowledge};
+\node[lay,above=0.5mm of l1.north west] {Layer 1: Scientific knowledge};
 \node[box,text width=13.5cm,below=7mm of l1,fill=green!6] (l2) {MCP server (Paper2Agent): 15 validated tools over data, stats, epitopes, HLA, RAG, raw FCS};
-\node[lay,above=0.5mm of l2.north west] {Layer 2 — Paper agent};
+\node[lay,above=0.5mm of l2.north west] {Layer 2: Paper agent};
 \node[box,text width=13.5cm,below=7mm of l2,fill=orange!6] (l3) {10 scientific agents: literature, immunology, ALS, HLA, T-cell, drug-discovery, structural, single-cell, clinical, safety};
-\node[lay,above=0.5mm of l3.north west] {Layer 3 — Scientific agents};
+\node[lay,above=0.5mm of l3.north west] {Layer 3: Scientific agents};
 \node[box,text width=13.5cm,below=7mm of l3,fill=purple!6] (l4) {7 discovery agents: generate $\to$ check evidence $\to$ replicate $\to$ critique $\to$ find contradictions $\to$ design falsification};
-\node[lay,above=0.5mm of l4.north west] {Layer 4 — Discovery agents};
+\node[lay,above=0.5mm of l4.north west] {Layer 4: Discovery agents};
 \node[box,text width=13.5cm,below=7mm of l4,fill=red!6] (l5) {PI agent: integrates outputs; cannot override contradictory evidence};
-\node[lay,above=0.5mm of l5.north west] {Layer 5 — Principal investigator};
+\node[lay,above=0.5mm of l5.north west] {Layer 5: Principal investigator};
 \end{tikzpicture}
 \caption{The five-layer agent ecosystem. Information flows upward from the data and tools to the
 scientific and discovery agents and finally to the PI agent. Every tool is shared between the MCP
@@ -266,8 +266,8 @@ Beyond the figure source data, the system reads the raw intracellular-cytokine-s
 directly. It indexes all 90 FCS files by group and condition, recovering the expected design of
 roughly fifteen donors per group across the negative, peptide and positive conditions, for a total
 of 6.37 million recorded events across a fourteen-colour panel that includes a viability stain and
-lineage and cytokine markers. The FlowJo workspace gating hierarchy is read where parseable. This
-represents the primary data behind the study, not only the summarised figure values.
+lineage and cytokine markers. The FlowJo workspace gating hierarchy is read where parseable. These
+files are the primary data behind the study, beyond the summarised figure values.
 
 \subsection{A peptide-immunogenicity model}
 As a model component, the system trains a classifier that predicts whether a peptide is immunogenic,
@@ -299,7 +299,7 @@ disagree about what a tool computes. The second is a deterministic default backe
 flexibility of free-text reasoning for the guarantee that every number in a result was computed
 rather than generated, with the live language-model backend kept available for when that flexibility
 is wanted. The third is to treat verification and criticism as first-class agents with their own
-logged runs, rather than as checks folded into the generator, so that the evidence for a result and
+logged runs, each kept separate from the generator, so that the evidence for a result and
 the case against it are produced by different parts of the system and recorded separately.
 
 \subsection{Reproducibility and testing}
@@ -347,7 +347,7 @@ The survival and mutation strata reproduce as well (Figure~\ref{fig:survival}). 
 higher in donors with longer predicted survival, and the total response is higher in C9orf72
 mutation carriers than in non-carriers. Both strata have small per-group samples, so these effects
 are individually marginal even where their direction matches the paper, which is recorded as an
-uncertainty rather than smoothed over.
+uncertainty and reported as such.
 
 \begin{figure}[t]
 \centering
@@ -361,8 +361,8 @@ median and the $y$-axis is on a log scale.}
 \section{Epitope and HLA interrogation}
 The agent ranks the 100 screened peptides by breadth and magnitude and returns the HLA coverage of
 each. The most immunogenic epitope is residues 56--70 (Table~\ref{tab:epitopes}), which is also the
-peptide with the broadest predicted HLA-II coverage. Immunogenicity across the protein is not flat:
-it rises and falls in runs along the sequence (Figure~\ref{fig:epitopes}), a structure examined
+peptide with the broadest predicted HLA-II coverage. Immunogenicity varies along the protein,
+rising and falling in runs along the sequence (Figure~\ref{fig:epitopes}), a structure examined
 quantitatively in the next section. The inferred HLA restrictions reproduce the study's Table~2,
 pairing specific peptides with DRB1, DQB1 and related alleles (Table~\ref{tab:hla}).
 
@@ -440,8 +440,8 @@ this spatial structure.
 The study frames the IL-5 and IL-10 bias around C9orf72. Testing each antigen separately
 (Figure~\ref{fig:cross}), the ALS increase in IL-5 is significant for C9orf72 and also for TDP-43,
 so the IL-5 skew is not unique to C9orf72. The IL-10 increase, by contrast, is significant only for
-C9orf72. This distinction matters for interpretation: a shared IL-5 response may reflect a general
-ALS T-helper-2 skew, whereas the IL-10 signal is antigen-specific and is the component that tracks
+C9orf72. This distinction matters for interpretation. A shared IL-5 response may reflect a general
+ALS T-helper-2 skew, whereas the IL-10 signal is antigen-specific and tracks
 survival.
 
 \paragraph{Robustness and its limits.}
@@ -449,7 +449,7 @@ The central C9orf72 total-response difference is robust to removing any single d
 56 leave-one-out removals the $p$-value stays below 0.05. Two robustness limits are also surfaced
 by the system itself. First, if the total response is reduced to the fraction of donors above the
 assay floor, the difference weakens to Fisher $p=0.10$, so the effect lives in the magnitude
-distribution rather than in the mere presence of a response. Second, the IFN$\gamma$ increase does
+of the responses, while the fraction of donors that respond barely differs. Second, the IFN$\gamma$ increase does
 not survive Benjamini--Hochberg correction across the sixteen antigen-by-cytokine comparisons
 ($q=0.12$), whereas the total, IL-5 and IL-10 effects do. These are reported as limitations, not
 hidden.
@@ -548,8 +548,7 @@ the dominant epitopes, stratified to mutation carriers who show the strongest re
 broadest HLA-covering epitopes as the most deployable antigens. An antigen-specific regulatory
 approach has been pursued in ALS and in autoimmune disease more
 generally~\citep{thonhoff2018,nepom2022}, though a recent polyclonal regulatory T-cell trial in a
-different autoimmune indication was negative, which is a reason for caution rather than
-optimism~\citep{al2024}.
+different autoimmune indication was negative, which is a reason for caution~\citep{al2024}.
 
 The experiment-designer agent states the most efficient falsification: expand C9orf72(56--70)-specific
 CD4 T cells, polarise them toward an IL-10-producing regulatory phenotype, and test adoptive
@@ -562,11 +561,11 @@ population. These are hypotheses with explicit tests, not claims of efficacy.
 
 \section{Limitations}
 The system inherits the study's limits and adds its own. FluoroSpot magnitude is in assay-specific
-spot units with a floor, and the total-response difference depends on the magnitude distribution
-rather than on response presence alone. The IFN$\gamma$ increase does not survive multiple-testing
+spot units with a floor, and the total-response difference comes from the magnitude of responses,
+while the fraction of donors that respond barely differs. The IFN$\gamma$ increase does not survive multiple-testing
 correction. Survival and mutation strata have small per-group samples, so those effects are
 individually marginal even where consistent with the paper. HLA-II binding uses the authors'
-NetMHCIIpan predictions rather than a fresh prediction run. The reasoning agents, in the committed
+NetMHCIIpan predictions and does not re-run the prediction itself. The reasoning agents, in the committed
 configuration, do not call an external language model, so the generative and critical steps are
 rule-based and grounded in the tools; the live backend is available but was not used for the
 recorded results. None of these undermine the reproductions, and each is catalogued with the result
@@ -579,7 +578,7 @@ grounding guarantee, which is the trade this project resolves in favour of groun
 is rule-based and catches the common failure modes, small samples, marginal significance and
 multiple testing, but it does not reason about confounds it was not told to look for. The therapeutic
 proposal is a hypothesis assembled from the data and the literature; it is not evidence of efficacy,
-and the system is built to make that boundary explicit rather than to cross it. These are reasons to
+and the system is built to keep that boundary explicit. These are reasons to
 read the output as a structured, checkable argument, not as a conclusion.
 
 \paragraph{A mechanistic reading.}
@@ -595,9 +594,9 @@ shifted away from IFN$\gamma$ and toward IL-10, and that the IL-10 share tracks 
 survival, is therefore readable as a protective regulatory arm that is present to differing degrees
 across patients. The decline of regulatory T cells as ALS progresses~\citep{appel2012,appel2020}
 places this arm under strain exactly when it is most needed. The intervention that follows from this
-reading is to reinforce the protective arm rather than to suppress the response wholesale, which is
-why the proposed strategy is tolerogenic and antigen-specific rather than broadly
-immunosuppressive.
+reading is to reinforce the protective arm, which is why the proposed strategy is tolerogenic and
+antigen-specific: it targets the C9orf72-specific regulatory response and leaves the rest of the
+immune system intact.
 
 \paragraph{Why stratification matters here.}
 The data argue for stratification on two axes. Mutation carriers show the strongest C9orf72-specific
@@ -607,7 +606,7 @@ and the IL-10-biased group is the one with the better outcome, which suggests th
 character of the response, rather than its mere size, is the feature to reinforce. The antigen-level
 result sharpens this: the IL-10 signal that tracks survival is specific to C9orf72, whereas the IL-5
 signal is shared with TDP-43, so an intervention aimed at the protective component should be directed
-at the C9orf72-specific, IL-10-producing population rather than at the broader T-helper-2 response. A
+at the C9orf72-specific, IL-10-producing population, which is narrower than the broader T-helper-2 response. A
 therapy that expands protective regulatory cells carries a risk in the other direction, that
 antigen-specific tolerance blunts a response that is itself partly protective, which is why the
 safety agent keeps this hazard on the list and why the proposed first test is a falsification rather
@@ -619,7 +618,7 @@ tools and to measure the gap between the deterministic framing and a language-mo
 grounding and tool-use metrics, which would quantify what the language layer adds and where it
 drifts. The second is to re-derive the response frequencies from the raw flow-cytometry files by
 applying the FlowJo gating, which would let the system test the figures against an independent
-quantification rather than the authors' summarised values, and would extend the novel-observation
+quantification built from the raw data, and would extend the novel-observation
 search to the single-cell phenotype. The third is to connect this paper agent to agents built from
 complementary papers, so that a hypothesis generated here can be checked against external datasets
 and models, which is the cross-project ecosystem the programme envisages.

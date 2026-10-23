@@ -24,7 +24,7 @@ figures()  { $PY scripts/reproduce_figures.py; }
 discovery(){ $PY scripts/run_discovery.py; }
 evaluate() { $PY scripts/run_evaluation.py; }
 test_()    { $PY -m pytest -q; }
-report()   { $PY scripts/make_report_assets.py && cd reports && \
+report()   { $PY scripts/enrich_references.py && $PY scripts/make_report_assets.py && cd reports && \
              pdflatex -interaction=nonstopmode main.tex >/dev/null && bibtex main >/dev/null && \
              pdflatex -interaction=nonstopmode main.tex >/dev/null && pdflatex -interaction=nonstopmode main.tex >/dev/null && \
              cd .. && echo "reports/main.pdf built"; }

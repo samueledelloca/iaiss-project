@@ -182,28 +182,8 @@ def main() -> None:
         "\\begin{tabular}{p{6.0cm}rp{5.6cm}}\n\\toprule\nDataset & Rows & Grain \\\\\n\\midrule\n"
         + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n")
 
-    # ---- references.bib from literature/citations.json + the primary paper ----
-    cites = load(paths.LITERATURE / "citations.json")
-    bib = ["@article{michaelis2025c9orf72,\n  title={Autoimmune response to C9orf72 protein in "
-           "amyotrophic lateral sclerosis},\n  author={Michaelis and others},\n  journal={Nature},"
-           "\n  year={2025},\n  doi={10.1038/s41586-025-09588-6}\n}",
-           "@article{miao2025paper2agent,\n  title={{Paper2Agent}: Reimagining Research Papers as "
-           "Interactive and Reliable {AI} Agents},\n  author={Miao, Jiacheng and others},\n  "
-           "journal={arXiv:2509.06917},\n  year={2025}\n}"]
-    def bibesc(s):
-        return (str(s).replace("&", r"\&").replace("%", r"\%")
-                .replace("#", r"\#").replace("_", r"\_"))
-    for i, c in enumerate(cites):
-        first = c.get("authors_short", f"ref{i}").split()[0].lower().replace(",", "")
-        key = first + str(c.get("year", ""))
-        author = f"{first.capitalize()} and others"
-        bib.append(f"@article{{{key},\n  title={{{bibesc(c.get('title',''))}}},\n  "
-                   f"author={{{author}}},\n  journal={{{bibesc(c.get('journal',''))}}},\n  "
-                   f"year={{{c.get('year','')}}},\n  doi={{{c.get('doi','')}}}\n}}")
-    (REPORTS / "references.bib").write_text("\n\n".join(bib) + "\n")
-
-    print("Wrote generated_values.tex, 5 tables, and references.bib "
-          f"({len(cites)+2} bib entries).")
+    # references.bib is built separately by scripts/enrich_references.py (Crossref-verified).
+    print("Wrote generated_values.tex and the result tables.")
 
 
 if __name__ == "__main__":
