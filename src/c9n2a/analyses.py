@@ -266,6 +266,76 @@ def censoring_robustness(antigen: str = "C9orf72", cytokine: str = "Total",
         data_source="fig2_fluorospot_responses", novel=True)
 
 
+def cd4_dominance() -> Analysis:
+    """Quantify CD4 vs CD8 dominance among C9orf72-reactive T cells (ED Fig. 4)."""
+    ed = datasets.load("edfig4_cd4_cd8")
+    # panels a (HC) and b (ALS): frequency of CD4 vs CD8 among reactive cells
+    res = {}
+    for grp, panel in [("HC", "a"), ("ALS", "b")]:
+        sub = ed[ed.panel == panel]
+        cd4 = sub[sub.series == "CD4"].value.tolist()
+        cd8 = sub[sub.series == "CD8"].value.tolist()
+        if cd4 and cd8:
+            r = stats.mann_whitney(cd4, cd8)
+            res[grp] = {"median_CD4": r.estimates["median_x"],
+                        "median_CD8": r.estimates["median_y"], "p_value": r.p_value}
+    return Analysis(
+        id="repro_cd4_dominance",
+        question="Are C9orf72-reactive T cells predominantly CD4+?",
+        method="Mann-Whitney of CD4 vs CD8 frequency among reactive cells, per group",
+        finding=("C9orf72-reactive T cells are predominantly CD4+ "
+                 + "; ".join(f"{g}: CD4 median {v['median_CD4']:.0f}% vs CD8 {v['median_CD8']:.0f}% "
+                             f"(p={v['p_value']:.2g})" for g, v in res.items())),
+        stats=res, data_source="edfig4_cd4_cd8",
+        reproduces="Responses predominantly CD4+ T-cell mediated (Fig. 2, ED Fig. 4)")
+
+
+def fdr_family_fig2() -> Analysis:
+    """Do the Fig 2 ALS-vs-HC comparisons survive family-wise FDR correction?"""
+    f2 = datasets.load("fig2_fluorospot_responses")
+    rows = []
+    for ag in ["C9orf72", "TDP-43", "SOD1", "EBV"]:
+        for cyto in ["Total", "IFNg", "IL-5", "IL-10"]:
+            s = f2[(f2.antigen == ag) & (f2.cytokine == cyto)]
+            r = stats.mann_whitney(s[s.group == "ALS"].magnitude.tolist(),
+                                   s[s.group == "HC"].magnitude.tolist())
+            rows.append({"antigen": ag, "cytokine": cyto, "p": r.p_value})
+    df = pd.DataFrame(rows)
+    df["q"] = stats.fdr_bh(df.p.tolist())
+    c9 = df[df.antigen == "C9orf72"]
+    n_sig = int((c9.q < 0.05).sum())
+    return Analysis(
+        id="explore_fdr_family",
+        question="Do the C9orf72 ALS-vs-HC differences survive FDR correction across the 16-comparison family?",
+        method="Benjamini-Hochberg FDR across 4 antigens x 4 cytokines (16 Mann-Whitney tests)",
+        finding=(f"After BH-FDR over all 16 antigen x cytokine comparisons, "
+                 f"{n_sig}/4 C9orf72 cytokines remain significant (q<0.05): "
+                 + ", ".join(f"{r.cytokine} q={r.q:.3g}" for _, r in c9.iterrows()) + "."),
+        stats={"table": df.to_dict("records")},
+        data_source="fig2_fluorospot_responses", novel=True)
+
+
+def cytokine_ratio_classifier() -> Analysis:
+    """How well does the IFNg/IL-5 ratio discriminate ALS from HC (ROC AUC)?"""
+    from sklearn.metrics import roc_auc_score
+    ed = datasets.load("edfig2_ifng_il5_ratio")
+    tg = ed[(ed.kind == "two_group") & (ed.measure == "IFNg/IL-5 ratio")]
+    hc = tg[tg.group == "HC"].value.to_numpy()
+    als = tg[tg.group == "ALS"].value.to_numpy()
+    y = np.r_[np.ones_like(als), np.zeros_like(hc)]
+    score = -np.r_[als, hc]  # lower ratio => more ALS-like
+    auc = float(roc_auc_score(y, score))
+    return Analysis(
+        id="explore_ratio_classifier",
+        question="How well does the per-donor IFNg/IL-5 ratio alone separate ALS from HC?",
+        method="ROC AUC of the IFNg/IL-5 ratio as a univariate ALS classifier",
+        finding=(f"The IFNg/IL-5 ratio alone separates ALS from HC with AUC={auc:.2f} "
+                 f"(n_ALS={len(als)}, n_HC={len(hc)}): a modest single-feature signal, "
+                 f"not a diagnostic on its own."),
+        stats={"auc": auc, "n_als": int(len(als)), "n_hc": int(len(hc))},
+        data_source="edfig2_ifng_il5_ratio", novel=True)
+
+
 REPRODUCTIONS = [
     lambda: als_vs_hc_response("C9orf72", "Total"),
     lambda: als_vs_hc_response("C9orf72", "IFNg"),
@@ -276,6 +346,7 @@ REPRODUCTIONS = [
     lambda: mutation_carrier_effect("Total"),
     lambda: survival_association("IL-10"),
     hla_binding_vs_immunogenicity,
+    cd4_dominance,
 ]
 
 EXPLORATORY = [
@@ -285,6 +356,8 @@ EXPLORATORY = [
     epitope_spatial_structure,
     lambda: donor_jackknife("C9orf72", "Total"),
     lambda: censoring_robustness("C9orf72", "Total"),
+    fdr_family_fig2,
+    cytokine_ratio_classifier,
 ]
 
 

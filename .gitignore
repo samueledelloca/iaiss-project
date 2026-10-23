@@ -55,3 +55,4 @@ results/large/
 
 # Discovery scratch (regenerable)
 data/zenodo_discovery.json
+experiments/agent_runs/

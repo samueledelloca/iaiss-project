@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Q13",
+    "item": "ALS>HC IL-5 enrichment is significant for: C9orf72, TDP-43. Not unique to C9orf72.",
+    "type": "caveats (extends: the IL-5 ALS bias is not unique to C9orf72)"
+  },
+  {
+    "id": "Q18",
+    "item": "Rank-based p=0.00159; above-floor responders 27/28 (ALS) vs 22/28 (HC), Fisher p=0.101: weaker under censoring.",
+    "type": "caveats (robustness limitation under censoring / multiple testing)"
+  },
+  {
+    "id": "Q19",
+    "item": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "type": "caveats (robustness limitation under censoring / multiple testing)"
+  },
+  {
+    "id": "L1",
+    "item": "FluoroSpot magnitude is in assay-specific spot units with a floor of 100; the ALS>HC total-response difference weakens when reduced to the fraction of above-floor responders (Fisher p=0.10).",
+    "type": "limitation"
+  },
+  {
+    "id": "L2",
+    "item": "The C9orf72 IFNg ALS>HC increase does not survive BH-FDR across the 16-comparison family (q=0.12), unlike IL-5/IL-10/Total.",
+    "type": "limitation"
+  },
+  {
+    "id": "L3",
+    "item": "Survival and mutation strata have small per-group n; effects are consistent with the paper but individually marginal.",
+    "type": "uncertainty"
+  }
+]

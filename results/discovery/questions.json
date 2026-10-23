@@ -1,0 +1,789 @@
+[
+  {
+    "id": "Q01",
+    "question": "Are C9orf72 total FluoroSpot responses increased in ALS vs HC?",
+    "owner": "immunology_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72 Total responses are higher in ALS (median 6720 vs 1142, p=0.00159, rank-biserial r=-0.49).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": "Base p=0.00159; across all leave-one-out removals p stays in [0.000607, 0.00263] and remains <0.05 in 56/56 removals: robust to any single donor.",
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_fig2_C9orf72_Total"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q02",
+    "question": "Are C9orf72 IL-5 responses increased in ALS vs HC?",
+    "owner": "immunology_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72 IL-5 responses are higher in ALS (median 2330 vs 208, p=0.000318, rank-biserial r=-0.56).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_fig2_C9orf72_IL5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q03",
+    "question": "Are C9orf72 IL-10 responses increased in ALS vs HC?",
+    "owner": "immunology_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72 IL-10 responses are higher in ALS (median 1029 vs 177, p=0.00469, rank-biserial r=-0.44).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_fig2_C9orf72_IL10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q04",
+    "question": "Are C9orf72 IFNg responses increased in ALS vs HC?",
+    "owner": "immunology_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72 IFNg responses are higher in ALS (median 2185 vs 627, p=0.0381, rank-biserial r=-0.33).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "marginal significance (0.01<=p<0.05); multiple-testing sensitive"
+    ],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_fig2_C9orf72_IFNg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q05",
+    "question": "Do ALS responses show an IL-5/IL-10 bias over IFNg?",
+    "owner": "immunology_agent",
+    "kind": "reproduction",
+    "answer": "The IFNg/IL-5 ratio is lower in ALS (median 0.65) than HC (median 1.26), p=0.0483: an IL-5-biased response in ALS.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "marginal significance (0.01<=p<0.05); multiple-testing sensitive"
+    ],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_th2_bias"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "question": "Are C9orf72-reactive T cells predominantly CD4+?",
+    "owner": "tcell_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72-reactive T cells are predominantly CD4+ HC: CD4 median 83% vs CD8 9% (p=3.4e-06); ALS: CD4 median 92% vs CD8 5% (p=3.4e-06)",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_cd4_dominance"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q07",
+    "question": "Is the ALS C9orf72 response specific vs PD and AD controls?",
+    "owner": "als_agent",
+    "kind": "reproduction",
+    "answer": "ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_specificity_Total"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q08",
+    "question": "Do C9orf72-mutation carriers show stronger responses?",
+    "owner": "als_agent",
+    "kind": "reproduction",
+    "answer": "C9orf72-mutation carriers have Total responses with median 7263 vs 100 in non-carriers (p=0.0281).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "small sample (n<15 in a group)",
+      "marginal significance (0.01<=p<0.05); multiple-testing sensitive"
+    ],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_mutation_Total"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q09",
+    "question": "Is the IL-10 C9orf72 response associated with predicted survival?",
+    "owner": "clinical_agent",
+    "kind": "reproduction",
+    "answer": "IL-10 responses are higher in long-survival donors (median 1153 vs 100, p=0.0382).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "small sample (n<15 in a group)",
+      "marginal significance (0.01<=p<0.05); multiple-testing sensitive"
+    ],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_survival_IL-10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "Is predicted HLA-II binding associated with observed immunogenicity?",
+    "owner": "hla_agent",
+    "kind": "reproduction",
+    "answer": "Predicted HLA-II binding breadth correlates with observed response frequency (Spearman rho=0.29, p=0.00385, n=95).",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "agrees",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "repro_hla_immunogenicity"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "question": "Which C9orf72 epitopes have the broadest predicted HLA-II coverage?",
+    "owner": "hla_agent",
+    "kind": "extension",
+    "answer": {
+      "top_by_hla_coverage": [
+        {
+          "epitope_num": 14,
+          "residues": "56-70",
+          "sequence": "DGEITFLANHTLNGE",
+          "n_predicted_hla_bound": 27.0,
+          "response_freq": 0.3181818181818182
+        },
+        {
+          "epitope_num": 42,
+          "residues": "196-210",
+          "sequence": "PEEIDIADTVLNDDD",
+          "n_predicted_hla_bound": 26.0,
+          "response_freq": 0.0
+        },
+        {
+          "epitope_num": 85,
+          "residues": "411-425",
+          "sequence": "TLIKYIEDDTQKGKK",
+          "n_predicted_hla_bound": 24.0,
+          "response_freq": 0.1578947368421052
+        },
+        {
+          "epitope_num": 70,
+          "residues": "336-350",
+          "sequence": "LTAFWRATSEEDMAQ",
+          "n_predicted_hla_bound": 20.0,
+          "response_freq": 0.0434782608695652
+        },
+        {
+          "epitope_num": 87,
+          "residues": "421-435",
+          "sequence": "QKGKKPFKSLRNLKI",
+          "n_predicted_hla_bound": 20.0,
+          "response_freq": 0.2105263157894736
+        },
+        {
+          "epitope_num": 8,
+          "residues": "26-40",
+          "sequence": "LAATFAYWDNILGPR",
+          "n_predicted_hla_bound": 19.0,
+          "response_freq": 0.0434782608695652
+        },
+        {
+          "epitope_num": 62,
+          "residues": "296-310",
+          "sequence": "RQVMYAPYPTTHIDV",
+          "n_predicted_hla_bound": 19.0,
+          "response_freq": 0.0869565217391304
+        },
+        {
+          "epitope_num": 79,
+          "residues": "381-395",
+          "sequence": "LDQVFQLKPGLSLRS",
+          "n_predicted_hla_bound": 18.0,
+          "response_freq": 0.15
+        },
+        {
+          "epitope_num": 75,
+          "residues": "361-375",
+          "sequence": "TPDLNIFQDVLHRDT",
+          "n_predicted_hla_bound": 17.0,
+          "response_freq": 0.15
+        },
+        {
+          "epitope_num": 19,
+          "residues": "81-95",
+          "sequence": "DVKFFVLSEKGVIIV",
+          "n_predicted_hla_bound": 15.0,
+          "response_freq": 0.2272727272727272
+        }
+      ]
+    },
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "broadest_hla_coverage",
+        "args": {
+          "top": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "question": "Which C9orf72 epitopes are most broadly immunogenic?",
+    "owner": "structural_agent",
+    "kind": "extension",
+    "answer": {
+      "top_by_breadth": [
+        {
+          "epitope_num": 14,
+          "residues": "56-70",
+          "sequence": "DGEITFLANHTLNGE",
+          "responders": 7,
+          "tested": 22,
+          "response_freq": 0.3181818181818182,
+          "avg_magnitude": 1215.9,
+          "n_predicted_hla_bound": 27.0
+        },
+        {
+          "epitope_num": 76,
+          "residues": "366-380",
+          "sequence": "IFQDVLHRDTLVKAF",
+          "responders": 6,
+          "tested": 20,
+          "response_freq": 0.3,
+          "avg_magnitude": 180.5,
+          "n_predicted_hla_bound": 3.0
+        },
+        {
+          "epitope_num": 89,
+          "residues": "426-440",
+          "sequence": "PFKSLRNLKIDLDLT*",
+          "responders": 5,
+          "tested": 19,
+          "response_freq": 0.2631578947368421,
+          "avg_magnitude": 500.4,
+          "n_predicted_hla_bound": NaN
+        },
+        {
+          "epitope_num": 91,
+          "residues": "431-445",
+          "sequence": "RNLKIDLDLT*AEGDL",
+          "responders": 5,
+          "tested": 19,
+          "response_freq": 0.2631578947368421,
+          "avg_magnitude": 717.7,
+          "n_predicted_hla_bound": NaN
+        },
+        {
+          "epitope_num": 19,
+          "residues": "81-95",
+          "sequence": "DVKFFVLSEKGVIIV",
+          "responders": 5,
+          "tested": 22,
+          "response_freq": 0.2272727272727272,
+          "avg_magnitude": 307.6,
+          "n_predicted_hla_bound": 15.0
+        },
+        {
+          "epitope_num": 82,
+          "residues": "396-410",
+          "sequence": "TFLAQFLLVLHRKAL",
+          "responders": 4,
+          "tested": 19,
+          "response_freq": 0.2105263157894736,
+          "avg_magnitude": 631.6,
+          "n_predicted_hla_bound": 5.0
+        },
+        {
+          "epitope_num": 83,
+          "residues": "401-415",
+          "sequence": "FLLVLHRKALTLIKY",
+          "responders": 4,
+          "tested": 19,
+          "response_freq": 0.2105263157894736,
+          "avg_magnitude": 657.0,
+          "n_predicted_hla_bound": 1.0
+        },
+        {
+          "epitope_num": 87,
+          "residues": "421-435",
+          "sequence": "QKGKKPFKSLRNLKI",
+          "responders": 4,
+          "tested": 19,
+          "response_freq": 0.2105263157894736,
+          "avg_magnitude": 768.6,
+          "n_predicted_hla_bound": 20.0
+        },
+        {
+          "epitope_num": 18,
+          "residues": "76-90",
+          "sequence": "ESGAIDVKFFVLSEK",
+          "responders": 4,
+          "tested": 22,
+          "response_freq": 0.1818181818181818,
+          "avg_magnitude": 119.4,
+          "n_predicted_hla_bound": 5.0
+        },
+        {
+          "epitope_num": 58,
+          "residues": "276-290",
+          "sequence": "SGLFVQGLLKDSTGS",
+          "responders": 4,
+          "tested": 25,
+          "response_freq": 0.16,
+          "avg_magnitude": 86.7,
+          "n_predicted_hla_bound": 5.0
+        }
+      ]
+    },
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "most_immunogenic_epitopes",
+        "args": {
+          "top": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q13",
+    "question": "Is the ALS IL-5 bias specific to C9orf72 or shared across neuroantigens?",
+    "owner": "immunology_agent",
+    "kind": "novel",
+    "answer": "ALS>HC IL-5 enrichment is significant for: C9orf72, TDP-43. Not unique to C9orf72.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "caveats (extends: the IL-5 ALS bias is not unique to C9orf72)",
+    "robustness": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_cross_antigen_IL-5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "question": "Is the ALS IL-10 bias specific to C9orf72 or shared across neuroantigens?",
+    "owner": "immunology_agent",
+    "kind": "novel",
+    "answer": "ALS>HC IL-10 enrichment is significant for: C9orf72. Consistent with C9orf72 focus.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_cross_antigen_IL-10"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q15",
+    "question": "Do phosphorylated peptide variants change immunogenicity?",
+    "owner": "structural_agent",
+    "kind": "novel",
+    "answer": "Across 5 phospho/parent pairs, phosphorylation changed average magnitude by a median of +8.7 spot units; 3/5 pairs increased.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "only 5 phospho/parent pairs; underpowered"
+    ],
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_phospho"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q16",
+    "question": "Is epitope immunogenicity spatially clustered along the sequence?",
+    "owner": "structural_agent",
+    "kind": "novel",
+    "answer": "Adjacent overlapping peptides show lag-1 autocorrelation of response frequency rho=0.47 (permutation p=0.0002): significant spatial clustering.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_spatial"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q17",
+    "question": "Does the central ALS-vs-HC result depend on any single donor?",
+    "owner": "safety_agent",
+    "kind": "novel",
+    "answer": "Base p=0.00159; across all leave-one-out removals p stays in [0.000607, 0.00263] and remains <0.05 in 56/56 removals: robust to any single donor.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_jackknife_C9orf72_Total"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q18",
+    "question": "Is the ALS-vs-HC difference robust to the assay floor (censoring)?",
+    "owner": "safety_agent",
+    "kind": "novel",
+    "answer": "Rank-based p=0.00159; above-floor responders 27/28 (ALS) vs 22/28 (HC), Fisher p=0.101: weaker under censoring.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "caveats (robustness limitation under censoring / multiple testing)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_censoring_C9orf72_Total"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q19",
+    "question": "Do the C9orf72 differences survive family-wise FDR correction?",
+    "owner": "safety_agent",
+    "kind": "novel",
+    "answer": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [],
+    "relation_to_paper": "caveats (robustness limitation under censoring / multiple testing)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_fdr_family"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q20",
+    "question": "How well does the IFNg/IL-5 ratio alone separate ALS from HC?",
+    "owner": "clinical_agent",
+    "kind": "novel",
+    "answer": "The IFNg/IL-5 ratio alone separates ALS from HC with AUC=0.68 (n_ALS=26, n_HC=17): a modest single-feature signal, not a diagnostic on its own.",
+    "verified": true,
+    "verification_note": "recomputed; identical output",
+    "critique_flags": [
+      "single-feature AUC is modest; not a diagnostic"
+    ],
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "run_analysis",
+        "args": {
+          "analysis_id": "explore_ratio_classifier"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q21",
+    "question": "What antigen-specific therapeutic strategy does the mechanism suggest?",
+    "owner": "drug_discovery_agent",
+    "kind": "interpretive",
+    "answer": {
+      "strategy": "Two complementary, patient-stratified antigen-specific strategies are suggested by the data. (1) Tolerogenic: because IL-10-biased C9orf72 responses track longer predicted survival, expanding or inducing regulatory C9orf72-specific T cells against the dominant epitopes (e.g. 56-70 DGEITFLANHTLNGE) is a candidate disease-modifying approach, stratified to C9orf72-mutation carriers who show the strongest responses. (2) The broadest HLA-II-covering epitopes are the most deployable antigens for an off-the-shelf tolerising construct. Both are hypotheses requiring experimental falsification, not validated therapies.",
+      "dominant_epitopes": [
+        {
+          "epitope_num": 14,
+          "residues": "56-70",
+          "sequence": "DGEITFLANHTLNGE",
+          "responders": 7,
+          "tested": 22,
+          "response_freq": 0.3181818181818182,
+          "avg_magnitude": 1215.9,
+          "n_predicted_hla_bound": 27.0
+        },
+        {
+          "epitope_num": 76,
+          "residues": "366-380",
+          "sequence": "IFQDVLHRDTLVKAF",
+          "responders": 6,
+          "tested": 20,
+          "response_freq": 0.3,
+          "avg_magnitude": 180.5,
+          "n_predicted_hla_bound": 3.0
+        },
+        {
+          "epitope_num": 89,
+          "residues": "426-440",
+          "sequence": "PFKSLRNLKIDLDLT*",
+          "responders": 5,
+          "tested": 19,
+          "response_freq": 0.2631578947368421,
+          "avg_magnitude": 500.4,
+          "n_predicted_hla_bound": NaN
+        },
+        {
+          "epitope_num": 91,
+          "residues": "431-445",
+          "sequence": "RNLKIDLDLT*AEGDL",
+          "responders": 5,
+          "tested": 19,
+          "response_freq": 0.2631578947368421,
+          "avg_magnitude": 717.7,
+          "n_predicted_hla_bound": NaN
+        },
+        {
+          "epitope_num": 19,
+          "residues": "81-95",
+          "sequence": "DVKFFVLSEKGVIIV",
+          "responders": 5,
+          "tested": 22,
+          "response_freq": 0.2272727272727272,
+          "avg_magnitude": 307.6,
+          "n_predicted_hla_bound": 15.0
+        }
+      ],
+      "broadest_coverage": [
+        {
+          "epitope_num": 14,
+          "residues": "56-70",
+          "sequence": "DGEITFLANHTLNGE",
+          "n_predicted_hla_bound": 27.0,
+          "response_freq": 0.3181818181818182
+        },
+        {
+          "epitope_num": 42,
+          "residues": "196-210",
+          "sequence": "PEEIDIADTVLNDDD",
+          "n_predicted_hla_bound": 26.0,
+          "response_freq": 0.0
+        },
+        {
+          "epitope_num": 85,
+          "residues": "411-425",
+          "sequence": "TLIKYIEDDTQKGKK",
+          "n_predicted_hla_bound": 24.0,
+          "response_freq": 0.1578947368421052
+        },
+        {
+          "epitope_num": 70,
+          "residues": "336-350",
+          "sequence": "LTAFWRATSEEDMAQ",
+          "n_predicted_hla_bound": 20.0,
+          "response_freq": 0.0434782608695652
+        },
+        {
+          "epitope_num": 87,
+          "residues": "421-435",
+          "sequence": "QKGKKPFKSLRNLKI",
+          "n_predicted_hla_bound": 20.0,
+          "response_freq": 0.2105263157894736
+        }
+      ],
+      "caveat": "Antigen-specific tolerance could also blunt protective immunity; safety-gated."
+    },
+    "verified": true,
+    "verification_note": "interpretive (grounded in computed tool outputs)",
+    "critique_flags": [
+      "hypothesis, not a validated therapy; requires falsification experiment"
+    ],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "most_immunogenic_epitopes",
+        "args": {
+          "top": 5
+        }
+      },
+      {
+        "tool": "broadest_hla_coverage",
+        "args": {
+          "top": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q22",
+    "question": "What experiment would most efficiently falsify the core hypothesis?",
+    "owner": "experiment_designer",
+    "kind": "interpretive",
+    "answer": {
+      "design": "Most efficient falsification experiment: an antigen-specific regulatory T cell (Treg) intervention in C9orf72-mutation ALS. Isolate/expand C9orf72(56-70)-specific CD4 T cells, polarise toward an IL-10+ regulatory phenotype, and test whether adoptive transfer slows motor-neuron loss in a C9orf72 model, with the pre-registered falsifier: if IL-10-biased C9orf72-specific Tregs do NOT slow progression (or worsen it), the survival-association hypothesis is rejected.",
+      "patients": "C9orf72-mutation carriers with short predicted survival (greatest unmet need).",
+      "target": "C9orf72 56-70 epitope-specific CD4 T cells.",
+      "falsifier": "No survival/neuroprotection benefit from IL-10-biased C9orf72-specific Tregs."
+    },
+    "verified": true,
+    "verification_note": "interpretive (grounded in computed tool outputs)",
+    "critique_flags": [
+      "hypothesis, not a validated therapy; requires falsification experiment"
+    ],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": []
+  },
+  {
+    "id": "Q23",
+    "question": "What single-cell follow-up would resolve the CD4 phenotype identity?",
+    "owner": "singlecell_agent",
+    "kind": "interpretive",
+    "answer": {
+      "proposal": "The IL-5/IL-10 bias leaves the CD4 identity ambiguous: classical Th2 vs IL-10+ regulatory (Tr1/Treg). A single-cell multi-omic experiment (scRNA-seq + TCR-seq + surface protein) on sorted C9orf72-reactive CD4 T cells would resolve whether the IL-10 signal is Tr1/FOXP3+ regulatory (consistent with the protective survival association) or Th2 effector, and whether clonality differs by C9orf72 mutation status.",
+      "resolves": "Th2 effector vs Tr1/Treg regulatory identity of IL-10+ C9orf72-reactive CD4 cells."
+    },
+    "verified": true,
+    "verification_note": "interpretive (grounded in computed tool outputs)",
+    "critique_flags": [
+      "hypothesis, not a validated therapy; requires falsification experiment"
+    ],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": []
+  },
+  {
+    "id": "Q24",
+    "question": "Is the C9orf72 autoimmunity finding supported by external literature?",
+    "owner": "literature_agent",
+    "kind": "interpretive",
+    "answer": {
+      "note": "External-literature support/contradiction is gathered via the scite MCP and recorded in literature/citations.json; see the Literature Agent run and the report's background section.",
+      "design": {
+        "study": "Michaelis et al. (2025) Nature, DOI 10.1038/s41586-025-09588-6",
+        "cohorts": "40 ALS, 28 HC (plus PD/AD and a UCSD validation cohort)",
+        "antigens": [
+          "C9orf72 (100 tiling peptides)",
+          "TDP-43",
+          "SOD1",
+          "EBV (control)"
+        ],
+        "assays": {
+          "FluoroSpot": "IFNg/IL-5/IL-10 spot responses after 2-week antigen expansion",
+          "ICS": "intracellular cytokine staining (Fortessa) for phenotyping",
+          "Spectral": "Cytek Aurora immunophenotyping of T-helper subsets"
+        },
+        "hla": "IEDB NetMHCIIpan-4.1 EL binding (<=20% percentile); RATE for restriction",
+        "statistics": "Statistical analyses were performed and graphs were created using GraphPad Prism\u2019s descriptive statistics, two-tailed Mann\u2013Whitney test, one-way ANOVA with Dunnett\u2019s multiple comparisons test, two-tailed Fisher exact test and Spearman\u2019s r test as applicable (GraphPad Prism, v.10)."
+      }
+    },
+    "verified": true,
+    "verification_note": "interpretive (grounded in computed tool outputs)",
+    "critique_flags": [
+      "hypothesis, not a validated therapy; requires falsification experiment"
+    ],
+    "relation_to_paper": "neutral",
+    "robustness": null,
+    "tool_calls": [
+      {
+        "tool": "explain_experimental_design",
+        "args": {}
+      }
+    ]
+  }
+]

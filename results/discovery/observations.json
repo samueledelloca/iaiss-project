@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Q13",
+    "observation": "ALS>HC IL-5 enrichment is significant for: C9orf72, TDP-43. Not unique to C9orf72.",
+    "status": "verified",
+    "relation_to_paper": "caveats (extends: the IL-5 ALS bias is not unique to C9orf72)",
+    "caveats": []
+  },
+  {
+    "id": "Q14",
+    "observation": "ALS>HC IL-10 enrichment is significant for: C9orf72. Consistent with C9orf72 focus.",
+    "status": "verified",
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "caveats": []
+  },
+  {
+    "id": "Q15",
+    "observation": "Across 5 phospho/parent pairs, phosphorylation changed average magnitude by a median of +8.7 spot units; 3/5 pairs increased.",
+    "status": "verified",
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "caveats": [
+      "only 5 phospho/parent pairs; underpowered"
+    ]
+  },
+  {
+    "id": "Q16",
+    "observation": "Adjacent overlapping peptides show lag-1 autocorrelation of response frequency rho=0.47 (permutation p=0.0002): significant spatial clustering.",
+    "status": "verified",
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "caveats": []
+  },
+  {
+    "id": "Q17",
+    "observation": "Base p=0.00159; across all leave-one-out removals p stays in [0.000607, 0.00263] and remains <0.05 in 56/56 removals: robust to any single donor.",
+    "status": "verified",
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "caveats": []
+  },
+  {
+    "id": "Q18",
+    "observation": "Rank-based p=0.00159; above-floor responders 27/28 (ALS) vs 22/28 (HC), Fisher p=0.101: weaker under censoring.",
+    "status": "verified",
+    "relation_to_paper": "caveats (robustness limitation under censoring / multiple testing)",
+    "caveats": []
+  },
+  {
+    "id": "Q19",
+    "observation": "After BH-FDR over all 16 antigen x cytokine comparisons, 3/4 C9orf72 cytokines remain significant (q<0.05): Total q=0.0127, IFNg q=0.122, IL-5 q=0.00508, IL-10 q=0.025.",
+    "status": "verified",
+    "relation_to_paper": "caveats (robustness limitation under censoring / multiple testing)",
+    "caveats": []
+  },
+  {
+    "id": "Q20",
+    "observation": "The IFNg/IL-5 ratio alone separates ALS from HC with AUC=0.68 (n_ALS=26, n_HC=17): a modest single-feature signal, not a diagnostic on its own.",
+    "status": "verified",
+    "relation_to_paper": "extends (new observation consistent with the paper's framework)",
+    "caveats": [
+      "single-feature AUC is modest; not a diagnostic"
+    ]
+  }
+]
