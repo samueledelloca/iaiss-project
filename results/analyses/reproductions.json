@@ -1,0 +1,265 @@
+[
+  {
+    "id": "repro_fig2_C9orf72_Total",
+    "question": "Are C9orf72 Total FluoroSpot responses different in ALS vs HC?",
+    "method": "Two-tailed Mann-Whitney U on per-donor response magnitude",
+    "finding": "C9orf72 Total responses are higher in ALS (median 6720 vs 1142, p=0.00159, rank-biserial r=-0.49).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 585.0,
+      "p_value": 0.0015913407200414003,
+      "effect_size": -0.49234693877551017,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 28,
+        "y": 28
+      },
+      "estimates": {
+        "median_x": 6719.9998335,
+        "median_y": 1141.665,
+        "median_diff": 5578.3348335
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": "C9orf72-specific responses increased in ALS (Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_fig2_C9orf72_IFNg",
+    "question": "Are C9orf72 IFNg FluoroSpot responses different in ALS vs HC?",
+    "method": "Two-tailed Mann-Whitney U on per-donor response magnitude",
+    "finding": "C9orf72 IFNg responses are higher in ALS (median 2185 vs 627, p=0.0381, rank-biserial r=-0.33).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 501.5,
+      "p_value": 0.03808326179503989,
+      "effect_size": -0.32671957671957674,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 28,
+        "y": 27
+      },
+      "estimates": {
+        "median_x": 2185.0,
+        "median_y": 626.666667,
+        "median_diff": 1558.333333
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": "C9orf72-specific responses increased in ALS (Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_fig2_C9orf72_IL5",
+    "question": "Are C9orf72 IL-5 FluoroSpot responses different in ALS vs HC?",
+    "method": "Two-tailed Mann-Whitney U on per-donor response magnitude",
+    "finding": "C9orf72 IL-5 responses are higher in ALS (median 2330 vs 208, p=0.000318, rank-biserial r=-0.56).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 610.5,
+      "p_value": 0.00031760985998954816,
+      "effect_size": -0.5573979591836735,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 28,
+        "y": 28
+      },
+      "estimates": {
+        "median_x": 2329.9998335,
+        "median_y": 208.33499999999998,
+        "median_diff": 2121.6648335
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": "C9orf72-specific responses increased in ALS (Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_fig2_C9orf72_IL10",
+    "question": "Are C9orf72 IL-10 FluoroSpot responses different in ALS vs HC?",
+    "method": "Two-tailed Mann-Whitney U on per-donor response magnitude",
+    "finding": "C9orf72 IL-10 responses are higher in ALS (median 1029 vs 177, p=0.00469, rank-biserial r=-0.44).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 543.5,
+      "p_value": 0.0046871395844527534,
+      "effect_size": -0.4378306878306879,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 28,
+        "y": 27
+      },
+      "estimates": {
+        "median_x": 1029.1666665,
+        "median_y": 176.666667,
+        "median_diff": 852.4999995000001
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": "C9orf72-specific responses increased in ALS (Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_th2_bias",
+    "question": "Do ALS responses show an IL-5/IL-10 (Th2/regulatory) bias over IFNg?",
+    "method": "Two-tailed Mann-Whitney U on the per-donor IFNg/IL-5 ratio",
+    "finding": "The IFNg/IL-5 ratio is lower in ALS (median 0.65) than HC (median 1.26), p=0.0483: an IL-5-biased response in ALS.",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 141.0,
+      "p_value": 0.04826692385876989,
+      "effect_size": 0.3619909502262444,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 26,
+        "y": 17
+      },
+      "estimates": {
+        "median_x": 0.6499999999999999,
+        "median_y": 1.25529995,
+        "median_diff": -0.60529995
+      }
+    },
+    "data_source": "edfig2_ifng_il5_ratio",
+    "reproduces": "ALS responses enriched for IL-5/IL-10 over IFNg (Fig. 2, ED Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_specificity_Total",
+    "question": "Is the ALS Total C9orf72 response specific vs PD and AD controls?",
+    "method": "Pairwise two-tailed Mann-Whitney U, ALS vs each control group",
+    "finding": "ALS Total C9orf72 responses differ from ALS_vs_HC at p<0.05.",
+    "stats": {
+      "ALS_vs_HC": {
+        "test": "Mann-Whitney U (two-sided)",
+        "statistic": 932.0,
+        "p_value": 0.0027265370449311935,
+        "effect_size": -0.4164133738601823,
+        "effect_name": "rank-biserial r",
+        "n": {
+          "x": 47,
+          "y": 28
+        },
+        "estimates": {
+          "median_x": 3903.333333,
+          "median_y": 1141.665,
+          "median_diff": 2761.668333
+        }
+      },
+      "ALS_vs_PD": {
+        "test": "Mann-Whitney U (two-sided)",
+        "statistic": 325.5,
+        "p_value": 0.6631347871323847,
+        "effect_size": 0.07659574468085106,
+        "effect_name": "rank-biserial r",
+        "n": {
+          "x": 47,
+          "y": 15
+        },
+        "estimates": {
+          "median_x": 3903.333333,
+          "median_y": 6616.666667,
+          "median_diff": -2713.3333340000004
+        }
+      },
+      "ALS_vs_AD": {
+        "test": "Mann-Whitney U (two-sided)",
+        "statistic": 342.0,
+        "p_value": 0.8694389151778709,
+        "effect_size": 0.029787234042553234,
+        "effect_name": "rank-biserial r",
+        "n": {
+          "x": 47,
+          "y": 15
+        },
+        "estimates": {
+          "median_x": 3903.333333,
+          "median_y": 4210.0,
+          "median_diff": -306.66666699999996
+        }
+      }
+    },
+    "data_source": "edfig2_ifng_il5_ratio",
+    "reproduces": "C9orf72 response relatively specific to ALS (ED Fig. 2)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_mutation_Total",
+    "question": "Do C9orf72 mutation carriers show stronger Total C9orf72 responses?",
+    "method": "Two-tailed Mann-Whitney U, C9orf72-mutation vs no-mutation donors",
+    "finding": "C9orf72-mutation carriers have Total responses with median 7263 vs 100 in non-carriers (p=0.0281).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 42.0,
+      "p_value": 0.028059661161392642,
+      "effect_size": -0.7142857142857142,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 7,
+        "y": 7
+      },
+      "estimates": {
+        "median_x": 7263.333333,
+        "median_y": 100.0,
+        "median_diff": 7163.333333
+      }
+    },
+    "data_source": "fig4_mutation_survival",
+    "reproduces": "Mutation carriers show stronger C9orf72-specific responses (Fig. 4)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_survival_IL-10",
+    "question": "Is the IL-10 C9orf72 response associated with predicted survival?",
+    "method": "Two-tailed Mann-Whitney U, long vs short predicted-survival donors",
+    "finding": "IL-10 responses are higher in long-survival donors (median 1153 vs 100, p=0.0382).",
+    "stats": {
+      "test": "Mann-Whitney U (two-sided)",
+      "statistic": 54.0,
+      "p_value": 0.03816582972912696,
+      "effect_size": -0.6363636363636365,
+      "effect_name": "rank-biserial r",
+      "n": {
+        "x": 11,
+        "y": 6
+      },
+      "estimates": {
+        "median_x": 1153.333,
+        "median_y": 100.0,
+        "median_diff": 1053.333
+      }
+    },
+    "data_source": "fig4_mutation_survival",
+    "reproduces": "IL-10-mediated responses associate with longer predicted survival (Fig. 4)",
+    "novel": false,
+    "robustness": {}
+  },
+  {
+    "id": "repro_hla_immunogenicity",
+    "question": "Is predicted HLA-II binding breadth associated with observed immunogenicity?",
+    "method": "Spearman correlation of predicted-HLA-bound count vs response frequency across 95 peptides",
+    "finding": "Predicted HLA-II binding breadth correlates with observed response frequency (Spearman rho=0.29, p=0.00385, n=95).",
+    "stats": {
+      "test": "Spearman r",
+      "statistic": 0.29385326620819163,
+      "p_value": 0.003848605691214226,
+      "effect_size": 0.29385326620819163,
+      "effect_name": "Spearman rho",
+      "n": {
+        "pairs": 95
+      },
+      "estimates": {}
+    },
+    "data_source": "si_table1_peptide_screen",
+    "reproduces": "Immunogenicity associated with HLA binding (ED Fig. 5)",
+    "novel": false,
+    "robustness": {}
+  }
+]

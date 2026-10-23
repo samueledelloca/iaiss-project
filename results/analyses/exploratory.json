@@ -1,0 +1,197 @@
+[
+  {
+    "id": "explore_cross_antigen_IL-5",
+    "question": "Is the ALS>HC IL-5 enrichment specific to C9orf72 or shared with other neuroantigens?",
+    "method": "Mann-Whitney ALS vs HC for each antigen (C9orf72/TDP-43/SOD1/EBV)",
+    "finding": "ALS>HC IL-5 enrichment is significant for: C9orf72, TDP-43. Not unique to C9orf72.",
+    "stats": {
+      "C9orf72": {
+        "p_value": 0.00031760985998954816,
+        "median_HC": 208.33499999999998,
+        "median_ALS": 2329.9998335,
+        "rbc": -0.5573979591836735
+      },
+      "TDP-43": {
+        "p_value": 0.02165369027516867,
+        "median_HC": 726.666667,
+        "median_ALS": 2396.6665000000003,
+        "rbc": -0.35978835978835977
+      },
+      "SOD1": {
+        "p_value": 0.21926508938687206,
+        "median_HC": 413.3333335,
+        "median_ALS": 1426.6668335,
+        "rbc": -0.19132653061224492
+      },
+      "EBV": {
+        "p_value": 0.20740880336089473,
+        "median_HC": 143.333333,
+        "median_ALS": 363.333333,
+        "rbc": -0.2857142857142858
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  },
+  {
+    "id": "explore_cross_antigen_IL-10",
+    "question": "Is the ALS>HC IL-10 enrichment specific to C9orf72 or shared with other neuroantigens?",
+    "method": "Mann-Whitney ALS vs HC for each antigen (C9orf72/TDP-43/SOD1/EBV)",
+    "finding": "ALS>HC IL-10 enrichment is significant for: C9orf72. Consistent with C9orf72 focus.",
+    "stats": {
+      "C9orf72": {
+        "p_value": 0.0046871395844527534,
+        "median_HC": 176.666667,
+        "median_ALS": 1029.1666665,
+        "rbc": -0.4378306878306879
+      },
+      "TDP-43": {
+        "p_value": 0.10084803203914494,
+        "median_HC": 641.6668334999999,
+        "median_ALS": 1201.6665,
+        "rbc": -0.2551020408163265
+      },
+      "SOD1": {
+        "p_value": 0.8358084019472232,
+        "median_HC": 518.3335,
+        "median_ALS": 650.0,
+        "rbc": -0.03316326530612246
+      },
+      "EBV": {
+        "p_value": 0.9477970600860888,
+        "median_HC": 1816.666667,
+        "median_ALS": 1511.6666665,
+        "rbc": -0.01904761904761898
+      }
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  },
+  {
+    "id": "explore_phospho",
+    "question": "Do phosphorylated C9orf72 peptide variants change immunogenicity vs their parent peptides?",
+    "method": "Paired comparison of 5 phospho/non-phospho peptide pairs (magnitude and responders)",
+    "finding": "Across 5 phospho/parent pairs, phosphorylation changed average magnitude by a median of +8.7 spot units; 3/5 pairs increased.",
+    "stats": {
+      "pairs": [
+        {
+          "residues": "1-15",
+          "nonphospho_mag": 9.6,
+          "phospho_mag": 0.0,
+          "nonphospho_resp": 1,
+          "phospho_resp": 0
+        },
+        {
+          "residues": "426-440",
+          "nonphospho_mag": 870.7,
+          "phospho_mag": 500.4,
+          "nonphospho_resp": 3,
+          "phospho_resp": 5
+        },
+        {
+          "residues": "431-445",
+          "nonphospho_mag": 374.6,
+          "phospho_mag": 717.7,
+          "nonphospho_resp": 3,
+          "phospho_resp": 5
+        },
+        {
+          "residues": "436-450",
+          "nonphospho_mag": 131.8,
+          "phospho_mag": 147.4,
+          "nonphospho_resp": 1,
+          "phospho_resp": 1
+        },
+        {
+          "residues": "6-20",
+          "nonphospho_mag": 0.0,
+          "phospho_mag": 8.7,
+          "nonphospho_resp": 0,
+          "phospho_resp": 1
+        }
+      ],
+      "median_delta_magnitude": 8.7
+    },
+    "data_source": "si_table1_peptide_screen",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  },
+  {
+    "id": "explore_spatial",
+    "question": "Are immunogenic C9orf72 epitopes spatially clustered along the protein sequence?",
+    "method": "Lag-1 autocorrelation of per-peptide response frequency along the tiling, permutation test (5000)",
+    "finding": "Adjacent overlapping peptides show lag-1 autocorrelation of response frequency rho=0.47 (permutation p=0.0002): significant spatial clustering.",
+    "stats": {
+      "lag1_autocorr": 0.4725420464057681,
+      "perm_p": 0.0001999600079984003,
+      "n_peptides": 95
+    },
+    "data_source": "si_table1_peptide_screen",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  },
+  {
+    "id": "explore_jackknife_C9orf72_Total",
+    "question": "Does the ALS vs HC C9orf72 Total result depend on any single donor?",
+    "method": "Leave-one-donor-out jackknife of the Mann-Whitney p-value",
+    "finding": "Base p=0.00159; across all leave-one-out removals p stays in [0.000607, 0.00263] and remains <0.05 in 56/56 removals: robust to any single donor.",
+    "stats": {
+      "base_p": 0.0015913407200414003,
+      "max_p": 0.0026276208841964936,
+      "min_p": 0.0006074506103467673,
+      "frac_sig": 1.0
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  },
+  {
+    "id": "explore_censoring_C9orf72_Total",
+    "question": "Is the ALS vs HC C9orf72 Total difference robust to the assay floor (value=100)?",
+    "method": "Mann-Whitney (rank-based) plus Fisher exact on the fraction of donors above the floor",
+    "finding": "Rank-based p=0.00159; above-floor responders 27/28 (ALS) vs 22/28 (HC), Fisher p=0.101: weaker under censoring.",
+    "stats": {
+      "mannwhitney_p": 0.0015913407200414003,
+      "fisher": {
+        "test": "Fisher exact (two-sided)",
+        "statistic": 7.363636363636363,
+        "p_value": 0.1011805065079205,
+        "effect_size": 7.363636363636363,
+        "effect_name": "odds ratio",
+        "n": {},
+        "estimates": {},
+        "table": [
+          [
+            27,
+            1
+          ],
+          [
+            22,
+            6
+          ]
+        ]
+      },
+      "table": [
+        [
+          27,
+          1
+        ],
+        [
+          22,
+          6
+        ]
+      ]
+    },
+    "data_source": "fig2_fluorospot_responses",
+    "reproduces": null,
+    "novel": true,
+    "robustness": {}
+  }
+]
