@@ -15,6 +15,13 @@ generates new hypotheses and verifies them.
 > [10.1038/s41586-025-09588-6](https://doi.org/10.1038/s41586-025-09588-6).
 > Open access: PMC [PMC12657233](https://pmc.ncbi.nlm.nih.gov/articles/PMC12657233/).
 
+> ⚠️ **Disclaimer.** This is a course assignment and an experiment in AI-driven
+> workflows. All work was performed by a system of AI agents. The author verified
+> the computational *process* (reproducibility, real data, numbers matching the
+> code), not the *scientific validity* of the biological results, which he is not
+> qualified to judge. Check all claims against the primary source before any use.
+> Provided as is, no warranty. Cite or reuse at your own risk. See [`DISCLAIMER.md`](DISCLAIMER.md).
+
 ## Scientific question
 
 Can AI agents use the C9orf72 autoimmune mechanism to move from observation to

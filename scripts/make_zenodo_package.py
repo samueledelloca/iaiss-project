@@ -26,6 +26,9 @@ INCLUDE = [
     ("reports", "main.pdf"), ("literature", "citations.json"), ("data", "DATA_SOURCES.md"),
     ("zenodo", "zenodo_metadata.json"),
 ]
+TOPLEVEL = [
+    "DISCLAIMER.md",
+]
 
 
 def main() -> None:
@@ -34,6 +37,7 @@ def main() -> None:
     files: list[Path] = []
     for sub, pat in INCLUDE:
         files.extend(sorted((paths.ROOT / sub).glob(pat)))
+    files.extend(paths.ROOT / name for name in TOPLEVEL)
     manifest = {}
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
         for f in files:
