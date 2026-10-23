@@ -1,0 +1,156 @@
+{
+  "timestamp_utc": "2026-10-23T08:25:56.427429+00:00",
+  "git_commit": "eb04d8cb49c2995c7bd9c874e4edfedf01be1b87",
+  "git_dirty": true,
+  "python_version": "3.12.3",
+  "platform": "Linux-6.14.0-32-generic-x86_64-with-glibc2.39",
+  "package_versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "flowkit": "1.3.2",
+    "flowio": "1.4.0",
+    "biopython": "1.88",
+    "fastembed": "0.9.0",
+    "faiss-cpu": "1.15.1",
+    "mcp": "2.3.0",
+    "anthropic": "2.1.0"
+  },
+  "seed": null,
+  "config_hash": "a12282b66c4a",
+  "input_checksums": {
+    "moesm3_workbook": "48ebcd4bb03d8457ab3aaf98386c7667d8f7158cc9d6e20c3255bc088e23d206",
+    "si_text": "dc878d13e045599ebe30fae893ae5730e9080e6ee0ee76ee8e6c12b83641a76f",
+    "jats_xml": "bce3cecfe610ee969d3ff52436e7922b8a214317774fb1b3608912e6e55e1476"
+  },
+  "datasets": {
+    "fig1_tcell_subsets": {
+      "rows": 819,
+      "columns": [
+        "compartment",
+        "subset",
+        "group",
+        "donor_idx",
+        "percent"
+      ]
+    },
+    "fig2_fluorospot_responses": {
+      "rows": 782,
+      "columns": [
+        "cytokine",
+        "antigen",
+        "group",
+        "donor_idx",
+        "magnitude"
+      ]
+    },
+    "fig3_epitopes": {
+      "rows": 100,
+      "columns": [
+        "epitope_num",
+        "pct_responded",
+        "avg_magnitude",
+        "responses_by_donor"
+      ]
+    },
+    "fig4_mutation_survival": {
+      "rows": 284,
+      "columns": [
+        "cytokine",
+        "stratum",
+        "donor_idx",
+        "magnitude"
+      ]
+    },
+    "edfig2_ifng_il5_ratio": {
+      "rows": 792,
+      "columns": [
+        "measure",
+        "group",
+        "donor_idx",
+        "value"
+      ]
+    },
+    "edfig4_cd4_cd8": {
+      "rows": 456,
+      "columns": [
+        "panel",
+        "sub",
+        "series",
+        "donor_idx",
+        "value"
+      ]
+    },
+    "edfig5_immunogenicity_hla": {
+      "rows": 490,
+      "columns": [
+        "panel",
+        "series",
+        "idx",
+        "value"
+      ]
+    },
+    "edfig6_clinical_correlates": {
+      "rows": 403,
+      "columns": [
+        "panel",
+        "measure",
+        "series",
+        "idx",
+        "value"
+      ]
+    },
+    "reported_pvalues": {
+      "rows": 45,
+      "columns": [
+        "figure_legend",
+        "comparison",
+        "raw_p"
+      ]
+    },
+    "si_table1_peptide_screen": {
+      "rows": 100,
+      "columns": [
+        "epitope_num",
+        "residues",
+        "start_residue",
+        "sequence",
+        "phospho",
+        "responders",
+        "tested",
+        "response_freq",
+        "avg_magnitude",
+        "n_predicted_hla_bound"
+      ]
+    },
+    "si_table2_hla_typing": {
+      "rows": 506,
+      "columns": [
+        "donor",
+        "locus",
+        "allele_index",
+        "allele"
+      ]
+    },
+    "table1_epitopes_ge3donors": {
+      "rows": 23,
+      "columns": [
+        "Peptide residue",
+        "Peptide sequence",
+        "Response frequency (%)",
+        "Average magnitude"
+      ]
+    },
+    "table2_hla_restrictions": {
+      "rows": 7,
+      "columns": [
+        "Peptide sequence",
+        "Allele",
+        "RATE P value",
+        "Binding percentile ranka"
+      ]
+    }
+  }
+}

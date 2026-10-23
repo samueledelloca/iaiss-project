@@ -1,0 +1,793 @@
+measure,group,donor_idx,value
+IFNg cytokine release,HC,0,16.633
+IFNg cytokine release,HC,1,71.812
+IFNg cytokine release,HC,2,24.397
+IFNg cytokine release,HC,3,25.974
+IFNg cytokine release,HC,4,62.859
+IFNg cytokine release,HC,5,70.593
+IFNg cytokine release,HC,6,32.925
+IFNg cytokine release,HC,7,100.0
+IFNg cytokine release,HC,8,90.0
+IFNg cytokine release,HC,9,21.577
+IFNg cytokine release,HC,10,41.688
+IFNg cytokine release,HC,11,27.751
+IFNg cytokine release,HC,12,58.909
+IFNg cytokine release,HC,13,48.026
+IFNg cytokine release,HC,14,27.83
+IFNg cytokine release,HC,15,100.0
+IFNg cytokine release,HC,16,32.772
+IFNg cytokine release,HC,17,90.499
+IFNg cytokine release,HC,18,65.505
+IFNg cytokine release,HC,19,100.0
+IFNg cytokine release,HC,20,74.741
+IFNg cytokine release,HC,21,22.876
+IFNg cytokine release,ALS,0,33.854
+IFNg cytokine release,ALS,1,34.14
+IFNg cytokine release,ALS,2,45.179
+IFNg cytokine release,ALS,3,60.264
+IFNg cytokine release,ALS,4,20.453
+IFNg cytokine release,ALS,5,4.696
+IFNg cytokine release,ALS,6,7.477
+IFNg cytokine release,ALS,7,26.429
+IFNg cytokine release,ALS,8,20.078
+IFNg cytokine release,ALS,9,46.048
+IFNg cytokine release,ALS,10,0.0
+IFNg cytokine release,ALS,11,0.0
+IFNg cytokine release,ALS,12,4.803
+IFNg cytokine release,ALS,13,0.0
+IFNg cytokine release,ALS,14,29.562
+IFNg cytokine release,ALS,15,28.038
+IFNg cytokine release,ALS,16,89.938
+IFNg cytokine release,ALS,17,27.351
+IFNg cytokine release,ALS,18,51.169
+IFNg cytokine release,ALS,19,38.892
+IFNg cytokine release,ALS,20,45.111
+IFNg cytokine release,ALS,21,50.253
+IFNg cytokine release,ALS,22,16.858
+IFNg cytokine release,ALS,23,100.0
+IFNg cytokine release,ALS,24,42.751
+IFNg cytokine release,ALS,25,26.007
+IFNg cytokine release,ALS,26,14.761
+IFNg cytokine release,ALS,27,22.296
+IL-5 cytokine release,HC,0,71.248
+IL-5 cytokine release,HC,1,28.188
+IL-5 cytokine release,HC,2,49.828
+IL-5 cytokine release,HC,3,74.026
+IL-5 cytokine release,HC,4,37.141
+IL-5 cytokine release,HC,5,6.372
+IL-5 cytokine release,HC,6,61.147
+IL-5 cytokine release,HC,7,0.0
+IL-5 cytokine release,HC,8,10.0
+IL-5 cytokine release,HC,9,0.0
+IL-5 cytokine release,HC,10,15.345
+IL-5 cytokine release,HC,11,39.944
+IL-5 cytokine release,HC,12,12.841
+IL-5 cytokine release,HC,13,42.774
+IL-5 cytokine release,HC,14,22.17
+IL-5 cytokine release,HC,15,0.0
+IL-5 cytokine release,HC,16,35.331
+IL-5 cytokine release,HC,17,9.501
+IL-5 cytokine release,HC,18,34.495
+IL-5 cytokine release,HC,19,0.0
+IL-5 cytokine release,HC,20,0.0
+IL-5 cytokine release,HC,21,42.484
+IL-5 cytokine release,ALS,0,21.094
+IL-5 cytokine release,ALS,1,36.077
+IL-5 cytokine release,ALS,2,54.821
+IL-5 cytokine release,ALS,3,31.438
+IL-5 cytokine release,ALS,4,53.81
+IL-5 cytokine release,ALS,5,30.951
+IL-5 cytokine release,ALS,6,29.439
+IL-5 cytokine release,ALS,7,56.798
+IL-5 cytokine release,ALS,8,48.893
+IL-5 cytokine release,ALS,9,47.313
+IL-5 cytokine release,ALS,10,99.999
+IL-5 cytokine release,ALS,11,0.0
+IL-5 cytokine release,ALS,12,78.06
+IL-5 cytokine release,ALS,13,100.0
+IL-5 cytokine release,ALS,14,62.824
+IL-5 cytokine release,ALS,15,49.521
+IL-5 cytokine release,ALS,16,10.062
+IL-5 cytokine release,ALS,17,59.125
+IL-5 cytokine release,ALS,18,36.97
+IL-5 cytokine release,ALS,19,53.025
+IL-5 cytokine release,ALS,20,44.926
+IL-5 cytokine release,ALS,21,27.483
+IL-5 cytokine release,ALS,22,57.088
+IL-5 cytokine release,ALS,23,0.0
+IL-5 cytokine release,ALS,24,5.673
+IL-5 cytokine release,ALS,25,66.179
+IL-5 cytokine release,ALS,26,48.482
+IL-5 cytokine release,ALS,27,65.857
+IFNg/IL-5 ratio,HC,0,0.23345217
+IFNg/IL-5 ratio,HC,1,2.54760891
+IFNg/IL-5 ratio,HC,2,0.48962431
+IFNg/IL-5 ratio,HC,3,0.35087672
+IFNg/IL-5 ratio,HC,4,1.69244231
+IFNg/IL-5 ratio,HC,5,11.0786252
+IFNg/IL-5 ratio,HC,6,0.53845651
+IFNg/IL-5 ratio,HC,7,9.0
+IFNg/IL-5 ratio,HC,8,2.71671554
+IFNg/IL-5 ratio,HC,9,0.69474765
+IFNg/IL-5 ratio,HC,10,4.58757106
+IFNg/IL-5 ratio,HC,11,1.12278487
+IFNg/IL-5 ratio,HC,12,1.25529995
+IFNg/IL-5 ratio,HC,13,0.92757069
+IFNg/IL-5 ratio,HC,14,9.52520787
+IFNg/IL-5 ratio,HC,15,1.89897087
+IFNg/IL-5 ratio,HC,16,0.53846154
+IFNg/IL-5 ratio,ALS,0,1.6
+IFNg/IL-5 ratio,ALS,1,0.95
+IFNg/IL-5 ratio,ALS,2,0.82
+IFNg/IL-5 ratio,ALS,3,1.92
+IFNg/IL-5 ratio,ALS,4,0.38
+IFNg/IL-5 ratio,ALS,5,0.15
+IFNg/IL-5 ratio,ALS,6,0.25
+IFNg/IL-5 ratio,ALS,7,0.47
+IFNg/IL-5 ratio,ALS,8,0.41
+IFNg/IL-5 ratio,ALS,9,0.97
+IFNg/IL-5 ratio,ALS,10,0.06
+IFNg/IL-5 ratio,ALS,11,1.0
+IFNg/IL-5 ratio,ALS,12,0.47
+IFNg/IL-5 ratio,ALS,13,0.57
+IFNg/IL-5 ratio,ALS,14,8.94
+IFNg/IL-5 ratio,ALS,15,0.46
+IFNg/IL-5 ratio,ALS,16,1.38
+IFNg/IL-5 ratio,ALS,17,0.73
+IFNg/IL-5 ratio,ALS,18,1.0
+IFNg/IL-5 ratio,ALS,19,1.83
+IFNg/IL-5 ratio,ALS,20,0.3
+IFNg/IL-5 ratio,ALS,21,3.1
+IFNg/IL-5 ratio,ALS,22,7.54
+IFNg/IL-5 ratio,ALS,23,0.39
+IFNg/IL-5 ratio,ALS,24,0.3
+IFNg/IL-5 ratio,ALS,25,0.34
+Total,HC,0,100.0
+Total,HC,1,8196.67
+Total,HC,2,4966.67
+Total,HC,3,13553.33
+Total,HC,4,513.33
+Total,HC,5,233.33
+Total,HC,6,100.0
+Total,HC,7,2662.67
+Total,HC,8,100.0
+Total,HC,9,5173.33
+Total,HC,10,100.0
+Total,HC,11,980.0
+Total,HC,12,4033.33
+Total,HC,13,1606.66667
+Total,HC,14,100.0
+Total,HC,15,1303.33
+Total,HC,16,9513.33333
+Total,HC,17,2076.66667
+Total,HC,18,9710.0
+Total,HC,19,100.0
+Total,HC,20,706.666667
+Total,HC,21,216.666667
+Total,HC,22,5340.0
+Total,HC,23,2806.66667
+Total,HC,24,956.666667
+Total,HC,25,356.666667
+Total,HC,26,2573.33333
+Total,HC,27,510.0
+Total,ALS,0,17750.0
+Total,ALS,1,1276.666667
+Total,ALS,2,3903.333333
+Total,ALS,3,3246.666667
+Total,ALS,4,6060.0
+Total,ALS,5,4233.333333
+Total,ALS,6,666.6666667
+Total,ALS,7,456.6666667
+Total,ALS,8,23420.0
+Total,ALS,9,6326.667
+Total,ALS,10,5720.0
+Total,ALS,11,29160.0
+Total,ALS,12,290.0
+Total,ALS,13,22010.0
+Total,ALS,14,2560.0
+Total,ALS,15,7583.333333
+Total,ALS,16,12593.33333
+Total,ALS,17,28430.0
+Total,ALS,18,9060.0
+Total,ALS,19,633.3333333
+Total,ALS,20,856.6666667
+Total,ALS,21,11870.0
+Total,ALS,22,2006.666667
+Total,ALS,23,15438.333
+Total,ALS,24,243.333
+Total,ALS,25,605.0
+Total,ALS,26,1426.667
+Total,ALS,27,2623.333
+Total,ALS,28,23193.333
+Total,ALS,29,100.0
+Total,ALS,30,405.0
+Total,ALS,31,6883.333
+Total,ALS,32,3850.0
+Total,ALS,33,6556.666667
+Total,ALS,34,3613.333333
+Total,ALS,35,7920.0
+Total,ALS,36,870.0
+Total,ALS,37,310.0
+Total,ALS,38,8990.0
+Total,ALS,39,13906.66667
+Total,ALS,40,3060.0
+Total,ALS,41,2726.666667
+Total,ALS,42,2166.666667
+Total,ALS,43,1540.0
+Total,ALS,44,13026.66667
+Total,ALS,45,14260.0
+Total,ALS,46,10756.667
+Total,PD,0,350.0
+Total,PD,1,17590.0
+Total,PD,2,6616.666667
+Total,PD,3,3230.0
+Total,PD,4,3573.333333
+Total,PD,5,12393.33333
+Total,PD,6,1806.666667
+Total,PD,7,6766.666667
+Total,PD,8,21023.33333
+Total,PD,9,16540.0
+Total,PD,10,1460.0
+Total,PD,11,7896.666667
+Total,PD,12,17016.66667
+Total,PD,13,100.0
+Total,PD,14,2573.333333
+Total,AD,0,3126.666667
+Total,AD,1,4210.0
+Total,AD,2,1700.0
+Total,AD,3,4683.333333
+Total,AD,4,2236.666667
+Total,AD,5,9120.0
+Total,AD,6,20573.33333
+Total,AD,7,9686.666667
+Total,AD,8,1116.666667
+Total,AD,9,3016.666667
+Total,AD,10,9333.333333
+Total,AD,11,2113.333333
+Total,AD,12,4536.666667
+Total,AD,13,2950.0
+Total,AD,14,7763.333333
+IFNg,HC,0,100.0
+IFNg,HC,1,1363.33
+IFNg,HC,2,3566.67
+IFNg,HC,3,3306.67
+IFNg,HC,4,133.33
+IFNg,HC,5,146.67
+IFNg,HC,6,100.0
+IFNg,HC,7,1879.67
+IFNg,HC,8,100.0
+IFNg,HC,9,1703.33
+IFNg,HC,10,980.0
+IFNg,HC,11,3630.0
+IFNg,HC,12,346.6666667
+IFNg,HC,13,100.0
+IFNg,HC,14,543.3333333
+IFNg,HC,15,2640.0
+IFNg,HC,16,1223.333333
+IFNg,HC,17,4663.333333
+IFNg,HC,18,100.0
+IFNg,HC,19,196.6666667
+IFNg,HC,20,216.6666667
+IFNg,HC,21,1750.0
+IFNg,HC,22,2540.0
+IFNg,HC,23,626.6666667
+IFNg,HC,24,356.6666667
+IFNg,HC,25,1923.333333
+IFNg,HC,26,116.6666667
+IFNg,ALS,0,4976.666667
+IFNg,ALS,1,216.6666667
+IFNg,ALS,2,3740.0
+IFNg,ALS,3,2920.0
+IFNg,ALS,4,2706.666667
+IFNg,ALS,5,1690.0
+IFNg,ALS,6,296.6666667
+IFNg,ALS,7,456.6666667
+IFNg,ALS,8,6923.333333
+IFNg,ALS,9,2913.333
+IFNg,ALS,10,2993.333333
+IFNg,ALS,11,6866.666667
+IFNg,ALS,12,166.6666667
+IFNg,ALS,13,6020.0
+IFNg,ALS,14,866.667
+IFNg,ALS,15,4500.0
+IFNg,ALS,16,7193.333333
+IFNg,ALS,17,4196.666667
+IFNg,ALS,18,2020.0
+IFNg,ALS,19,480.0
+IFNg,ALS,20,856.6666667
+IFNg,ALS,21,7153.333
+IFNg,ALS,22,1330.0
+IFNg,ALS,23,725.0
+IFNg,ALS,24,100.0
+IFNg,ALS,25,273.333
+IFNg,ALS,26,106.667
+IFNg,ALS,27,693.333
+IFNg,ALS,28,4656.667
+IFNg,ALS,29,100.0
+IFNg,ALS,30,100.0
+IFNg,ALS,31,2350.0
+IFNg,ALS,32,1970.0
+IFNg,ALS,33,2550.0
+IFNg,ALS,34,1630.0
+IFNg,ALS,35,3980.0
+IFNg,ALS,36,146.6666667
+IFNg,ALS,37,310.0
+IFNg,ALS,38,3843.333333
+IFNg,ALS,39,3616.666667
+IFNg,ALS,40,1433.333333
+IFNg,ALS,41,2726.666667
+IFNg,ALS,42,600.0
+IFNg,ALS,43,166.6666667
+IFNg,ALS,44,4630.0
+IFNg,ALS,45,2916.667
+IFNg,ALS,46,516.667
+IFNg,PD,0,350.0
+IFNg,PD,1,6250.0
+IFNg,PD,2,4283.333333
+IFNg,PD,3,2283.333333
+IFNg,PD,4,856.6666667
+IFNg,PD,5,3796.666667
+IFNg,PD,6,1623.333333
+IFNg,PD,7,5723.333333
+IFNg,PD,8,6043.333333
+IFNg,PD,9,6443.333333
+IFNg,PD,10,603.3333333
+IFNg,PD,11,3850.0
+IFNg,PD,12,8076.666667
+IFNg,PD,13,100.0
+IFNg,PD,14,1906.666667
+IFNg,AD,0,2133.333333
+IFNg,AD,1,3900.0
+IFNg,AD,2,1193.333333
+IFNg,AD,3,4323.333333
+IFNg,AD,4,1326.666667
+IFNg,AD,5,2353.333333
+IFNg,AD,6,5230.0
+IFNg,AD,7,2950.0
+IFNg,AD,8,1116.666667
+IFNg,AD,9,1590.0
+IFNg,AD,10,4466.666667
+IFNg,AD,11,1463.333333
+IFNg,AD,12,4023.333333
+IFNg,AD,13,1573.333333
+IFNg,AD,14,1870.0
+IL-5,HC,0,100.0
+IL-5,HC,1,5840.0
+IL-5,HC,2,1400.0
+IL-5,HC,3,6753.33
+IL-5,HC,4,380.0
+IL-5,HC,5,100.0
+IL-5,HC,6,100.0
+IL-5,HC,7,169.67
+IL-5,HC,8,100.0
+IL-5,HC,9,3163.33
+IL-5,HC,10,100.0
+IL-5,HC,11,100.0
+IL-5,HC,12,403.33
+IL-5,HC,13,100.0
+IL-5,HC,14,100.0
+IL-5,HC,15,200.0
+IL-5,HC,16,3800.0
+IL-5,HC,17,266.6666667
+IL-5,HC,18,4153.333333
+IL-5,HC,19,100.0
+IL-5,HC,20,156.6666667
+IL-5,HC,21,100.0
+IL-5,HC,22,1886.666667
+IL-5,HC,23,266.6666667
+IL-5,HC,24,330.0
+IL-5,HC,25,100.0
+IL-5,HC,26,236.6666667
+IL-5,HC,27,216.67
+IL-5,ALS,0,8790.0
+IL-5,ALS,1,796.6666667
+IL-5,ALS,2,163.3333333
+IL-5,ALS,3,326.6666667
+IL-5,ALS,4,3353.333333
+IL-5,ALS,5,2050.0
+IL-5,ALS,6,270.0
+IL-5,ALS,7,100.0
+IL-5,ALS,8,14713.33333
+IL-5,ALS,9,2993.333
+IL-5,ALS,10,456.6666667
+IL-5,ALS,11,13876.66667
+IL-5,ALS,12,123.3333333
+IL-5,ALS,13,13013.33333
+IL-5,ALS,14,540.0
+IL-5,ALS,15,1156.666667
+IL-5,ALS,16,2660.0
+IL-5,ALS,17,13783.33333
+IL-5,ALS,18,5966.666667
+IL-5,ALS,19,100.0
+IL-5,ALS,20,100.0
+IL-5,ALS,21,3731.667
+IL-5,ALS,22,100.0
+IL-5,ALS,23,4778.333
+IL-5,ALS,24,190.0
+IL-5,ALS,25,331.667
+IL-5,ALS,26,420.0
+IL-5,ALS,27,1490.0
+IL-5,ALS,28,11340.0
+IL-5,ALS,29,100.0
+IL-5,ALS,30,100.0
+IL-5,ALS,31,2483.333
+IL-5,ALS,32,1423.333333
+IL-5,ALS,33,3476.666667
+IL-5,ALS,34,1623.333333
+IL-5,ALS,35,2176.666667
+IL-5,ALS,36,496.67
+IL-5,ALS,37,100.0
+IL-5,ALS,38,510.0
+IL-5,ALS,39,9203.33
+IL-5,ALS,40,780.0
+IL-5,ALS,41,100.0
+IL-5,ALS,42,760.0
+IL-5,ALS,43,1046.666667
+IL-5,ALS,44,6300.0
+IL-5,ALS,45,7673.333
+IL-5,ALS,46,8396.667
+IL-5,PD,0,100.0
+IL-5,PD,1,5396.666667
+IL-5,PD,2,993.3333333
+IL-5,PD,3,593.3333333
+IL-5,PD,4,2716.666667
+IL-5,PD,5,5923.333333
+IL-5,PD,6,100.0
+IL-5,PD,7,833.3333333
+IL-5,PD,8,5620.0
+IL-5,PD,9,4153.333333
+IL-5,PD,10,330.0
+IL-5,PD,11,1783.333333
+IL-5,PD,12,5260.0
+IL-5,PD,13,100.0
+IL-5,PD,14,666.6666667
+IL-5,AD,0,293.3333333
+IL-5,AD,1,310.0
+IL-5,AD,2,276.6666667
+IL-5,AD,3,100.0
+IL-5,AD,4,910.0
+IL-5,AD,5,2773.333333
+IL-5,AD,6,9043.333333
+IL-5,AD,7,5776.666667
+IL-5,AD,8,100.0
+IL-5,AD,9,803.3333333
+IL-5,AD,10,3713.333333
+IL-5,AD,11,486.6666667
+IL-5,AD,12,266.6666667
+IL-5,AD,13,123.3333333
+IL-5,AD,14,1836.666667
+IL-10,HC,0,100.0
+IL-10,HC,1,993.33
+IL-10,HC,2,100.0
+IL-10,HC,3,3493.33
+IL-10,HC,4,100.0
+IL-10,HC,5,100.0
+IL-10,HC,6,613.33
+IL-10,HC,7,100.0
+IL-10,HC,8,306.67
+IL-10,HC,9,100.0
+IL-10,HC,10,100.0
+IL-10,HC,11,100.0
+IL-10,HC,12,1260.0
+IL-10,HC,13,100.0
+IL-10,HC,14,560.0
+IL-10,HC,15,3073.333333
+IL-10,HC,16,586.6666667
+IL-10,HC,17,893.3333333
+IL-10,HC,18,100.0
+IL-10,HC,19,353.3333333
+IL-10,HC,20,100.0
+IL-10,HC,21,1703.333333
+IL-10,HC,22,460.0
+IL-10,HC,23,100.0
+IL-10,HC,24,100.0
+IL-10,HC,25,650.0
+IL-10,HC,26,176.6666667
+IL-10,ALS,0,3983.333333
+IL-10,ALS,1,263.3333333
+IL-10,ALS,2,100.0
+IL-10,ALS,3,100.0
+IL-10,ALS,4,100.0
+IL-10,ALS,5,493.3333333
+IL-10,ALS,6,100.0
+IL-10,ALS,7,100.0
+IL-10,ALS,8,1783.333333
+IL-10,ALS,9,420.0
+IL-10,ALS,10,2270.0
+IL-10,ALS,11,8416.666667
+IL-10,ALS,12,100.0
+IL-10,ALS,13,2976.666667
+IL-10,ALS,14,1153.333
+IL-10,ALS,15,1926.666667
+IL-10,ALS,16,2740.0
+IL-10,ALS,17,10450.0
+IL-10,ALS,18,1073.333333
+IL-10,ALS,19,153.3333333
+IL-10,ALS,20,100.0
+IL-10,ALS,21,985.0
+IL-10,ALS,22,576.6666667
+IL-10,ALS,23,9935.0
+IL-10,ALS,24,100.0
+IL-10,ALS,25,100.0
+IL-10,ALS,26,900.0
+IL-10,ALS,27,440.0
+IL-10,ALS,28,7196.667
+IL-10,ALS,29,100.0
+IL-10,ALS,30,350.0
+IL-10,ALS,31,2050.0
+IL-10,ALS,32,456.6666667
+IL-10,ALS,33,530.0
+IL-10,ALS,34,360.0
+IL-10,ALS,35,1763.333333
+IL-10,ALS,36,226.6666667
+IL-10,ALS,37,100.0
+IL-10,ALS,38,4636.666667
+IL-10,ALS,39,1086.666667
+IL-10,ALS,40,846.6666667
+IL-10,ALS,41,100.0
+IL-10,ALS,42,806.6666667
+IL-10,ALS,43,326.6666667
+IL-10,ALS,44,2096.666667
+IL-10,ALS,45,3670.0
+IL-10,ALS,46,1843.333
+IL-10,PD,0,100.0
+IL-10,PD,1,5943.333333
+IL-10,PD,2,1340.0
+IL-10,PD,3,353.3333333
+IL-10,PD,4,100.0
+IL-10,PD,5,2673.333333
+IL-10,PD,6,183.3333333
+IL-10,PD,7,210.0
+IL-10,PD,8,9360.0
+IL-10,PD,9,5943.333333
+IL-10,PD,10,526.6666667
+IL-10,PD,11,2263.333333
+IL-10,PD,12,3680.0
+IL-10,PD,13,100.0
+IL-10,PD,14,100.0
+IL-10,AD,0,700.0
+IL-10,AD,1,100.0
+IL-10,AD,2,230.0
+IL-10,AD,3,360.0
+IL-10,AD,4,100.0
+IL-10,AD,5,3993.333333
+IL-10,AD,6,6300.0
+IL-10,AD,7,960.0
+IL-10,AD,8,100.0
+IL-10,AD,9,623.3333333
+IL-10,AD,10,1153.333333
+IL-10,AD,11,163.3333333
+IL-10,AD,12,246.6666667
+IL-10,AD,13,1253.333333
+IL-10,AD,14,4056.666667
+IFNg cytokine release,HC,0,16.633
+IFNg cytokine release,HC,1,71.812
+IFNg cytokine release,HC,2,24.397
+IFNg cytokine release,HC,3,25.974
+IFNg cytokine release,HC,4,62.859
+IFNg cytokine release,HC,5,70.593
+IFNg cytokine release,HC,6,32.925
+IFNg cytokine release,HC,7,100.0
+IFNg cytokine release,HC,8,90.0
+IFNg cytokine release,HC,9,21.577
+IFNg cytokine release,HC,10,41.688
+IFNg cytokine release,HC,11,27.751
+IFNg cytokine release,HC,12,58.909
+IFNg cytokine release,HC,13,48.026
+IFNg cytokine release,HC,14,27.83
+IFNg cytokine release,HC,15,100.0
+IFNg cytokine release,HC,16,32.772
+IFNg cytokine release,HC,17,90.499
+IFNg cytokine release,HC,18,65.505
+IFNg cytokine release,HC,19,100.0
+IFNg cytokine release,HC,20,74.741
+IFNg cytokine release,HC,21,22.876
+IFNg cytokine release,ALS,0,33.854
+IFNg cytokine release,ALS,1,34.14
+IFNg cytokine release,ALS,2,45.179
+IFNg cytokine release,ALS,3,60.264
+IFNg cytokine release,ALS,4,20.453
+IFNg cytokine release,ALS,5,4.696
+IFNg cytokine release,ALS,6,7.477
+IFNg cytokine release,ALS,7,26.429
+IFNg cytokine release,ALS,8,20.078
+IFNg cytokine release,ALS,9,46.048
+IFNg cytokine release,ALS,10,0.0
+IFNg cytokine release,ALS,11,0.0
+IFNg cytokine release,ALS,12,4.803
+IFNg cytokine release,ALS,13,0.0
+IFNg cytokine release,ALS,14,29.562
+IFNg cytokine release,ALS,15,28.038
+IFNg cytokine release,ALS,16,89.938
+IFNg cytokine release,ALS,17,27.351
+IFNg cytokine release,ALS,18,51.169
+IFNg cytokine release,ALS,19,38.892
+IFNg cytokine release,ALS,20,45.111
+IFNg cytokine release,ALS,21,50.253
+IFNg cytokine release,ALS,22,16.858
+IFNg cytokine release,ALS,23,100.0
+IFNg cytokine release,ALS,24,42.751
+IFNg cytokine release,ALS,25,26.007
+IFNg cytokine release,ALS,26,14.761
+IFNg cytokine release,ALS,27,22.296
+IFNg cytokine release,PD,0,100.0
+IFNg cytokine release,PD,1,35.53
+IFNg cytokine release,PD,2,64.74
+IFNg cytokine release,PD,3,70.69
+IFNg cytokine release,PD,4,23.97
+IFNg cytokine release,PD,5,30.63
+IFNg cytokine release,PD,6,89.85
+IFNg cytokine release,PD,7,84.58
+IFNg cytokine release,PD,8,28.75
+IFNg cytokine release,PD,9,38.96
+IFNg cytokine release,PD,10,41.32
+IFNg cytokine release,PD,11,48.75
+IFNg cytokine release,PD,12,47.46
+IFNg cytokine release,PD,13,74.09
+IFNg cytokine release,AD,0,68.23
+IFNg cytokine release,AD,1,92.64
+IFNg cytokine release,AD,2,70.2
+IFNg cytokine release,AD,3,92.31
+IFNg cytokine release,AD,4,59.31
+IFNg cytokine release,AD,5,25.8
+IFNg cytokine release,AD,6,25.42
+IFNg cytokine release,AD,7,30.45
+IFNg cytokine release,AD,8,100.0
+IFNg cytokine release,AD,9,52.71
+IFNg cytokine release,AD,10,47.86
+IFNg cytokine release,AD,11,69.24
+IFNg cytokine release,AD,12,88.68
+IFNg cytokine release,AD,13,53.33
+IFNg cytokine release,AD,14,24.09
+IL-5 cytokine release,HC,0,71.248
+IL-5 cytokine release,HC,1,28.188
+IL-5 cytokine release,HC,2,49.828
+IL-5 cytokine release,HC,3,74.026
+IL-5 cytokine release,HC,4,37.141
+IL-5 cytokine release,HC,5,6.372
+IL-5 cytokine release,HC,6,61.147
+IL-5 cytokine release,HC,7,0.0
+IL-5 cytokine release,HC,8,10.0
+IL-5 cytokine release,HC,9,0.0
+IL-5 cytokine release,HC,10,15.345
+IL-5 cytokine release,HC,11,39.944
+IL-5 cytokine release,HC,12,12.841
+IL-5 cytokine release,HC,13,42.774
+IL-5 cytokine release,HC,14,22.17
+IL-5 cytokine release,HC,15,0.0
+IL-5 cytokine release,HC,16,35.331
+IL-5 cytokine release,HC,17,9.501
+IL-5 cytokine release,HC,18,34.495
+IL-5 cytokine release,HC,19,0.0
+IL-5 cytokine release,HC,20,0.0
+IL-5 cytokine release,HC,21,42.484
+IL-5 cytokine release,ALS,0,21.094
+IL-5 cytokine release,ALS,1,36.077
+IL-5 cytokine release,ALS,2,54.821
+IL-5 cytokine release,ALS,3,31.438
+IL-5 cytokine release,ALS,4,53.81
+IL-5 cytokine release,ALS,5,30.951
+IL-5 cytokine release,ALS,6,29.439
+IL-5 cytokine release,ALS,7,56.798
+IL-5 cytokine release,ALS,8,48.893
+IL-5 cytokine release,ALS,9,47.313
+IL-5 cytokine release,ALS,10,99.999
+IL-5 cytokine release,ALS,11,0.0
+IL-5 cytokine release,ALS,12,78.06
+IL-5 cytokine release,ALS,13,100.0
+IL-5 cytokine release,ALS,14,62.824
+IL-5 cytokine release,ALS,15,49.521
+IL-5 cytokine release,ALS,16,10.062
+IL-5 cytokine release,ALS,17,59.125
+IL-5 cytokine release,ALS,18,36.97
+IL-5 cytokine release,ALS,19,53.025
+IL-5 cytokine release,ALS,20,44.926
+IL-5 cytokine release,ALS,21,27.483
+IL-5 cytokine release,ALS,22,57.088
+IL-5 cytokine release,ALS,23,0.0
+IL-5 cytokine release,ALS,24,5.673
+IL-5 cytokine release,ALS,25,66.179
+IL-5 cytokine release,ALS,26,48.482
+IL-5 cytokine release,ALS,27,65.857
+IL-5 cytokine release,PD,0,0.0
+IL-5 cytokine release,PD,1,30.68
+IL-5 cytokine release,PD,2,15.01
+IL-5 cytokine release,PD,3,18.37
+IL-5 cytokine release,PD,4,76.03
+IL-5 cytokine release,PD,5,47.79
+IL-5 cytokine release,PD,6,0.0
+IL-5 cytokine release,PD,7,12.32
+IL-5 cytokine release,PD,8,26.73
+IL-5 cytokine release,PD,9,25.11
+IL-5 cytokine release,PD,10,22.6
+IL-5 cytokine release,PD,11,22.58
+IL-5 cytokine release,PD,12,30.91
+IL-5 cytokine release,PD,13,25.91
+IL-5 cytokine release,AD,0,9.38
+IL-5 cytokine release,AD,1,7.36
+IL-5 cytokine release,AD,2,16.27
+IL-5 cytokine release,AD,3,0.0
+IL-5 cytokine release,AD,4,40.69
+IL-5 cytokine release,AD,5,30.41
+IL-5 cytokine release,AD,6,43.96
+IL-5 cytokine release,AD,7,59.64
+IL-5 cytokine release,AD,8,0.0
+IL-5 cytokine release,AD,9,26.63
+IL-5 cytokine release,AD,10,39.79
+IL-5 cytokine release,AD,11,23.03
+IL-5 cytokine release,AD,12,5.88
+IL-5 cytokine release,AD,13,4.18
+IL-5 cytokine release,AD,14,23.66
+IFNg/IL-5 ratio,HC,0,0.23345217
+IFNg/IL-5 ratio,HC,1,2.54760891
+IFNg/IL-5 ratio,HC,2,0.48962431
+IFNg/IL-5 ratio,HC,3,0.35087672
+IFNg/IL-5 ratio,HC,4,1.69244231
+IFNg/IL-5 ratio,HC,5,11.0786252
+IFNg/IL-5 ratio,HC,6,0.53845651
+IFNg/IL-5 ratio,HC,7,9.0
+IFNg/IL-5 ratio,HC,8,2.71671554
+IFNg/IL-5 ratio,HC,9,0.69474765
+IFNg/IL-5 ratio,HC,10,4.58757106
+IFNg/IL-5 ratio,HC,11,1.12278487
+IFNg/IL-5 ratio,HC,12,1.25529995
+IFNg/IL-5 ratio,HC,13,0.92757069
+IFNg/IL-5 ratio,HC,14,9.52520787
+IFNg/IL-5 ratio,HC,15,1.89897087
+IFNg/IL-5 ratio,HC,16,0.53846154
+IFNg/IL-5 ratio,ALS,0,1.6
+IFNg/IL-5 ratio,ALS,1,0.95
+IFNg/IL-5 ratio,ALS,2,0.82
+IFNg/IL-5 ratio,ALS,3,1.92
+IFNg/IL-5 ratio,ALS,4,0.38
+IFNg/IL-5 ratio,ALS,5,0.15
+IFNg/IL-5 ratio,ALS,6,0.25
+IFNg/IL-5 ratio,ALS,7,0.47
+IFNg/IL-5 ratio,ALS,8,0.41
+IFNg/IL-5 ratio,ALS,9,0.97
+IFNg/IL-5 ratio,ALS,10,0.06
+IFNg/IL-5 ratio,ALS,11,1.0
+IFNg/IL-5 ratio,ALS,12,0.47
+IFNg/IL-5 ratio,ALS,13,0.57
+IFNg/IL-5 ratio,ALS,14,8.94
+IFNg/IL-5 ratio,ALS,15,0.46
+IFNg/IL-5 ratio,ALS,16,1.38
+IFNg/IL-5 ratio,ALS,17,0.73
+IFNg/IL-5 ratio,ALS,18,1.0
+IFNg/IL-5 ratio,ALS,19,1.83
+IFNg/IL-5 ratio,ALS,20,0.3
+IFNg/IL-5 ratio,ALS,21,3.1
+IFNg/IL-5 ratio,ALS,22,7.54
+IFNg/IL-5 ratio,ALS,23,0.39
+IFNg/IL-5 ratio,ALS,24,0.3
+IFNg/IL-5 ratio,ALS,25,0.34
+IFNg/IL-5 ratio,PD,0,3.5
+IFNg/IL-5 ratio,PD,1,3.2594194
+IFNg/IL-5 ratio,PD,2,6.6610738
+IFNg/IL-5 ratio,PD,3,5.4438202
+IFNg/IL-5 ratio,PD,4,1.3153374
+IFNg/IL-5 ratio,PD,5,2.0922904
+IFNg/IL-5 ratio,PD,6,18.066667
+IFNg/IL-5 ratio,PD,7,8.12
+IFNg/IL-5 ratio,PD,8,3.7408066
+IFNg/IL-5 ratio,PD,9,3.9823435
+IFNg/IL-5 ratio,PD,10,4.4242424
+IFNg/IL-5 ratio,PD,11,4.4280374
+IFNg/IL-5 ratio,PD,12,3.2351077
+IFNg/IL-5 ratio,PD,13,1.0
+IFNg/IL-5 ratio,PD,14,3.86
+IFNg/IL-5 ratio,AD,0,10.659091
+IFNg/IL-5 ratio,AD,1,13.580645
+IFNg/IL-5 ratio,AD,2,6.1445783
+IFNg/IL-5 ratio,AD,3,46.833333
+IFNg/IL-5 ratio,AD,4,2.4578755
+IFNg/IL-5 ratio,AD,5,3.2884615
+IFNg/IL-5 ratio,AD,6,2.2749724
+IFNg/IL-5 ratio,AD,7,1.6768609
+IFNg/IL-5 ratio,AD,8,11.166667
+IFNg/IL-5 ratio,AD,9,3.7551867
+IFNg/IL-5 ratio,AD,10,2.513465
+IFNg/IL-5 ratio,AD,11,4.3424658
+IFNg/IL-5 ratio,AD,12,17.0125
+IFNg/IL-5 ratio,AD,13,23.918919
+IFNg/IL-5 ratio,AD,14,4.2268603

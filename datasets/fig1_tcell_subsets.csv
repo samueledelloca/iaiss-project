@@ -1,0 +1,820 @@
+compartment,subset,group,donor_idx,percent
+T cell Subsets,CD4 T cells,HC,0,27.0
+T cell Subsets,CD4 T cells,HC,1,39.1
+T cell Subsets,CD4 T cells,HC,2,39.1
+T cell Subsets,CD4 T cells,HC,3,49.8
+T cell Subsets,CD4 T cells,HC,4,27.7
+T cell Subsets,CD4 T cells,HC,5,30.9
+T cell Subsets,CD4 T cells,HC,6,38.6
+T cell Subsets,CD4 T cells,HC,7,33.1
+T cell Subsets,CD4 T cells,HC,8,40.5
+T cell Subsets,CD4 T cells,HC,9,46.9
+T cell Subsets,CD4 T cells,HC,10,33.3
+T cell Subsets,CD4 T cells,HC,11,25.2
+T cell Subsets,CD4 T cells,HC,12,40.3
+T cell Subsets,CD4 T cells,HC,13,29.5
+T cell Subsets,CD4 T cells,HC,14,25.7
+T cell Subsets,CD4 T cells,HC,15,37.0
+T cell Subsets,CD4 T cells,HC,16,34.1
+T cell Subsets,CD4 T cells,HC,17,39.7
+T cell Subsets,CD4 T cells,HC,18,38.5
+T cell Subsets,CD4 T cells,HC,19,31.4
+T cell Subsets,CD4 T cells,ALS,0,42.2
+T cell Subsets,CD4 T cells,ALS,1,54.6
+T cell Subsets,CD4 T cells,ALS,2,37.5
+T cell Subsets,CD4 T cells,ALS,3,39.9
+T cell Subsets,CD4 T cells,ALS,4,31.9
+T cell Subsets,CD4 T cells,ALS,5,31.8
+T cell Subsets,CD4 T cells,ALS,6,23.4
+T cell Subsets,CD4 T cells,ALS,7,15.9
+T cell Subsets,CD4 T cells,ALS,8,52.2
+T cell Subsets,CD4 T cells,ALS,9,41.0
+T cell Subsets,CD4 T cells,ALS,10,32.7
+T cell Subsets,CD4 T cells,ALS,11,18.7
+T cell Subsets,CD4 T cells,ALS,12,30.1
+T cell Subsets,CD4 T cells,ALS,13,37.4
+T cell Subsets,CD4 T cells,ALS,14,28.2
+T cell Subsets,CD4 T cells,ALS,15,49.7
+T cell Subsets,CD4 T cells,ALS,16,48.4
+T cell Subsets,CD4 T cells,ALS,17,42.3
+T cell Subsets,CD4 T cells,ALS,18,49.1
+T cell Subsets,CD4+CD8+ T cells,HC,0,0.78
+T cell Subsets,CD4+CD8+ T cells,HC,1,0.29
+T cell Subsets,CD4+CD8+ T cells,HC,2,0.57
+T cell Subsets,CD4+CD8+ T cells,HC,3,0.67
+T cell Subsets,CD4+CD8+ T cells,HC,4,0.51
+T cell Subsets,CD4+CD8+ T cells,HC,5,0.32
+T cell Subsets,CD4+CD8+ T cells,HC,6,0.4
+T cell Subsets,CD4+CD8+ T cells,HC,7,0.32
+T cell Subsets,CD4+CD8+ T cells,HC,8,0.95
+T cell Subsets,CD4+CD8+ T cells,HC,9,0.31
+T cell Subsets,CD4+CD8+ T cells,HC,10,0.26
+T cell Subsets,CD4+CD8+ T cells,HC,11,0.14
+T cell Subsets,CD4+CD8+ T cells,HC,12,0.38
+T cell Subsets,CD4+CD8+ T cells,HC,13,0.34
+T cell Subsets,CD4+CD8+ T cells,HC,14,0.21
+T cell Subsets,CD4+CD8+ T cells,HC,15,0.49
+T cell Subsets,CD4+CD8+ T cells,HC,16,0.73
+T cell Subsets,CD4+CD8+ T cells,HC,17,0.26
+T cell Subsets,CD4+CD8+ T cells,HC,18,0.32
+T cell Subsets,CD4+CD8+ T cells,HC,19,0.24
+T cell Subsets,CD4+CD8+ T cells,ALS,0,0.17
+T cell Subsets,CD4+CD8+ T cells,ALS,1,0.27
+T cell Subsets,CD4+CD8+ T cells,ALS,2,0.51
+T cell Subsets,CD4+CD8+ T cells,ALS,3,0.31
+T cell Subsets,CD4+CD8+ T cells,ALS,4,0.36
+T cell Subsets,CD4+CD8+ T cells,ALS,5,0.46
+T cell Subsets,CD4+CD8+ T cells,ALS,6,0.33
+T cell Subsets,CD4+CD8+ T cells,ALS,7,0.1
+T cell Subsets,CD4+CD8+ T cells,ALS,8,0.36
+T cell Subsets,CD4+CD8+ T cells,ALS,9,0.29
+T cell Subsets,CD4+CD8+ T cells,ALS,10,0.19
+T cell Subsets,CD4+CD8+ T cells,ALS,11,0.61
+T cell Subsets,CD4+CD8+ T cells,ALS,12,0.086
+T cell Subsets,CD4+CD8+ T cells,ALS,13,0.24
+T cell Subsets,CD4+CD8+ T cells,ALS,14,0.26
+T cell Subsets,CD4+CD8+ T cells,ALS,15,0.27
+T cell Subsets,CD4+CD8+ T cells,ALS,16,0.63
+T cell Subsets,CD4+CD8+ T cells,ALS,17,0.22
+T cell Subsets,CD4+CD8+ T cells,ALS,18,0.24
+T cell Subsets,CD4-CD8- T cells,HC,0,1.46
+T cell Subsets,CD4-CD8- T cells,HC,1,1.37
+T cell Subsets,CD4-CD8- T cells,HC,2,1.57
+T cell Subsets,CD4-CD8- T cells,HC,3,2.27
+T cell Subsets,CD4-CD8- T cells,HC,4,1.68
+T cell Subsets,CD4-CD8- T cells,HC,5,2.21
+T cell Subsets,CD4-CD8- T cells,HC,6,1.94
+T cell Subsets,CD4-CD8- T cells,HC,7,1.76
+T cell Subsets,CD4-CD8- T cells,HC,8,0.9
+T cell Subsets,CD4-CD8- T cells,HC,9,1.06
+T cell Subsets,CD4-CD8- T cells,HC,10,1.64
+T cell Subsets,CD4-CD8- T cells,HC,11,0.75
+T cell Subsets,CD4-CD8- T cells,HC,12,2.76
+T cell Subsets,CD4-CD8- T cells,HC,13,1.31
+T cell Subsets,CD4-CD8- T cells,HC,14,3.13
+T cell Subsets,CD4-CD8- T cells,HC,15,2.09
+T cell Subsets,CD4-CD8- T cells,HC,16,1.31
+T cell Subsets,CD4-CD8- T cells,HC,17,0.75
+T cell Subsets,CD4-CD8- T cells,HC,18,3.56
+T cell Subsets,CD4-CD8- T cells,HC,19,0.66
+T cell Subsets,CD4-CD8- T cells,ALS,0,0.33
+T cell Subsets,CD4-CD8- T cells,ALS,1,1.34
+T cell Subsets,CD4-CD8- T cells,ALS,2,0.54
+T cell Subsets,CD4-CD8- T cells,ALS,3,0.32
+T cell Subsets,CD4-CD8- T cells,ALS,4,2.1
+T cell Subsets,CD4-CD8- T cells,ALS,5,1.0
+T cell Subsets,CD4-CD8- T cells,ALS,6,1.12
+T cell Subsets,CD4-CD8- T cells,ALS,7,0.25
+T cell Subsets,CD4-CD8- T cells,ALS,8,0.51
+T cell Subsets,CD4-CD8- T cells,ALS,9,0.67
+T cell Subsets,CD4-CD8- T cells,ALS,10,1.32
+T cell Subsets,CD4-CD8- T cells,ALS,11,2.75
+T cell Subsets,CD4-CD8- T cells,ALS,12,5.05
+T cell Subsets,CD4-CD8- T cells,ALS,13,2.27
+T cell Subsets,CD4-CD8- T cells,ALS,14,4.12
+T cell Subsets,CD4-CD8- T cells,ALS,15,0.47
+T cell Subsets,CD4-CD8- T cells,ALS,16,1.2
+T cell Subsets,CD4-CD8- T cells,ALS,17,1.29
+T cell Subsets,CD4-CD8- T cells,ALS,18,1.66
+T cell Subsets,CD8 T cells,HC,0,12.0
+T cell Subsets,CD8 T cells,HC,1,14.8
+T cell Subsets,CD8 T cells,HC,2,11.9
+T cell Subsets,CD8 T cells,HC,3,13.4
+T cell Subsets,CD8 T cells,HC,4,19.9
+T cell Subsets,CD8 T cells,HC,5,9.7
+T cell Subsets,CD8 T cells,HC,6,8.16
+T cell Subsets,CD8 T cells,HC,7,12.4
+T cell Subsets,CD8 T cells,HC,8,17.9
+T cell Subsets,CD8 T cells,HC,9,13.9
+T cell Subsets,CD8 T cells,HC,10,12.9
+T cell Subsets,CD8 T cells,HC,11,4.64
+T cell Subsets,CD8 T cells,HC,12,12.3
+T cell Subsets,CD8 T cells,HC,13,16.8
+T cell Subsets,CD8 T cells,HC,14,24.4
+T cell Subsets,CD8 T cells,HC,15,9.01
+T cell Subsets,CD8 T cells,HC,16,14.5
+T cell Subsets,CD8 T cells,HC,17,8.17
+T cell Subsets,CD8 T cells,HC,18,16.0
+T cell Subsets,CD8 T cells,HC,19,4.8
+T cell Subsets,CD8 T cells,ALS,0,6.06
+T cell Subsets,CD8 T cells,ALS,1,10.7
+T cell Subsets,CD8 T cells,ALS,2,8.98
+T cell Subsets,CD8 T cells,ALS,3,7.2
+T cell Subsets,CD8 T cells,ALS,4,11.2
+T cell Subsets,CD8 T cells,ALS,5,7.22
+T cell Subsets,CD8 T cells,ALS,6,13.5
+T cell Subsets,CD8 T cells,ALS,7,2.92
+T cell Subsets,CD8 T cells,ALS,8,5.71
+T cell Subsets,CD8 T cells,ALS,9,10.4
+T cell Subsets,CD8 T cells,ALS,10,13.2
+T cell Subsets,CD8 T cells,ALS,11,42.5
+T cell Subsets,CD8 T cells,ALS,12,14.3
+T cell Subsets,CD8 T cells,ALS,13,16.9
+T cell Subsets,CD8 T cells,ALS,14,18.1
+T cell Subsets,CD8 T cells,ALS,15,5.83
+T cell Subsets,CD8 T cells,ALS,16,7.17
+T cell Subsets,CD8 T cells,ALS,17,18.1
+T cell Subsets,CD8 T cells,ALS,18,8.3
+T cell Subsets,MAIT,HC,0,1.18
+T cell Subsets,MAIT,HC,1,2.51
+T cell Subsets,MAIT,HC,2,3.51
+T cell Subsets,MAIT,HC,3,2.94
+T cell Subsets,MAIT,HC,4,4.29
+T cell Subsets,MAIT,HC,5,3.18
+T cell Subsets,MAIT,HC,6,1.63
+T cell Subsets,MAIT,HC,7,3.66
+T cell Subsets,MAIT,HC,8,1.52
+T cell Subsets,MAIT,HC,9,1.8
+T cell Subsets,MAIT,HC,10,0.83
+T cell Subsets,MAIT,HC,11,0.86
+T cell Subsets,MAIT,HC,12,2.73
+T cell Subsets,MAIT,HC,13,0.84
+T cell Subsets,MAIT,HC,14,7.95
+T cell Subsets,MAIT,HC,15,1.58
+T cell Subsets,MAIT,HC,16,0.94
+T cell Subsets,MAIT,HC,17,0.9
+T cell Subsets,MAIT,HC,18,2.74
+T cell Subsets,MAIT,HC,19,0.35
+T cell Subsets,MAIT,ALS,0,1.21
+T cell Subsets,MAIT,ALS,1,1.5
+T cell Subsets,MAIT,ALS,2,5.51
+T cell Subsets,MAIT,ALS,3,0.36
+T cell Subsets,MAIT,ALS,4,0.87
+T cell Subsets,MAIT,ALS,5,1.77
+T cell Subsets,MAIT,ALS,6,0.61
+T cell Subsets,MAIT,ALS,7,0.22
+T cell Subsets,MAIT,ALS,8,0.8
+T cell Subsets,MAIT,ALS,9,4.0
+T cell Subsets,MAIT,ALS,10,0.7
+T cell Subsets,MAIT,ALS,11,1.54
+T cell Subsets,MAIT,ALS,12,1.48
+T cell Subsets,MAIT,ALS,13,0.89
+T cell Subsets,MAIT,ALS,14,4.3
+T cell Subsets,MAIT,ALS,15,0.13
+T cell Subsets,MAIT,ALS,16,0.74
+T cell Subsets,MAIT,ALS,17,1.64
+T cell Subsets,MAIT,ALS,18,0.52
+T cell Subsets,TCRgd,HC,0,2.67
+T cell Subsets,TCRgd,HC,1,1.02
+T cell Subsets,TCRgd,HC,2,1.29
+T cell Subsets,TCRgd,HC,3,3.07
+T cell Subsets,TCRgd,HC,4,2.91
+T cell Subsets,TCRgd,HC,5,4.37
+T cell Subsets,TCRgd,HC,6,5.03
+T cell Subsets,TCRgd,HC,7,5.59
+T cell Subsets,TCRgd,HC,8,0.74
+T cell Subsets,TCRgd,HC,9,1.17
+T cell Subsets,TCRgd,HC,10,1.51
+T cell Subsets,TCRgd,HC,11,0.18
+T cell Subsets,TCRgd,HC,12,0.83
+T cell Subsets,TCRgd,HC,13,1.78
+T cell Subsets,TCRgd,HC,14,1.32
+T cell Subsets,TCRgd,HC,15,0.85
+T cell Subsets,TCRgd,HC,16,3.94
+T cell Subsets,TCRgd,HC,17,5.63
+T cell Subsets,TCRgd,HC,18,6.17
+T cell Subsets,TCRgd,HC,19,5.89
+T cell Subsets,TCRgd,ALS,0,0.25
+T cell Subsets,TCRgd,ALS,1,0.57
+T cell Subsets,TCRgd,ALS,2,0.71
+T cell Subsets,TCRgd,ALS,3,0.5
+T cell Subsets,TCRgd,ALS,4,11.4
+T cell Subsets,TCRgd,ALS,5,0.67
+T cell Subsets,TCRgd,ALS,6,2.37
+T cell Subsets,TCRgd,ALS,7,0.13
+T cell Subsets,TCRgd,ALS,8,2.06
+T cell Subsets,TCRgd,ALS,9,1.19
+T cell Subsets,TCRgd,ALS,10,2.14
+T cell Subsets,TCRgd,ALS,11,0.46
+T cell Subsets,TCRgd,ALS,12,3.88
+T cell Subsets,TCRgd,ALS,13,1.63
+T cell Subsets,TCRgd,ALS,14,3.68
+T cell Subsets,TCRgd,ALS,15,0.63
+T cell Subsets,TCRgd,ALS,16,1.76
+T cell Subsets,TCRgd,ALS,17,3.99
+T cell Subsets,TCRgd,ALS,18,7.58
+T cell Subsets,NKT CD3hi,HC,0,0.6
+T cell Subsets,NKT CD3hi,HC,1,0.12
+T cell Subsets,NKT CD3hi,HC,2,0.87
+T cell Subsets,NKT CD3hi,HC,3,1.17
+T cell Subsets,NKT CD3hi,HC,4,1.4
+T cell Subsets,NKT CD3hi,HC,5,2.63
+T cell Subsets,NKT CD3hi,HC,6,1.58
+T cell Subsets,NKT CD3hi,HC,7,2.73
+T cell Subsets,NKT CD3hi,HC,8,0.31
+T cell Subsets,NKT CD3hi,HC,9,0.51
+T cell Subsets,NKT CD3hi,HC,10,0.42
+T cell Subsets,NKT CD3hi,HC,11,0.17
+T cell Subsets,NKT CD3hi,HC,12,0.11
+T cell Subsets,NKT CD3hi,HC,13,0.38
+T cell Subsets,NKT CD3hi,HC,14,0.26
+T cell Subsets,NKT CD3hi,HC,15,0.19
+T cell Subsets,NKT CD3hi,HC,16,0.18
+T cell Subsets,NKT CD3hi,HC,17,0.61
+T cell Subsets,NKT CD3hi,HC,18,1.26
+T cell Subsets,NKT CD3hi,HC,19,0.038
+T cell Subsets,NKT CD3hi,ALS,0,0.23
+T cell Subsets,NKT CD3hi,ALS,1,0.1
+T cell Subsets,NKT CD3hi,ALS,2,0.69
+T cell Subsets,NKT CD3hi,ALS,3,0.42
+T cell Subsets,NKT CD3hi,ALS,4,7.87
+T cell Subsets,NKT CD3hi,ALS,5,0.36
+T cell Subsets,NKT CD3hi,ALS,6,1.39
+T cell Subsets,NKT CD3hi,ALS,7,0.09
+T cell Subsets,NKT CD3hi,ALS,8,0.15
+T cell Subsets,NKT CD3hi,ALS,9,0.44
+T cell Subsets,NKT CD3hi,ALS,10,0.57
+T cell Subsets,NKT CD3hi,ALS,11,0.017
+T cell Subsets,NKT CD3hi,ALS,12,0.2
+T cell Subsets,NKT CD3hi,ALS,13,0.12
+T cell Subsets,NKT CD3hi,ALS,14,0.89
+T cell Subsets,NKT CD3hi,ALS,15,0.047
+T cell Subsets,NKT CD3hi,ALS,16,0.28
+T cell Subsets,NKT CD3hi,ALS,17,0.39
+T cell Subsets,NKT CD3hi,ALS,18,0.38
+T cell Subsets,NKT CD3int,HC,0,2.58
+T cell Subsets,NKT CD3int,HC,1,1.61
+T cell Subsets,NKT CD3int,HC,2,11.2
+T cell Subsets,NKT CD3int,HC,3,0.42
+T cell Subsets,NKT CD3int,HC,4,5.0
+T cell Subsets,NKT CD3int,HC,5,1.87
+T cell Subsets,NKT CD3int,HC,6,6.6
+T cell Subsets,NKT CD3int,HC,7,14.3
+T cell Subsets,NKT CD3int,HC,8,1.57
+T cell Subsets,NKT CD3int,HC,9,0.97
+T cell Subsets,NKT CD3int,HC,10,0.94
+T cell Subsets,NKT CD3int,HC,11,1.0
+T cell Subsets,NKT CD3int,HC,12,1.92
+T cell Subsets,NKT CD3int,HC,13,2.45
+T cell Subsets,NKT CD3int,HC,14,3.79
+T cell Subsets,NKT CD3int,HC,15,3.69
+T cell Subsets,NKT CD3int,HC,16,2.45
+T cell Subsets,NKT CD3int,HC,17,1.79
+T cell Subsets,NKT CD3int,HC,18,7.5
+T cell Subsets,NKT CD3int,HC,19,0.57
+T cell Subsets,NKT CD3int,ALS,0,1.53
+T cell Subsets,NKT CD3int,ALS,1,0.37
+T cell Subsets,NKT CD3int,ALS,2,3.4
+T cell Subsets,NKT CD3int,ALS,3,3.28
+T cell Subsets,NKT CD3int,ALS,4,9.17
+T cell Subsets,NKT CD3int,ALS,5,0.31
+T cell Subsets,NKT CD3int,ALS,6,7.72
+T cell Subsets,NKT CD3int,ALS,7,0.11
+T cell Subsets,NKT CD3int,ALS,8,0.71
+T cell Subsets,NKT CD3int,ALS,9,3.34
+T cell Subsets,NKT CD3int,ALS,10,15.6
+T cell Subsets,NKT CD3int,ALS,11,2.29
+T cell Subsets,NKT CD3int,ALS,12,2.35
+T cell Subsets,NKT CD3int,ALS,13,0.69
+T cell Subsets,NKT CD3int,ALS,14,3.91
+T cell Subsets,NKT CD3int,ALS,15,0.48
+T cell Subsets,NKT CD3int,ALS,16,1.29
+T cell Subsets,NKT CD3int,ALS,17,5.16
+T cell Subsets,NKT CD3int,ALS,18,1.25
+CD4 Memory,CD4 mem,HC,0,60.5
+CD4 Memory,CD4 mem,HC,1,79.0
+CD4 Memory,CD4 mem,HC,2,57.3
+CD4 Memory,CD4 mem,HC,3,42.0
+CD4 Memory,CD4 mem,HC,4,44.8
+CD4 Memory,CD4 mem,HC,5,62.1
+CD4 Memory,CD4 mem,HC,6,39.1
+CD4 Memory,CD4 mem,HC,7,81.9
+CD4 Memory,CD4 mem,HC,8,61.1
+CD4 Memory,CD4 mem,HC,9,29.9
+CD4 Memory,CD4 mem,HC,10,59.7
+CD4 Memory,CD4 mem,HC,11,47.3
+CD4 Memory,CD4 mem,HC,12,66.6
+CD4 Memory,CD4 mem,HC,13,62.2
+CD4 Memory,CD4 mem,HC,14,49.7
+CD4 Memory,CD4 mem,HC,15,18.9
+CD4 Memory,CD4 mem,HC,16,57.6
+CD4 Memory,CD4 mem,HC,17,27.2
+CD4 Memory,CD4 mem,HC,18,59.4
+CD4 Memory,CD4 mem,HC,19,75.0
+CD4 Memory,CD4 mem,ALS,0,34.5
+CD4 Memory,CD4 mem,ALS,1,48.1
+CD4 Memory,CD4 mem,ALS,2,43.2
+CD4 Memory,CD4 mem,ALS,3,38.6
+CD4 Memory,CD4 mem,ALS,4,58.3
+CD4 Memory,CD4 mem,ALS,5,67.1
+CD4 Memory,CD4 mem,ALS,6,62.6
+CD4 Memory,CD4 mem,ALS,7,18.9
+CD4 Memory,CD4 mem,ALS,8,31.8
+CD4 Memory,CD4 mem,ALS,9,31.6
+CD4 Memory,CD4 mem,ALS,10,69.6
+CD4 Memory,CD4 mem,ALS,11,71.5
+CD4 Memory,CD4 mem,ALS,12,71.8
+CD4 Memory,CD4 mem,ALS,13,49.3
+CD4 Memory,CD4 mem,ALS,14,68.3
+CD4 Memory,CD4 mem,ALS,15,34.0
+CD4 Memory,CD4 mem,ALS,16,44.3
+CD4 Memory,CD4 mem,ALS,17,46.1
+CD4 Memory,CD4 mem,ALS,18,35.0
+CD4 Memory,Tn,HC,0,46.0
+CD4 Memory,Tn,HC,1,24.7
+CD4 Memory,Tn,HC,2,42.6
+CD4 Memory,Tn,HC,3,58.0
+CD4 Memory,Tn,HC,4,55.3
+CD4 Memory,Tn,HC,5,37.9
+CD4 Memory,Tn,HC,6,60.9
+CD4 Memory,Tn,HC,7,18.2
+CD4 Memory,Tn,HC,8,38.7
+CD4 Memory,Tn,HC,9,70.0
+CD4 Memory,Tn,HC,10,40.2
+CD4 Memory,Tn,HC,11,52.5
+CD4 Memory,Tn,HC,12,33.2
+CD4 Memory,Tn,HC,13,37.7
+CD4 Memory,Tn,HC,14,50.1
+CD4 Memory,Tn,HC,15,81.1
+CD4 Memory,Tn,HC,16,42.2
+CD4 Memory,Tn,HC,17,72.7
+CD4 Memory,Tn,HC,18,40.6
+CD4 Memory,Tn,HC,19,24.9
+CD4 Memory,Tn,ALS,0,73.2
+CD4 Memory,Tn,ALS,1,61.9
+CD4 Memory,Tn,ALS,2,60.7
+CD4 Memory,Tn,ALS,3,61.4
+CD4 Memory,Tn,ALS,4,41.7
+CD4 Memory,Tn,ALS,5,32.9
+CD4 Memory,Tn,ALS,6,37.4
+CD4 Memory,Tn,ALS,7,81.1
+CD4 Memory,Tn,ALS,8,68.0
+CD4 Memory,Tn,ALS,9,68.2
+CD4 Memory,Tn,ALS,10,30.3
+CD4 Memory,Tn,ALS,11,28.3
+CD4 Memory,Tn,ALS,12,28.1
+CD4 Memory,Tn,ALS,13,50.5
+CD4 Memory,Tn,ALS,14,31.6
+CD4 Memory,Tn,ALS,15,65.9
+CD4 Memory,Tn,ALS,16,55.5
+CD4 Memory,Tn,ALS,17,53.8
+CD4 Memory,Tn,ALS,18,64.7
+CD4 Memory,Tcm,HC,0,13.4
+CD4 Memory,Tcm,HC,1,19.6
+CD4 Memory,Tcm,HC,2,11.0
+CD4 Memory,Tcm,HC,3,26.2
+CD4 Memory,Tcm,HC,4,16.1
+CD4 Memory,Tcm,HC,5,41.5
+CD4 Memory,Tcm,HC,6,25.5
+CD4 Memory,Tcm,HC,7,52.3
+CD4 Memory,Tcm,HC,8,33.8
+CD4 Memory,Tcm,HC,9,15.9
+CD4 Memory,Tcm,HC,10,35.4
+CD4 Memory,Tcm,HC,11,28.2
+CD4 Memory,Tcm,HC,12,40.8
+CD4 Memory,Tcm,HC,13,28.0
+CD4 Memory,Tcm,HC,14,27.5
+CD4 Memory,Tcm,HC,15,0.29
+CD4 Memory,Tcm,HC,16,29.6
+CD4 Memory,Tcm,HC,17,14.9
+CD4 Memory,Tcm,HC,18,17.8
+CD4 Memory,Tcm,HC,19,35.4
+CD4 Memory,Tcm,ALS,0,11.2
+CD4 Memory,Tcm,ALS,1,22.5
+CD4 Memory,Tcm,ALS,2,8.11
+CD4 Memory,Tcm,ALS,3,22.2
+CD4 Memory,Tcm,ALS,4,35.0
+CD4 Memory,Tcm,ALS,5,34.5
+CD4 Memory,Tcm,ALS,6,30.8
+CD4 Memory,Tcm,ALS,7,11.0
+CD4 Memory,Tcm,ALS,8,26.2
+CD4 Memory,Tcm,ALS,9,20.9
+CD4 Memory,Tcm,ALS,10,35.8
+CD4 Memory,Tcm,ALS,11,26.7
+CD4 Memory,Tcm,ALS,12,22.0
+CD4 Memory,Tcm,ALS,13,23.0
+CD4 Memory,Tcm,ALS,14,34.7
+CD4 Memory,Tcm,ALS,15,24.3
+CD4 Memory,Tcm,ALS,16,24.1
+CD4 Memory,Tcm,ALS,17,23.8
+CD4 Memory,Tcm,ALS,18,22.7
+CD4 Memory,Tem,HC,0,36.0
+CD4 Memory,Tem,HC,1,49.7
+CD4 Memory,Tem,HC,2,25.3
+CD4 Memory,Tem,HC,3,15.4
+CD4 Memory,Tem,HC,4,19.0
+CD4 Memory,Tem,HC,5,20.2
+CD4 Memory,Tem,HC,6,13.0
+CD4 Memory,Tem,HC,7,29.2
+CD4 Memory,Tem,HC,8,22.9
+CD4 Memory,Tem,HC,9,11.8
+CD4 Memory,Tem,HC,10,23.3
+CD4 Memory,Tem,HC,11,17.5
+CD4 Memory,Tem,HC,12,23.5
+CD4 Memory,Tem,HC,13,31.3
+CD4 Memory,Tem,HC,14,21.1
+CD4 Memory,Tem,HC,15,0.46
+CD4 Memory,Tem,HC,16,25.1
+CD4 Memory,Tem,HC,17,10.8
+CD4 Memory,Tem,HC,18,37.9
+CD4 Memory,Tem,HC,19,37.0
+CD4 Memory,Tem,ALS,0,13.7
+CD4 Memory,Tem,ALS,1,13.7
+CD4 Memory,Tem,ALS,2,25.4
+CD4 Memory,Tem,ALS,3,15.6
+CD4 Memory,Tem,ALS,4,21.9
+CD4 Memory,Tem,ALS,5,31.7
+CD4 Memory,Tem,ALS,6,30.6
+CD4 Memory,Tem,ALS,7,6.97
+CD4 Memory,Tem,ALS,8,5.21
+CD4 Memory,Tem,ALS,9,9.36
+CD4 Memory,Tem,ALS,10,28.6
+CD4 Memory,Tem,ALS,11,42.9
+CD4 Memory,Tem,ALS,12,48.4
+CD4 Memory,Tem,ALS,13,20.4
+CD4 Memory,Tem,ALS,14,31.3
+CD4 Memory,Tem,ALS,15,9.27
+CD4 Memory,Tem,ALS,16,18.0
+CD4 Memory,Tem,ALS,17,20.8
+CD4 Memory,Tem,ALS,18,12.0
+CD4 Memory,Temra,HC,0,4.62
+CD4 Memory,Temra,HC,1,5.99
+CD4 Memory,Temra,HC,2,21.2
+CD4 Memory,Temra,HC,3,0.37
+CD4 Memory,Temra,HC,4,9.63
+CD4 Memory,Temra,HC,5,0.37
+CD4 Memory,Temra,HC,6,0.54
+CD4 Memory,Temra,HC,7,0.3
+CD4 Memory,Temra,HC,8,4.59
+CD4 Memory,Temra,HC,9,2.36
+CD4 Memory,Temra,HC,10,1.11
+CD4 Memory,Temra,HC,11,1.82
+CD4 Memory,Temra,HC,12,2.57
+CD4 Memory,Temra,HC,13,3.06
+CD4 Memory,Temra,HC,14,1.23
+CD4 Memory,Temra,HC,15,18.1
+CD4 Memory,Temra,HC,16,3.08
+CD4 Memory,Temra,HC,17,1.61
+CD4 Memory,Temra,HC,18,3.67
+CD4 Memory,Temra,HC,19,2.72
+CD4 Memory,Temra,ALS,0,1.88
+CD4 Memory,Temra,ALS,1,1.98
+CD4 Memory,Temra,ALS,2,5.86
+CD4 Memory,Temra,ALS,3,0.76
+CD4 Memory,Temra,ALS,4,1.4
+CD4 Memory,Temra,ALS,5,0.89
+CD4 Memory,Temra,ALS,6,1.26
+CD4 Memory,Temra,ALS,7,0.95
+CD4 Memory,Temra,ALS,8,0.52
+CD4 Memory,Temra,ALS,9,1.48
+CD4 Memory,Temra,ALS,10,5.28
+CD4 Memory,Temra,ALS,11,2.09
+CD4 Memory,Temra,ALS,12,1.45
+CD4 Memory,Temra,ALS,13,6.12
+CD4 Memory,Temra,ALS,14,2.47
+CD4 Memory,Temra,ALS,15,0.58
+CD4 Memory,Temra,ALS,16,2.38
+CD4 Memory,Temra,ALS,17,1.54
+CD4 Memory,Temra,ALS,18,0.6
+CD8 Memory,Tn,HC,0,18.0
+CD8 Memory,Tn,HC,1,12.1
+CD8 Memory,Tn,HC,2,54.9
+CD8 Memory,Tn,HC,3,66.9
+CD8 Memory,Tn,HC,4,49.6
+CD8 Memory,Tn,HC,5,34.8
+CD8 Memory,Tn,HC,6,21.6
+CD8 Memory,Tn,HC,7,26.5
+CD8 Memory,Tn,HC,8,9.99
+CD8 Memory,Tn,HC,9,81.4
+CD8 Memory,Tn,HC,10,22.5
+CD8 Memory,Tn,HC,11,29.4
+CD8 Memory,Tn,HC,12,19.8
+CD8 Memory,Tn,HC,13,30.0
+CD8 Memory,Tn,HC,14,49.1
+CD8 Memory,Tn,HC,15,27.5
+CD8 Memory,Tn,HC,16,41.4
+CD8 Memory,Tn,HC,17,70.8
+CD8 Memory,Tn,HC,18,49.8
+CD8 Memory,Tn,HC,19,15.7
+CD8 Memory,Tn,ALS,0,45.3
+CD8 Memory,Tn,ALS,1,27.6
+CD8 Memory,Tn,ALS,2,39.1
+CD8 Memory,Tn,ALS,3,43.1
+CD8 Memory,Tn,ALS,4,24.8
+CD8 Memory,Tn,ALS,5,38.1
+CD8 Memory,Tn,ALS,6,7.97
+CD8 Memory,Tn,ALS,7,80.3
+CD8 Memory,Tn,ALS,8,36.0
+CD8 Memory,Tn,ALS,9,57.7
+CD8 Memory,Tn,ALS,10,18.8
+CD8 Memory,Tn,ALS,11,8.17
+CD8 Memory,Tn,ALS,12,16.7
+CD8 Memory,Tn,ALS,13,33.7
+CD8 Memory,Tn,ALS,14,27.6
+CD8 Memory,Tn,ALS,15,23.6
+CD8 Memory,Tn,ALS,16,18.8
+CD8 Memory,Tn,ALS,17,60.1
+CD8 Memory,Tn,ALS,18,42.6
+CD8 Memory,Tcm,HC,0,5.38
+CD8 Memory,Tcm,HC,1,3.55
+CD8 Memory,Tcm,HC,2,1.69
+CD8 Memory,Tcm,HC,3,9.05
+CD8 Memory,Tcm,HC,4,3.5
+CD8 Memory,Tcm,HC,5,21.4
+CD8 Memory,Tcm,HC,6,14.0
+CD8 Memory,Tcm,HC,7,6.61
+CD8 Memory,Tcm,HC,8,5.74
+CD8 Memory,Tcm,HC,9,1.76
+CD8 Memory,Tcm,HC,10,4.78
+CD8 Memory,Tcm,HC,11,13.3
+CD8 Memory,Tcm,HC,12,5.95
+CD8 Memory,Tcm,HC,13,2.45
+CD8 Memory,Tcm,HC,14,1.14
+CD8 Memory,Tcm,HC,15,0.11
+CD8 Memory,Tcm,HC,16,5.61
+CD8 Memory,Tcm,HC,17,3.14
+CD8 Memory,Tcm,HC,18,1.68
+CD8 Memory,Tcm,HC,19,8.64
+CD8 Memory,Tcm,ALS,0,5.56
+CD8 Memory,Tcm,ALS,1,4.54
+CD8 Memory,Tcm,ALS,2,5.49
+CD8 Memory,Tcm,ALS,3,6.24
+CD8 Memory,Tcm,ALS,4,4.99
+CD8 Memory,Tcm,ALS,5,18.0
+CD8 Memory,Tcm,ALS,6,4.5
+CD8 Memory,Tcm,ALS,7,2.51
+CD8 Memory,Tcm,ALS,8,10.8
+CD8 Memory,Tcm,ALS,9,4.71
+CD8 Memory,Tcm,ALS,10,6.46
+CD8 Memory,Tcm,ALS,11,5.43
+CD8 Memory,Tcm,ALS,12,3.61
+CD8 Memory,Tcm,ALS,13,2.25
+CD8 Memory,Tcm,ALS,14,2.82
+CD8 Memory,Tcm,ALS,15,7.27
+CD8 Memory,Tcm,ALS,16,7.77
+CD8 Memory,Tcm,ALS,17,2.15
+CD8 Memory,Tcm,ALS,18,6.46
+CD8 Memory,Tem,HC,0,43.0
+CD8 Memory,Tem,HC,1,24.7
+CD8 Memory,Tem,HC,2,9.47
+CD8 Memory,Tem,HC,3,17.3
+CD8 Memory,Tem,HC,4,15.2
+CD8 Memory,Tem,HC,5,36.8
+CD8 Memory,Tem,HC,6,29.1
+CD8 Memory,Tem,HC,7,37.0
+CD8 Memory,Tem,HC,8,23.9
+CD8 Memory,Tem,HC,9,8.89
+CD8 Memory,Tem,HC,10,55.9
+CD8 Memory,Tem,HC,11,35.7
+CD8 Memory,Tem,HC,12,33.1
+CD8 Memory,Tem,HC,13,39.5
+CD8 Memory,Tem,HC,14,28.4
+CD8 Memory,Tem,HC,15,0.3
+CD8 Memory,Tem,HC,16,23.1
+CD8 Memory,Tem,HC,17,15.0
+CD8 Memory,Tem,HC,18,25.0
+CD8 Memory,Tem,HC,19,37.4
+CD8 Memory,Tem,ALS,0,29.5
+CD8 Memory,Tem,ALS,1,27.3
+CD8 Memory,Tem,ALS,2,25.4
+CD8 Memory,Tem,ALS,3,23.2
+CD8 Memory,Tem,ALS,4,36.5
+CD8 Memory,Tem,ALS,5,25.5
+CD8 Memory,Tem,ALS,6,58.8
+CD8 Memory,Tem,ALS,7,9.81
+CD8 Memory,Tem,ALS,8,18.7
+CD8 Memory,Tem,ALS,9,17.4
+CD8 Memory,Tem,ALS,10,22.9
+CD8 Memory,Tem,ALS,11,43.0
+CD8 Memory,Tem,ALS,12,34.6
+CD8 Memory,Tem,ALS,13,24.1
+CD8 Memory,Tem,ALS,14,32.4
+CD8 Memory,Tem,ALS,15,28.1
+CD8 Memory,Tem,ALS,16,36.5
+CD8 Memory,Tem,ALS,17,11.3
+CD8 Memory,Tem,ALS,18,22.4
+CD8 Memory,Temra,HC,0,33.6
+CD8 Memory,Temra,HC,1,59.7
+CD8 Memory,Temra,HC,2,33.9
+CD8 Memory,Temra,HC,3,6.78
+CD8 Memory,Temra,HC,4,31.7
+CD8 Memory,Temra,HC,5,7.0
+CD8 Memory,Temra,HC,6,35.3
+CD8 Memory,Temra,HC,7,29.9
+CD8 Memory,Temra,HC,8,60.4
+CD8 Memory,Temra,HC,9,7.98
+CD8 Memory,Temra,HC,10,16.8
+CD8 Memory,Temra,HC,11,21.6
+CD8 Memory,Temra,HC,12,41.1
+CD8 Memory,Temra,HC,13,28.1
+CD8 Memory,Temra,HC,14,21.4
+CD8 Memory,Temra,HC,15,72.1
+CD8 Memory,Temra,HC,16,30.0
+CD8 Memory,Temra,HC,17,11.0
+CD8 Memory,Temra,HC,18,23.6
+CD8 Memory,Temra,HC,19,38.2
+CD8 Memory,Temra,ALS,0,19.6
+CD8 Memory,Temra,ALS,1,40.6
+CD8 Memory,Temra,ALS,2,30.0
+CD8 Memory,Temra,ALS,3,27.5
+CD8 Memory,Temra,ALS,4,33.8
+CD8 Memory,Temra,ALS,5,18.4
+CD8 Memory,Temra,ALS,6,28.7
+CD8 Memory,Temra,ALS,7,7.38
+CD8 Memory,Temra,ALS,8,34.4
+CD8 Memory,Temra,ALS,9,20.2
+CD8 Memory,Temra,ALS,10,51.8
+CD8 Memory,Temra,ALS,11,43.4
+CD8 Memory,Temra,ALS,12,45.2
+CD8 Memory,Temra,ALS,13,39.9
+CD8 Memory,Temra,ALS,14,37.2
+CD8 Memory,Temra,ALS,15,41.0
+CD8 Memory,Temra,ALS,16,36.9
+CD8 Memory,Temra,ALS,17,26.5
+CD8 Memory,Temra,ALS,18,28.5
+TH Subsets,Th1*,HC,0,1.71
+TH Subsets,Th1*,HC,1,15.2
+TH Subsets,Th1*,HC,2,5.6
+TH Subsets,Th1*,HC,3,13.6
+TH Subsets,Th1*,HC,4,9.91
+TH Subsets,Th1*,HC,5,11.0
+TH Subsets,Th1*,HC,6,8.46
+TH Subsets,Th1*,HC,7,4.93
+TH Subsets,Th1*,HC,8,19.6
+TH Subsets,Th1*,HC,9,11.2
+TH Subsets,Th1*,HC,10,14.9
+TH Subsets,Th1*,HC,11,3.59
+TH Subsets,Th1*,HC,12,16.3
+TH Subsets,Th1*,HC,13,30.6
+TH Subsets,Th1*,HC,14,21.0
+TH Subsets,Th1*,HC,15,10.8
+TH Subsets,Th1*,HC,16,13.7
+TH Subsets,Th1*,HC,17,10.1
+TH Subsets,Th1*,HC,18,12.6
+TH Subsets,Th1*,HC,19,0.93
+TH Subsets,Th1*,ALS,0,3.35
+TH Subsets,Th1*,ALS,1,0.16
+TH Subsets,Th1*,ALS,2,7.86
+TH Subsets,Th1*,ALS,3,2.45
+TH Subsets,Th1*,ALS,4,8.3
+TH Subsets,Th1*,ALS,5,15.1
+TH Subsets,Th1*,ALS,6,2.63
+TH Subsets,Th1*,ALS,7,17.9
+TH Subsets,Th1*,ALS,8,3.33
+TH Subsets,Th1*,ALS,9,6.66
+TH Subsets,Th1*,ALS,10,2.47
+TH Subsets,Th1*,ALS,11,5.95
+TH Subsets,Th1*,ALS,12,10.1
+TH Subsets,Th1*,ALS,13,6.05
+TH Subsets,Th1*,ALS,14,2.38
+TH Subsets,Th1*,ALS,15,2.79
+TH Subsets,Th1*,ALS,16,6.92
+TH Subsets,Th1*,ALS,17,0.69
+TH Subsets,Th1*,ALS,18,0.36
+TH Subsets,Th17,HC,0,10.5
+TH Subsets,Th17,HC,1,9.45
+TH Subsets,Th17,HC,2,5.63
+TH Subsets,Th17,HC,3,16.0
+TH Subsets,Th17,HC,4,14.2
+TH Subsets,Th17,HC,5,15.9
+TH Subsets,Th17,HC,6,13.5
+TH Subsets,Th17,HC,7,22.7
+TH Subsets,Th17,HC,8,13.0
+TH Subsets,Th17,HC,9,16.9
+TH Subsets,Th17,HC,10,17.9
+TH Subsets,Th17,HC,11,10.7
+TH Subsets,Th17,HC,12,16.4
+TH Subsets,Th17,HC,13,7.31
+TH Subsets,Th17,HC,14,18.9
+TH Subsets,Th17,HC,15,9.74
+TH Subsets,Th17,HC,16,6.2
+TH Subsets,Th17,HC,17,5.32
+TH Subsets,Th17,HC,18,3.39
+TH Subsets,Th17,HC,19,7.95
+TH Subsets,Th17,ALS,0,3.66
+TH Subsets,Th17,ALS,1,3.98
+TH Subsets,Th17,ALS,2,14.2
+TH Subsets,Th17,ALS,3,24.9
+TH Subsets,Th17,ALS,4,20.4
+TH Subsets,Th17,ALS,5,22.7
+TH Subsets,Th17,ALS,6,15.5
+TH Subsets,Th17,ALS,7,18.3
+TH Subsets,Th17,ALS,8,19.8
+TH Subsets,Th17,ALS,9,11.0
+TH Subsets,Th17,ALS,10,18.2
+TH Subsets,Th17,ALS,11,6.55
+TH Subsets,Th17,ALS,12,8.86
+TH Subsets,Th17,ALS,13,2.64
+TH Subsets,Th17,ALS,14,6.85
+TH Subsets,Th17,ALS,15,9.11
+TH Subsets,Th17,ALS,16,10.8
+TH Subsets,Th17,ALS,17,4.83
+TH Subsets,Th17,ALS,18,8.22
+TH Subsets,Th1,HC,0,2.52
+TH Subsets,Th1,HC,1,12.5
+TH Subsets,Th1,HC,2,7.36
+TH Subsets,Th1,HC,3,10.1
+TH Subsets,Th1,HC,4,5.98
+TH Subsets,Th1,HC,5,4.64
+TH Subsets,Th1,HC,6,7.57
+TH Subsets,Th1,HC,7,2.63
+TH Subsets,Th1,HC,8,26.0
+TH Subsets,Th1,HC,9,11.2
+TH Subsets,Th1,HC,10,11.7
+TH Subsets,Th1,HC,11,4.59
+TH Subsets,Th1,HC,12,8.37
+TH Subsets,Th1,HC,13,18.5
+TH Subsets,Th1,HC,14,9.12
+TH Subsets,Th1,HC,15,3.5
+TH Subsets,Th1,HC,16,22.0
+TH Subsets,Th1,HC,17,12.9
+TH Subsets,Th1,HC,18,34.4
+TH Subsets,Th1,HC,19,2.06
+TH Subsets,Th1,ALS,0,8.22
+TH Subsets,Th1,ALS,1,0.45
+TH Subsets,Th1,ALS,2,5.66
+TH Subsets,Th1,ALS,3,1.91
+TH Subsets,Th1,ALS,4,4.9
+TH Subsets,Th1,ALS,5,8.91
+TH Subsets,Th1,ALS,6,2.38
+TH Subsets,Th1,ALS,7,16.0
+TH Subsets,Th1,ALS,8,4.92
+TH Subsets,Th1,ALS,9,7.02
+TH Subsets,Th1,ALS,10,2.05
+TH Subsets,Th1,ALS,11,1.48
+TH Subsets,Th1,ALS,12,3.53
+TH Subsets,Th1,ALS,13,10.8
+TH Subsets,Th1,ALS,14,0.72
+TH Subsets,Th1,ALS,15,7.03
+TH Subsets,Th1,ALS,16,8.97
+TH Subsets,Th1,ALS,17,2.0
+TH Subsets,Th1,ALS,18,1.21
+TH Subsets,Th2,HC,0,13.9
+TH Subsets,Th2,HC,1,6.87
+TH Subsets,Th2,HC,2,5.2
+TH Subsets,Th2,HC,3,13.3
+TH Subsets,Th2,HC,4,7.41
+TH Subsets,Th2,HC,5,10.1
+TH Subsets,Th2,HC,6,9.85
+TH Subsets,Th2,HC,7,14.6
+TH Subsets,Th2,HC,8,9.43
+TH Subsets,Th2,HC,9,18.4
+TH Subsets,Th2,HC,10,10.3
+TH Subsets,Th2,HC,11,14.9
+TH Subsets,Th2,HC,12,7.7
+TH Subsets,Th2,HC,13,2.84
+TH Subsets,Th2,HC,14,6.08
+TH Subsets,Th2,HC,15,3.31
+TH Subsets,Th2,HC,16,6.88
+TH Subsets,Th2,HC,17,6.11
+TH Subsets,Th2,HC,18,4.97
+TH Subsets,Th2,HC,19,14.5
+TH Subsets,Th2,ALS,0,6.24
+TH Subsets,Th2,ALS,1,8.25
+TH Subsets,Th2,ALS,2,12.4
+TH Subsets,Th2,ALS,3,21.3
+TH Subsets,Th2,ALS,4,13.3
+TH Subsets,Th2,ALS,5,11.4
+TH Subsets,Th2,ALS,6,11.7
+TH Subsets,Th2,ALS,7,12.7
+TH Subsets,Th2,ALS,8,29.2
+TH Subsets,Th2,ALS,9,12.0
+TH Subsets,Th2,ALS,10,16.8
+TH Subsets,Th2,ALS,11,1.23
+TH Subsets,Th2,ALS,12,2.59
+TH Subsets,Th2,ALS,13,4.12
+TH Subsets,Th2,ALS,14,1.84
+TH Subsets,Th2,ALS,15,17.6
+TH Subsets,Th2,ALS,16,9.63
+TH Subsets,Th2,ALS,17,13.6
+TH Subsets,Th2,ALS,18,19.8

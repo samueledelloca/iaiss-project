@@ -1,0 +1,285 @@
+cytokine,stratum,donor_idx,magnitude
+Total,C9orf72 mutation,0,15438.333
+Total,C9orf72 mutation,1,17750.0
+Total,C9orf72 mutation,2,22010.0
+Total,Other Mutations,0,3246.666667
+Total,Other Mutations,1,23420.0
+Total,Other Mutations,2,2560.0
+Total,Other Mutations,3,7583.333333
+Total,Other Mutations,4,243.333
+Total,Other Mutations,5,1426.667
+Total,Other Mutations,6,2623.333
+Total,Other Mutations,7,23193.333
+Total,Other Mutations,8,100.0
+Total,Other Mutations,9,405.0
+Total,Other Mutations,10,14260.0
+Total,Other Mutations,11,10756.667
+Total,No Mutation,0,605.0
+Total,No Mutation,1,6326.667
+Total,No Mutation,2,28430.0
+Total,No Mutation,3,9060.0
+Total,No Mutation,4,3903.333333
+Total,No Mutation,5,6060.0
+Total,No Mutation,6,4233.333333
+Total,No Mutation,7,666.6666667
+Total,No Mutation,8,5720.0
+Total,No Mutation,9,633.3333333
+Total,Unknown,0,6883.333
+Total,Unknown,1,11870.0
+Total,Unknown,2,3850.0
+Total,Unknown,3,6556.666667
+Total,Unknown,4,3613.333333
+Total,Unknown,5,7920.0
+Total,Unknown,6,870.0
+Total,Unknown,7,310.0
+Total,Unknown,8,8990.0
+Total,Unknown,9,13906.66667
+Total,Unknown,10,3060.0
+Total,Unknown,11,2726.666667
+Total,Unknown,12,2166.666667
+Total,Unknown,13,1540.0
+Total,Unknown,14,2006.666667
+IFNg,C9orf72 mutation,0,725.0
+IFNg,C9orf72 mutation,1,4976.666667
+IFNg,C9orf72 mutation,2,6020.0
+IFNg,Other Mutations,0,2920.0
+IFNg,Other Mutations,1,6923.333333
+IFNg,Other Mutations,2,866.667
+IFNg,Other Mutations,3,4500.0
+IFNg,Other Mutations,4,100.0
+IFNg,Other Mutations,5,106.667
+IFNg,Other Mutations,6,693.333
+IFNg,Other Mutations,7,4656.667
+IFNg,Other Mutations,8,100.0
+IFNg,Other Mutations,9,100.0
+IFNg,Other Mutations,10,2916.667
+IFNg,Other Mutations,11,516.667
+IFNg,No Mutation,0,273.333
+IFNg,No Mutation,1,2913.333
+IFNg,No Mutation,2,4196.666667
+IFNg,No Mutation,3,2020.0
+IFNg,No Mutation,4,3740.0
+IFNg,No Mutation,5,2706.666667
+IFNg,No Mutation,6,1690.0
+IFNg,No Mutation,7,296.6666667
+IFNg,No Mutation,8,2993.333333
+IFNg,No Mutation,9,480.0
+IFNg,Unknown,0,2350.0
+IFNg,Unknown,1,7153.333
+IFNg,Unknown,2,1970.0
+IFNg,Unknown,3,2550.0
+IFNg,Unknown,4,1630.0
+IFNg,Unknown,5,3980.0
+IFNg,Unknown,6,146.6666667
+IFNg,Unknown,7,310.0
+IFNg,Unknown,8,3843.333333
+IFNg,Unknown,9,3616.666667
+IFNg,Unknown,10,1433.333333
+IFNg,Unknown,11,2726.666667
+IFNg,Unknown,12,600.0
+IFNg,Unknown,13,166.6666667
+IFNg,Unknown,14,1330.0
+IL-5,C9orf72 mutation,0,4778.333
+IL-5,C9orf72 mutation,1,8790.0
+IL-5,C9orf72 mutation,2,13013.33333
+IL-5,Other Mutations,0,326.6666667
+IL-5,Other Mutations,1,14713.33333
+IL-5,Other Mutations,2,540.0
+IL-5,Other Mutations,3,1156.666667
+IL-5,Other Mutations,4,190.0
+IL-5,Other Mutations,5,420.0
+IL-5,Other Mutations,6,1490.0
+IL-5,Other Mutations,7,11340.0
+IL-5,Other Mutations,8,100.0
+IL-5,Other Mutations,9,100.0
+IL-5,Other Mutations,10,7673.333
+IL-5,Other Mutations,11,8396.667
+IL-5,No Mutation,0,331.667
+IL-5,No Mutation,1,2993.333
+IL-5,No Mutation,2,13783.33333
+IL-5,No Mutation,3,5966.666667
+IL-5,No Mutation,4,163.3333333
+IL-5,No Mutation,5,3353.333333
+IL-5,No Mutation,6,2050.0
+IL-5,No Mutation,7,270.0
+IL-5,No Mutation,8,456.6666667
+IL-5,No Mutation,9,100.0
+IL-5,Unknown,0,2483.333
+IL-5,Unknown,1,3731.667
+IL-5,Unknown,2,1423.333333
+IL-5,Unknown,3,3476.666667
+IL-5,Unknown,4,1623.333333
+IL-5,Unknown,5,2176.666667
+IL-5,Unknown,6,496.67
+IL-5,Unknown,7,100.0
+IL-5,Unknown,8,510.0
+IL-5,Unknown,9,9203.33
+IL-5,Unknown,10,780.0
+IL-5,Unknown,11,100.0
+IL-5,Unknown,12,760.0
+IL-5,Unknown,13,1046.666667
+IL-5,Unknown,14,100.0
+IL-10,C9orf72 mutation,0,9935.0
+IL-10,C9orf72 mutation,1,3983.333333
+IL-10,C9orf72 mutation,2,2976.666667
+IL-10,Other Mutations,0,100.0
+IL-10,Other Mutations,1,1783.333333
+IL-10,Other Mutations,2,1153.333
+IL-10,Other Mutations,3,1926.666667
+IL-10,Other Mutations,4,100.0
+IL-10,Other Mutations,5,900.0
+IL-10,Other Mutations,6,440.0
+IL-10,Other Mutations,7,7196.667
+IL-10,Other Mutations,8,100.0
+IL-10,Other Mutations,9,350.0
+IL-10,Other Mutations,10,3670.0
+IL-10,Other Mutations,11,1843.333
+IL-10,No Mutation,0,100.0
+IL-10,No Mutation,1,420.0
+IL-10,No Mutation,2,10450.0
+IL-10,No Mutation,3,1073.333333
+IL-10,No Mutation,4,100.0
+IL-10,No Mutation,5,100.0
+IL-10,No Mutation,6,493.3333333
+IL-10,No Mutation,7,100.0
+IL-10,No Mutation,8,2270.0
+IL-10,No Mutation,9,153.3333333
+IL-10,Unknown,0,2050.0
+IL-10,Unknown,1,985.0
+IL-10,Unknown,2,456.6666667
+IL-10,Unknown,3,530.0
+IL-10,Unknown,4,360.0
+IL-10,Unknown,5,1763.333333
+IL-10,Unknown,6,226.6666667
+IL-10,Unknown,7,100.0
+IL-10,Unknown,8,4636.666667
+IL-10,Unknown,9,1086.666667
+IL-10,Unknown,10,846.6666667
+IL-10,Unknown,11,100.0
+IL-10,Unknown,12,806.6666667
+IL-10,Unknown,13,326.6666667
+IL-10,Unknown,14,576.6666667
+Total,C9orf72 mutation,0,1506.666667
+Total,C9orf72 mutation,1,3286.666667
+Total,C9orf72 mutation,2,7263.333333
+Total,C9orf72 mutation,3,3926.666667
+Total,C9orf72 mutation,4,9513.333333
+Total,C9orf72 mutation,5,13610.0
+Total,C9orf72 mutation,6,16333.33333
+Total,No mutation,0,3803.33333
+Total,No mutation,1,100.0
+Total,No mutation,2,100.0
+Total,No mutation,3,100.0
+Total,No mutation,4,100.0
+Total,No mutation,5,12086.6667
+Total,No mutation,6,316.666667
+IFNg,C9orf72 mutation,0,863.3333333
+IFNg,C9orf72 mutation,1,1043.333333
+IFNg,C9orf72 mutation,2,4353.333333
+IFNg,C9orf72 mutation,3,1796.666667
+IFNg,C9orf72 mutation,4,3146.666667
+IFNg,C9orf72 mutation,5,9443.333333
+IFNg,C9orf72 mutation,6,7466.666667
+IFNg,No mutation,0,2366.66667
+IFNg,No mutation,1,100.0
+IFNg,No mutation,2,100.0
+IFNg,No mutation,3,100.0
+IFNg,No mutation,4,100.0
+IFNg,No mutation,5,7943.33333
+IFNg,No mutation,6,100.0
+IL-5,C9orf72 mutation,0,643.3333333
+IL-5,C9orf72 mutation,1,1876.666667
+IL-5,C9orf72 mutation,2,1370.0
+IL-5,C9orf72 mutation,3,1823.333333
+IL-5,C9orf72 mutation,4,766.6666667
+IL-5,C9orf72 mutation,5,1723.333333
+IL-5,C9orf72 mutation,6,3983.333333
+IL-5,No mutation,0,1146.66667
+IL-5,No mutation,1,100.0
+IL-5,No mutation,2,100.0
+IL-5,No mutation,3,100.0
+IL-5,No mutation,4,100.0
+IL-5,No mutation,5,3696.66667
+IL-5,No mutation,6,100.0
+IL-10,C9orf72 mutation,0,100.0
+IL-10,C9orf72 mutation,1,366.6666667
+IL-10,C9orf72 mutation,2,1540.0
+IL-10,C9orf72 mutation,3,306.6666667
+IL-10,C9orf72 mutation,4,5600.0
+IL-10,C9orf72 mutation,5,2443.333333
+IL-10,C9orf72 mutation,6,4883.333333
+IL-10,No mutation,0,290.0
+IL-10,No mutation,1,100.0
+IL-10,No mutation,2,100.0
+IL-10,No mutation,3,100.0
+IL-10,No mutation,4,100.0
+IL-10,No mutation,5,446.666667
+IL-10,No mutation,6,316.666667
+Total,Short,0,17750.0
+Total,Short,1,3903.333333
+Total,Short,2,3246.666667
+Total,Short,3,6060.0
+Total,Short,4,4233.333333
+Total,Short,5,666.6666667
+Total,Long,0,23420.0
+Total,Long,1,6326.667
+Total,Long,2,5720.0
+Total,Long,3,22010.0
+Total,Long,4,2560.0
+Total,Long,5,7583.333333
+Total,Long,6,28430.0
+Total,Long,7,9060.0
+Total,Long,8,633.3333333
+Total,Long,9,11870.0
+Total,Long,10,2006.666667
+IFNg,Short,0,4976.666667
+IFNg,Short,1,3740.0
+IFNg,Short,2,2920.0
+IFNg,Short,3,2706.666667
+IFNg,Short,4,1690.0
+IFNg,Short,5,296.6666667
+IFNg,Long,0,6923.333333
+IFNg,Long,1,2913.333
+IFNg,Long,2,2993.333333
+IFNg,Long,3,6020.0
+IFNg,Long,4,866.667
+IFNg,Long,5,4500.0
+IFNg,Long,6,4196.666667
+IFNg,Long,7,2020.0
+IFNg,Long,8,480.0
+IFNg,Long,9,7153.333
+IFNg,Long,10,1330.0
+IL-5,Short,0,8790.0
+IL-5,Short,1,163.3333333
+IL-5,Short,2,326.6666667
+IL-5,Short,3,3353.333333
+IL-5,Short,4,2050.0
+IL-5,Short,5,270.0
+IL-5,Long,0,14713.33333
+IL-5,Long,1,2993.333
+IL-5,Long,2,456.6666667
+IL-5,Long,3,13013.33333
+IL-5,Long,4,540.0
+IL-5,Long,5,1156.666667
+IL-5,Long,6,13783.33333
+IL-5,Long,7,5966.666667
+IL-5,Long,8,100.0
+IL-5,Long,9,3731.667
+IL-5,Long,10,100.0
+IL-10,Short,0,3983.333333
+IL-10,Short,1,100.0
+IL-10,Short,2,100.0
+IL-10,Short,3,100.0
+IL-10,Short,4,493.3333333
+IL-10,Short,5,100.0
+IL-10,Long,0,1783.333333
+IL-10,Long,1,420.0
+IL-10,Long,2,2270.0
+IL-10,Long,3,2976.666667
+IL-10,Long,4,1153.333
+IL-10,Long,5,1926.666667
+IL-10,Long,6,10450.0
+IL-10,Long,7,1073.333333
+IL-10,Long,8,153.3333333
+IL-10,Long,9,985.0
+IL-10,Long,10,576.6666667

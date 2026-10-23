@@ -1,0 +1,46 @@
+figure_legend,comparison,raw_p
+a.,ALS vs HC,0.007
+b.,ALS vs HC,0.014
+c.,ALS vs HC,0.047
+d.,  HC vs. ALS,<0.001
+,  HC vs. PD,0.008
+,  HC vs. AD,0.019
+,  ALS vs. PD,0.861
+,  ALS vs. AD,0.643
+,  PD vs. AD,0.801
+e.,  HC vs. ALS,0.032
+,  HC vs. PD,0.002
+,  HC vs. AD,0.008
+,  ALS vs. PD,0.209
+,  ALS vs. AD,0.399
+,  PD vs. AD,0.717
+f.,  HC vs. ALS,<0.001
+,  HC vs. PD,0.026
+,  HC vs. AD,0.143
+,  ALS vs. PD,0.348
+,  ALS vs. AD,0.09
+,  PD vs. AD,0.508
+g.,  HC vs. ALS,0.005
+,  HC vs. PD,0.061
+,  HC vs. AD,0.111
+,  ALS vs. PD,0.614
+,  ALS vs. AD,0.432
+,  PD vs. AD,0.805
+h. ,  HC vs. ALS,0.006
+,  HC vs. PD,0.753
+,  HC vs. AD,0.541
+,  ALS vs. PD,0.006
+,  ALS vs. AD,0.002
+,  PD vs. AD,0.794
+i. ,  HC vs. ALS,0.008
+,  HC vs. PD,0.778
+,  HC vs. AD,0.56
+,  ALS vs. PD,0.01
+,  ALS vs. AD,0.003
+,  PD vs. AD,0.791
+j.,  HC vs. ALS,0.072
+,  HC vs. PD,0.028
+,  HC vs. AD,0.003
+,  ALS vs. PD,<0.001
+,  ALS vs. AD,<0.001
+,  PD vs. AD,0.454
