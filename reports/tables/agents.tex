@@ -1,0 +1,24 @@
+\begin{tabular}{p{3.6cm}lp{7.6cm}}
+\toprule
+Agent & Layer & Role \\
+\midrule
+literature agent & Scientific & Find external support/contradiction for findings. \\
+immunology agent & Scientific & Interpret cytokine responses and Th phenotype. \\
+als agent & Scientific & Relate findings to ALS biology, mutation status and contro \\
+hla agent & Scientific & Analyse HLA typing, restriction and binding coverage. \\
+tcell agent & Scientific & Analyse CD4/CD8 and T-cell subset composition. \\
+drug discovery agent & Scientific & Propose antigen-specific therapeutic strategies. \\
+structural agent & Scientific & Analyse epitope sequence/position and modifications. \\
+singlecell agent & Scientific & Propose single-cell follow-ups for phenotype identity. \\
+clinical agent & Scientific & Relate responses to survival and clinical variables. \\
+safety agent & Scientific & Stress-test robustness, multiple testing and censoring. \\
+hypothesis generator & Discovery & Generate testable questions from the data. \\
+hypothesis critic & Discovery & Adversarially critique each hypothesis/answer. \\
+evidence checker & Discovery & Independently recompute and verify each finding. \\
+replication agent & Discovery & Re-run robustness checks (jackknife, FDR, censoring). \\
+contradiction agent & Discovery & Classify each finding vs the paper's claims. \\
+experiment designer & Discovery & Design the most efficient falsification experiment. \\
+falsification agent & Discovery & State what observation would falsify each claim. \\
+pi agent & PI & Integrate all outputs; cannot override contradictory evide \\
+\bottomrule
+\end{tabular}
