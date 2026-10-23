@@ -1,0 +1,54 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+
+# ---- Raw data (large, CC-BY; fetched by scripts/fetch_data.py, not committed) ----
+data/raw/
+data/zenodo/
+*.fcs
+*.wsp
+*.FCS
+
+# ---- Model checkpoints (large; tracked by config + checksum, not committed) ----
+model/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# ---- Secrets ----
+.env
+*.key
+secrets/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ---- Report build artifacts (keep .tex/.bib/.pdf final, drop intermediates) ----
+reports/**/*.aux
+reports/**/*.log
+reports/**/*.out
+reports/**/*.toc
+reports/**/*.bbl
+reports/**/*.blg
+reports/**/*.fls
+reports/**/*.fdb_latexmk
+reports/**/*.synctex.gz
+
+# ---- Large result blobs (regenerated; small summaries are committed) ----
+results/large/
