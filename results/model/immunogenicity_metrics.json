@@ -1,0 +1,16 @@
+{
+  "cv_auc_mean": 0.5142857142857142,
+  "cv_auc_std": 0.15489005683133897,
+  "baseline_auc_mean": 0.7790476190476191,
+  "n": 95,
+  "n_positive": 21,
+  "feature_importance": {
+    "start_residue": 0.5604995522469497,
+    "hydropathy": 0.17187768462606584,
+    "n_predicted_hla_bound": 0.1374753142442192,
+    "net_charge": 0.04090273595210348,
+    "pos_frac": 0.03622754604325047,
+    "neg_frac": 0.03016647830249667,
+    "aromatic_frac": 0.022850688584914798
+  }
+}
