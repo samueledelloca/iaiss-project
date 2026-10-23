@@ -16,7 +16,7 @@ in `src/c9n2a/tools.py`, and the numbers are the tools' real outputs. The commit
 
 ---
 
-## Trace 1 — Hypothesis Generator and Structural Agent: spatial structure
+## Trace 1: Hypothesis Generator and Structural Agent: spatial structure
 
 **Hypothesis.** The paper maps individual C9orf72 epitopes but does not say whether
 immunogenic peptides are scattered or clustered along the protein. If recognition is
@@ -46,7 +46,7 @@ random relabelling", not as independent evidence of discrete epitopes. Verdict:
 
 ---
 
-## Trace 2 — Immunology Agent and Critic: is the IL-5 bias C9orf72-specific?
+## Trace 2: Immunology Agent and Critic: is the IL-5 bias C9orf72-specific?
 
 **Hypothesis.** The study frames the IL-5 and IL-10 skew around C9orf72. If the IL-5
 skew is a general ALS T-helper-2 phenomenon, it should also appear for the other
@@ -69,7 +69,7 @@ and the FDR family test (Trace 3) is run on the C9orf72 comparisons. Verdict: **
 
 ---
 
-## Trace 3 — Safety Agent and Falsification Agent: does the signal survive correction?
+## Trace 3: Safety Agent and Falsification Agent: does the signal survive correction?
 
 **Hypothesis.** The paper reports raw p-values for the C9orf72 ALS-vs-HC comparisons. A
 sceptic would ask whether they survive correction across the whole family of
