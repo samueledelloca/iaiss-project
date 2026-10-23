@@ -1,0 +1,53 @@
+# Base configuration for the C9orf72-Nature2Agent project.
+# Override any key with a second YAML passed to c9n2a.config.load_config(override=...).
+
+project:
+  name: c9orf72-nature2agent
+  primary_reference:
+    citation: "Michaelis et al., Autoimmune response to C9orf72 protein in amyotrophic lateral sclerosis, Nature 647, 970-978 (2025)"
+    doi: "10.1038/s41586-025-09588-6"
+    url: "https://www.nature.com/articles/s41586-025-09588-6"
+
+reproducibility:
+  random_seed: 1234
+
+# Study design constants taken verbatim from the paper (verified at ingest).
+study:
+  n_als: 40
+  n_hc: 28
+  n_c9orf72_peptides: 100
+  cytokines_of_interest: [IFNg, IL-5, IL-10, IL-4, IL-13, IL-17, TNF, IL-2, GM-CSF]
+  key_claims:
+    - "C9orf72-specific responses increased in ALS vs HC"
+    - "Responses predominantly CD4+ T-cell mediated"
+    - "ALS responses relatively enriched for IL-5 and IL-10 over IFNg"
+    - "IL-10-mediated C9orf72 responses associate with longer predicted survival"
+    - "C9orf72 mutation carriers show stronger C9orf72-specific responses"
+
+# Data sources. Zenodo record IDs are filled in and verified by scripts/fetch_data.py;
+# datasets are versioned by record id + file SHA-256.
+data:
+  zenodo_concept: "C9orf72 ALS autoimmunity (Michaelis et al. 2025)"
+  nature_source_data: true          # per-figure source-data tables from the article
+  records: []                        # populated by the data-discovery step
+
+# Model/predictor settings (small, reproducible; no torch).
+model:
+  peptide_immunogenicity:
+    estimator: gradient_boosting
+    cv_folds: 5
+    seed: 1234
+
+# Agent architecture. Backend is pluggable; with no API key the reasoning agents
+# run in-session and their transcripts are cached under experiments/ and literature/.
+agents:
+  backend: cached            # one of: anthropic | cached
+  anthropic_model: claude-opus-4-8
+  temperature: 0.0
+  record_prompts: true
+  record_transcripts: true
+
+evaluation:
+  bootstrap_iterations: 2000
+  alpha: 0.05
+  multiple_testing: fdr_bh    # Benjamini-Hochberg
