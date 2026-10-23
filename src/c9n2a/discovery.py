@@ -41,7 +41,7 @@ DATA_TOOLS = ["list_datasets", "describe_dataset", "query_dataset", "run_analysi
 AGENT_SPECS: dict[str, AgentSpec] = {s.name: s for s in [
     # Layer 3 - scientific agents
     _spec("literature_agent", 3, "Find external support/contradiction for findings.",
-          ["explain_experimental_design"]),
+          ["explain_experimental_design", "search_paper"]),
     _spec("immunology_agent", 3, "Interpret cytokine responses and Th phenotype.",
           DATA_TOOLS),
     _spec("als_agent", 3, "Relate findings to ALS biology, mutation status and controls.",

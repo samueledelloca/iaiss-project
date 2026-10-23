@@ -168,6 +168,12 @@ def protein_sequence() -> dict:
             "sequence": C9ORF72_SEQUENCE}
 
 
+def search_paper(query: str, k: int = 5) -> dict:
+    """Retrieve passages from the paper + supplementary (scientific RAG)."""
+    from . import rag
+    return {"query": query, "passages": rag.get_index().query(query, k=k)}
+
+
 # --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
@@ -196,6 +202,7 @@ TOOLS: dict[str, Tool] = {t.name: t for t in [
     Tool("list_analyses", list_analyses, "List all named analyses."),
     Tool("reported_pvalues", reported_pvalues, "Authors' reported p-values (validation)."),
     Tool("protein_sequence", protein_sequence, "C9orf72 protein sequence (UniProt Q96LT7)."),
+    Tool("search_paper", search_paper, "Retrieve passages from the paper + SI (scientific RAG)."),
 ]}
 
 
