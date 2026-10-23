@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "c9orf72-nature2agent": {
+      "command": ".venv/bin/python",
+      "args": ["model/mcp_server.py"],
+      "description": "Interactive agent over the Michaelis et al. (2025) C9orf72/ALS Nature study"
+    }
+  }
+}
