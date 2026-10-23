@@ -52,3 +52,6 @@ reports/**/*.synctex.gz
 
 # ---- Large result blobs (regenerated; small summaries are committed) ----
 results/large/
+
+# Discovery scratch (regenerable)
+data/zenodo_discovery.json

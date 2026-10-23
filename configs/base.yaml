@@ -28,8 +28,30 @@ study:
 # datasets are versioned by record id + file SHA-256.
 data:
   zenodo_concept: "C9orf72 ALS autoimmunity (Michaelis et al. 2025)"
-  nature_source_data: true          # per-figure source-data tables from the article
-  records: []                        # populated by the data-discovery step
+  pmc_id: "PMC12657233"             # open-access full text + supplementary (MOESM3 = Supplementary Tables)
+  pmid: "41034581"
+  # Five Zenodo deposits (verified by title + DOI); versioned by record id + per-file MD5.
+  records:
+    - id: "16749283"
+      label: spectral
+      title: "Spectral data"
+      size_mb: 1641
+    - id: "16749334"
+      label: ics_screen1
+      title: "ICS data Screen 1"
+      size_mb: 152
+    - id: "16754553"
+      label: ics_screen2
+      title: "ICS data Screen 2"
+      size_mb: 45
+    - id: "16754591"
+      label: ics_screen3
+      title: "ICS data Screen 3"
+      size_mb: 58
+    - id: "16754609"
+      label: ics_screen4
+      title: "ICS data Screen 4"
+      size_mb: 139
 
 # Model/predictor settings (small, reproducible; no torch).
 model:
